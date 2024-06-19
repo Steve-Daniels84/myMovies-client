@@ -2,7 +2,13 @@
   color: #4682b4;
 }
 
-.movie-detail.container {
+.movie-detail-container {
+  height: 50%;
   padding: 0 auto;
+  display: flex;
+}
+
+.backButton {
+  width: 60%;
 }
 /*# sourceMappingURL=index.2212206d.css.map */

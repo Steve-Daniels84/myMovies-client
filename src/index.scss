@@ -4,6 +4,16 @@ $color: steelblue;
   color: $color;
 }
 
-.movie-detail.container {
-  padding: 0 auto;
+.movie-detail-container {
+display: flex;
+height: 50%;
+padding: 0 auto;
+}
+
+.detail-image-container {
+
+}
+
+.backButton {
+  width: 60%;
 }
