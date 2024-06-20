@@ -27375,6 +27375,8 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MainView", ()=>MainView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
+var _headerBar = require("../header-bar/header-bar");
+var _sideBar = require("../side-bar/side-bar");
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 var _s = $RefreshSig$();
@@ -27426,7 +27428,7 @@ const MainView = ()=>{
                 Bio: "Quentin Tarantino is an American filmmaker known for his unique style and eclectic use of violence and dark humor.",
                 Birth: "1963"
             },
-            ImagePath: "https://xl.movieposterdb.com/22_12/2004/478720/xl_pulp-fiction-on-a-dime-a-10th-anniversary-retrospect-movie-poster_a2a3d55d.jpg?v=2022-12-17%2008:45:22",
+            ImagePath: "https://xl.movieposterdb.com/07_10/1994/110912/xl_110912_55345443.jpg?v=2024-06-20%2005:24:20",
             Featured: true
         },
         {
@@ -27550,34 +27552,69 @@ const MainView = ()=>{
         }
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 173,
+        lineNumber: 175,
         columnNumber: 5
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "No movies found!"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 183,
+        lineNumber: 185,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                movie: movie,
-                onMovieClick: (newSelectedMovie)=>{
-                    setSelectedMovie(newSelectedMovie);
-                }
-            }, movie.id, false, {
+        className: "main-view",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerBar.HeaderBar), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 189,
-                columnNumber: 13
-            }, undefined))
-    }, void 0, false, {
+                lineNumber: 190,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "main-content",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sideBar.SideBar), {}, void 0, false, {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 193,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/main-view/main-view.jsx",
+                        lineNumber: 192,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "movie-card-grid",
+                        children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                                movie: movie,
+                                onMovieClick: (newSelectedMovie)=>{
+                                    setSelectedMovie(newSelectedMovie);
+                                }
+                            }, movie.id, false, {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 197,
+                                columnNumber: 13
+                            }, undefined))
+                    }, void 0, false, {
+                        fileName: "src/components/main-view/main-view.jsx",
+                        lineNumber: 195,
+                        columnNumber: 7
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 191,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 187,
+        lineNumber: 189,
         columnNumber: 5
     }, undefined);
 };
-_s(MainView, "Xw5/YZ62RAq9gvYAIZYSo9uHppc=");
+_s(MainView, "eD/A5Rb9JccVaDLacKQyPN0SUsw=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -27587,7 +27624,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","react":"21dqq","../movie-card/movie-card":"bwuIu","react/jsx-dev-runtime":"iTorj","../movie-view/movie-view":"ggaUx"}],"gYsYj":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","react":"21dqq","../movie-card/movie-card":"bwuIu","react/jsx-dev-runtime":"iTorj","../movie-view/movie-view":"ggaUx","../side-bar/side-bar":"bbzZy","../header-bar/header-bar":"97I93"}],"gYsYj":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27630,14 +27667,80 @@ parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const MovieCard = ({ movie, onMovieClick })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "movie-card",
         onClick: ()=>{
             onMovieClick(movie);
         },
-        children: movie.Title
-    }, void 0, false, {
+        children: [
+            "   ",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "movie-card-header",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "movie-card-image-container",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "poster-image",
+                            src: movie.ImagePath,
+                            alt: ""
+                        }, void 0, false, {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 9,
+                            columnNumber: 29
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/movie-card/movie-card.jsx",
+                        lineNumber: 8,
+                        columnNumber: 25
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "movie-card-title",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "movie-card-title-container",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                    children: movie.Title
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 13,
+                                    columnNumber: 29
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/movie-card/movie-card.jsx",
+                                lineNumber: 12,
+                                columnNumber: 29
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                children: movie.Genre.Name
+                            }, void 0, false, {
+                                fileName: "src/components/movie-card/movie-card.jsx",
+                                lineNumber: 15,
+                                columnNumber: 29
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/movie-card/movie-card.jsx",
+                        lineNumber: 11,
+                        columnNumber: 25
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 7,
+                columnNumber: 21
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "movie-card-description",
+                children: movie.Description
+            }, void 0, false, {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 18,
+                columnNumber: 21
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/components/movie-card/movie-card.jsx",
         lineNumber: 3,
-        columnNumber: 9
+        columnNumber: 13
     }, undefined);
 };
 _c = MovieCard;
@@ -27800,6 +27903,129 @@ var _c;
 $RefreshReg$(_c, "MovieView");
 
   $parcel$ReactRefreshHelpers$e9f6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la"}],"bbzZy":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2a49 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2a49.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SideBar", ()=>SideBar);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const SideBar = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "sidebar-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "sidbar-header"
+            }, void 0, false, {
+                fileName: "src/components/side-bar/side-bar.jsx",
+                lineNumber: 4,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "sidebar-filter-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: "Filters"
+                    }, void 0, false, {
+                        fileName: "src/components/side-bar/side-bar.jsx",
+                        lineNumber: 7,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        children: "logout"
+                    }, void 0, false, {
+                        fileName: "src/components/side-bar/side-bar.jsx",
+                        lineNumber: 8,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/side-bar/side-bar.jsx",
+                lineNumber: 6,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/side-bar/side-bar.jsx",
+        lineNumber: 3,
+        columnNumber: 9
+    }, undefined);
+};
+
+  $parcel$ReactRefreshHelpers$2a49.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la"}],"97I93":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5f9e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5f9e.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "HeaderBar", ()=>HeaderBar);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const HeaderBar = ()=>{
+    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "header-bar",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "MyMovies"
+            }, void 0, false, {
+                fileName: "src/components/header-bar/header-bar.jsx",
+                lineNumber: 3,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "header-search-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                        For: "header-search-input",
+                        children: "Search:"
+                    }, void 0, false, {
+                        fileName: "src/components/header-bar/header-bar.jsx",
+                        lineNumber: 5,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        name: "search-input",
+                        id: "search-input",
+                        placeholder: "Search"
+                    }, void 0, false, {
+                        fileName: "src/components/header-bar/header-bar.jsx",
+                        lineNumber: 6,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/header-bar/header-bar.jsx",
+                lineNumber: 4,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/header-bar/header-bar.jsx",
+        lineNumber: 2,
+        columnNumber: 5
+    }, undefined);
+};
+_c = HeaderBar;
+var _c;
+$RefreshReg$(_c, "HeaderBar");
+
+  $parcel$ReactRefreshHelpers$5f9e.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;

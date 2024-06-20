@@ -1,5 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
 .my-movies {
   color: #4682b4;
+}
+
+.header-bar {
+  border: 1px solid #000;
+  height: 30px;
+}
+
+.main-content {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+}
+
+.sidebar-container {
+  border: 1px solid #000;
+  width: 25vw;
+  height: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.sidebar-filter-container {
+  width: 100%;
+  height: 100%;
 }
 
 .movie-detail-container {
@@ -10,5 +38,65 @@
 
 .backButton {
   width: 60%;
+}
+
+.movie-card-grid {
+  grid-gap: 1rem;
+  align-content: top;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 100vh;
+  padding: 5rem;
+  display: grid;
+  overflow: scroll;
+}
+
+.movie-card {
+  background-color: #f9f6e7;
+  border-radius: 20px;
+  width: 25rem;
+  height: 25rem;
+  padding: 5px;
+  box-shadow: 0 4px 8px #0003, 0 6px 20px #00000030;
+}
+
+.movie-card-header {
+  height: 250px;
+  display: flex;
+}
+
+.movie-card-image-container {
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+}
+
+.poster-image {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 10px;
+}
+
+.movie-card-title {
+  text-align: left;
+  margin-left: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.movie-card-title-container {
+  height: 45px;
+}
+
+.movie-card-title p {
+  text-align: left;
+  height: 50px;
+}
+
+.movie-card-description {
+  padding: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  overflow: scroll;
 }
 /*# sourceMappingURL=index.2212206d.css.map */

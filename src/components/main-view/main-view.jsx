@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { HeaderBar } from "../header-bar/header-bar";
+import {SideBar} from "../side-bar/side-bar";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
@@ -49,7 +51,7 @@ const [movies, setMovies] = useState ([
         Bio: "Quentin Tarantino is an American filmmaker known for his unique style and eclectic use of violence and dark humor.",
         Birth: "1963"
       },
-      ImagePath: "https://xl.movieposterdb.com/22_12/2004/478720/xl_pulp-fiction-on-a-dime-a-10th-anniversary-retrospect-movie-poster_a2a3d55d.jpg?v=2022-12-17%2008:45:22",
+      ImagePath: "https://xl.movieposterdb.com/07_10/1994/110912/xl_110912_55345443.jpg?v=2024-06-20%2005:24:20",
       Featured: true
     },
     {
@@ -184,16 +186,24 @@ const [movies, setMovies] = useState ([
   }
 
   return (
-    <div>
-        {movies.map((movie) => (
+    <div className = "main-view">
+      <HeaderBar />
+      <div className="main-content">
+        <div>
+          <SideBar />
+        </div>
+      <div className="movie-card-grid">
+          {movies.map((movie) => (
             <MovieCard 
-            key={movie.id} 
-            movie={movie}
-            onMovieClick={(newSelectedMovie) =>{
+              key={movie.id} 
+              movie={movie}
+              onMovieClick={(newSelectedMovie) =>{
                 setSelectedMovie(newSelectedMovie);
-            }}
+              }}
             />
         ))}
+        </div>
+      </div>
     </div>
   );
 
