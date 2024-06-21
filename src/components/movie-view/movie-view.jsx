@@ -1,7 +1,12 @@
+import { HeaderBar } from "../header-bar/header-bar";
+
 export const MovieView = ({movie, onBackClick}) => {
+
+   
 
     return (
     <div>
+        {/* <HeaderBar /> */}
         <div className="movie-detail-container">
             <div className="detail-image-container">
                 <img src={movie.ImagePath} alt={movie.Title + " poster image."} />

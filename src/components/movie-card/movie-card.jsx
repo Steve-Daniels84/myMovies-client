@@ -1,3 +1,5 @@
+import {MovieViewModal} from "../movie-view-modal/movie-view-modal";
+
 export const MovieCard = ({ movie, onMovieClick }) => {
     return (
             <div className="movie-card"
