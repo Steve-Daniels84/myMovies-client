@@ -27775,6 +27775,7 @@ const MovieViewModal = ({ show, movie, onClose })=>{
     if (!show) return null;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "movie-view-modal-backdrop",
+        onClick: onClose,
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "movie-view-modal",
             children: [
@@ -27909,48 +27910,59 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "HeaderBar", ()=>HeaderBar);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _logoSvg = require("../../../public/img/logo.svg");
+var _logoSvgDefault = parcelHelpers.interopDefault(_logoSvg);
 const HeaderBar = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "header-bar",
         children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                src: (0, _logoSvgDefault.default),
+                alt: "Logo",
+                height: "60px"
+            }, void 0, false, {
+                fileName: "src/components/header-bar/header-bar.jsx",
+                lineNumber: 4,
+                columnNumber: 9
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: "MyMovies"
             }, void 0, false, {
                 fileName: "src/components/header-bar/header-bar.jsx",
-                lineNumber: 3,
+                lineNumber: 5,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "header-search-container",
                 children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                        for: "search-input",
-                        children: "Search:"
-                    }, void 0, false, {
-                        fileName: "src/components/header-bar/header-bar.jsx",
-                        lineNumber: 5,
-                        columnNumber: 13
-                    }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                         type: "text",
                         name: "search-input",
                         id: "search-input",
-                        placeholder: "Search"
+                        placeholder: "Search for a movie..."
                     }, void 0, false, {
                         fileName: "src/components/header-bar/header-bar.jsx",
-                        lineNumber: 6,
+                        lineNumber: 7,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "button-search",
+                        children: "Search"
+                    }, void 0, false, {
+                        fileName: "src/components/header-bar/header-bar.jsx",
+                        lineNumber: 8,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/header-bar/header-bar.jsx",
-                lineNumber: 4,
+                lineNumber: 6,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/header-bar/header-bar.jsx",
-        lineNumber: 2,
+        lineNumber: 3,
         columnNumber: 13
     }, undefined);
 };
@@ -27963,6 +27975,44 @@ $RefreshReg$(_c, "HeaderBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la"}]},["a28iG","1FsAG","d8Dch"], "d8Dch", "parcelRequirebd5d")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","../../../public/img/logo.svg":"lqNGK"}],"lqNGK":[function(require,module,exports) {
+module.exports = require("125f1f860d822223").getBundleURL("byUka") + "logo.7efc0074.svg" + "?" + Date.now();
+
+},{"125f1f860d822223":"fWaqB"}],"fWaqB":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}]},["a28iG","1FsAG","d8Dch"], "d8Dch", "parcelRequirebd5d")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

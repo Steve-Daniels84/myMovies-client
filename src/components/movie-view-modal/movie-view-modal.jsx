@@ -6,7 +6,7 @@ export const MovieViewModal = ( {show, movie, onClose} ) => {
     }
 
    return (
-     <div className="movie-view-modal-backdrop">
+     <div className="movie-view-modal-backdrop" onClick={onClose}>
         <div className="movie-view-modal">
             <div className="movie-view-modal-header">
                 <h1>{movie.Name}</h1>

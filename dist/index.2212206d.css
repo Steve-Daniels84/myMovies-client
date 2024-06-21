@@ -6,15 +6,36 @@
   color: #4682b4;
 }
 
+.main-view {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .header-bar {
-  text-align: center;
   color: gold;
   background-color: #ad0e0e;
   justify-content: space-between;
+  align-items: center;
   width: 100vw;
   height: 5vh;
   display: flex;
-  position: relative;
+}
+
+.header-search-container {
+  padding-right: 1rem;
+}
+
+#search-input {
+  border-radius: 8px;
+  width: 15rem;
+  height: 2.5rem;
+  margin: 1rem;
+  padding: 4px;
+}
+
+.button-search {
+  border-radius: 8px;
+  width: 6rem;
+  height: 2.5rem;
 }
 
 .main-content {
@@ -37,7 +58,6 @@
 
 .movie-detail-container {
   height: 50%;
-  padding: 0 auto;
   display: flex;
 }
 
@@ -52,11 +72,18 @@
 }
 
 .movie-card {
+  cursor: pointer;
   border-radius: 20px;
   width: 25rem;
   height: 25rem;
   padding: 5px;
+  transition: scale 1s;
   box-shadow: 0 4px 8px #0003, 0 6px 20px #00000030;
+}
+
+.movie-card:hover {
+  z-index: 999;
+  scale: 1.05;
 }
 
 .movie-card-header {
@@ -81,7 +108,6 @@
 .movie-card-title {
   text-align: left;
   margin-left: 10px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .movie-card-title-container {
