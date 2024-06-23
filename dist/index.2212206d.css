@@ -1,59 +1,80 @@
-* {
-  box-sizing: border-box;
-}
-
-.my-movies {
-  color: #4682b4;
-}
-
-.main-view {
+body {
+  margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.header-bar {
-  color: gold;
-  background-color: #ad0e0e;
+.main-content {
+  height: 95vh;
+  display: flex;
+}
+
+.movie-view-modal-backdrop {
+  z-index: 1000;
+  background: #00000080;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  inset: 0;
+}
+
+.movie-view-modal {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  width: 70vw;
+  padding: 20px;
+}
+
+.movie-view-modal-header {
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
-  height: 5vh;
   display: flex;
 }
 
-.header-search-container {
-  padding-right: 1rem;
-}
-
-#search-input {
-  border-radius: 8px;
-  width: 15rem;
-  height: 2.5rem;
-  margin: 1rem;
-  padding: 4px;
-}
-
-.button-search {
-  border-radius: 8px;
-  width: 6rem;
-  height: 2.5rem;
-}
-
-.main-content {
-  width: 100vw;
-  height: 95vh;
+.movie-view-modal-movie {
+  width: 100%;
   display: flex;
 }
 
-.sidebar-container {
-  border-right: 1px solid #000;
-  width: 20vw;
-  height: 95vh;
+.modal-poster-container {
+  width: 50%;
+  padding: 10px;
+}
+
+.movie-view-modal-director {
+  width: 100%;
+  display: flex;
+}
+
+.modal-headshot-container {
+  width: 20rem;
+  height: 100%;
   padding: 10px;
   overflow: hidden;
 }
 
-.sidebar-filter-container {
+.modal-poster-image, .modal-headshot-image {
+  width: 100%;
+}
+
+.modal-plot {
+  width: 100%;
+  padding: 5px;
+}
+
+.director-card-container {
+  border-radius: 10px;
+  align-content: space-around;
+  width: 100%;
   height: 100%;
+  margin: 10px;
+  display: flex;
+}
+
+.director-card-image {
+  width: 300px;
 }
 
 .movie-detail-container {
@@ -63,9 +84,9 @@
 
 .movie-card-grid {
   grid-gap: 1rem;
-  align-content: top;
   grid-template-columns: 1fr 1fr 1fr;
-  height: auto;
+  justify-items: center;
+  width: 80vw;
   padding: 1rem;
   display: grid;
   overflow: scroll;
@@ -114,6 +135,10 @@
   height: 45px;
 }
 
+#movie-genre {
+  margin-top: 20px;
+}
+
 .movie-card-title p {
   text-align: left;
   height: 50px;
@@ -121,34 +146,61 @@
 
 .movie-card-description {
   padding: 10px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 18px;
-  overflow: scroll;
+  font-size: 16px;
 }
 
-.movie-view-modal-backdrop {
-  z-index: 1000;
-  background: #00000080;
-  justify-content: center;
+.sidebar-container {
+  border-right: 1px solid #000;
+  width: 20vw;
+  height: 95vh;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.sidebar-filter-container {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header-bar {
+  color: gold;
+  background-color: #ad0e0e;
+  justify-content: space-between;
   align-items: center;
+  height: 5vh;
   display: flex;
-  position: fixed;
-  inset: 0;
 }
 
-.movie-view-modal {
-  background: #fff;
+.logo-container {
+  width: 3rem;
+  display: flex;
+}
+
+.logo-container h1 {
+  margin-left: .5rem;
+}
+
+.header-search-container {
+  padding-right: 1rem;
+}
+
+#search-input {
   border-radius: 8px;
-  width: 80%;
-  max-width: 500px;
-  padding: 20px;
-  position: relative;
+  width: 15rem;
+  height: 2.5rem;
+  margin: 1rem;
+  padding: 4px;
 }
 
-.close-button {
+.button-generic {
+  color: #faebd7;
   cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 20px;
+  background-color: #000;
+  border-radius: 8px;
+  width: auto;
+  height: 2.5rem;
 }
 /*# sourceMappingURL=index.2212206d.css.map */

@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+.header-bar {
+    height: 5vh;
+    background-color: rgb(173, 14, 14);
+    display: flex;
+    justify-content: space-between;
+    color: #ffd700;
+    align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      width: 3rem;
+    }
+    
+    .logo-container h1 {
+      margin-left: 0.5rem;
+    }
+    
+    .header-search-container {
+      padding-right: 1rem;
+    }
+    
+    #search-input {
+      width: 15rem;
+      height: 2.5rem;
+      border-radius: 8;
+      margin: 1rem;
+      padding:4px;
+    }
+    
+    .button-generic {
+      height: 2.5rem;
+      width: auto;
+      border-radius: 8;
+      background-color: black;
+      color: antiquewhite;
+      cursor: pointer;
+    }

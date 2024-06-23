@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+  }
+
+  .movie-view-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .movie-view-modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 70vw;
+    border: 1px solid black;
+
+  }
+
+.movie-view-modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-view-modal-movie {
+  display: flex;
+  width: 100%;
+}
+
+.modal-poster-container {
+  width: 100%;
+  width: 50%;
+  padding: 10px;
+}
+
+.movie-view-modal-director {
+  display: flex;
+  width: 100%;
+}
+
+.modal-headshot-container {
+  width: 20rem;
+  height: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.modal-poster-image {
+  width: 100%;
+}
+
+.modal-headshot-image {
+  width: 100%;
+}
+
+.modal-plot {
+  width: 100%;
+  padding: 5px;
+}
+
+

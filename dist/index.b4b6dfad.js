@@ -27384,164 +27384,214 @@ const MainView = ()=>{
     _s();
     const [movies, setMovies] = (0, _react.useState)([
         {
-            id: "666f359593c7c89956dc00ed",
-            Title: "The Dark Knight",
-            Description: "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
-            Genre: {
-                Name: "Action",
-                Description: "Action films are characterized by a lot of excitement, including high-energy scenes, chases, and combat sequences."
+            "id": "666f359593c7c89956dc00ed",
+            "Title": "The Dark Knight",
+            "Description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+            "Plot": "Batman, Gordon, and Harvey Dent successfully begin to round up the criminals that plague Gotham, until a mysterious and sadistic criminal mastermind known only as the Joker appears in Gotham, creating a new wave of chaos. Batman's struggle against the Joker becomes deeply personal, forcing him to confront everything he believes in and improve his technology to stop him. A love triangle develops between Bruce Wayne, Dent, and Rachel Dawes.",
+            "Genre": {
+                "Name": "Action",
+                "Description": "Action films are characterized by a lot of excitement, including high-energy scenes, chases, and combat sequences."
             },
-            Director: {
-                Name: "Christopher Nolan",
-                Bio: "Christopher Nolan is a British-American film director, producer, and screenwriter known for his complex narratives and innovative visuals.",
-                Birth: "1970"
+            "Director": {
+                "Name": "Christopher Nolan",
+                "Bio": "Christopher Nolan is a British-American film director, producer, and screenwriter known for his complex narratives and innovative visuals.",
+                "Birth": "1970",
+                "HeadShots": [
+                    "https://www.hollywoodreporter.com/wp-content/uploads/2023/07/GettyImages-1542858165-H-2023.jpg?w=1296&h=730&crop=1&resize=1000%2C563"
+                ]
             },
-            ImagePath: "https://xl.movieposterdb.com/08_05/2008/468569/xl_468569_f0e2cd63.jpg?v=2024-06-14%2013:00:59",
-            Featured: true
+            "ImagePath": "https://xl.movieposterdb.com/08_05/2008/468569/xl_468569_f0e2cd63.jpg?v=2024-06-14%2013:00:59",
+            "Featured": true,
+            "ReleaseYear": 2008
         },
         {
-            id: "666f359f93c7c89956dc00ee",
-            Title: "The Godfather",
-            Description: "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
-            Genre: {
-                Name: "Crime",
-                Description: "Crime films focus on the criminal underworld, often involving law enforcement and criminal activities."
+            "id": "666f359f93c7c89956dc00ee",
+            "Title": "The Godfather",
+            "Description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+            "Plot": "In 1945 New York City, at his daughter Connie's wedding, Vito Corleone hears requests in his role as the godfather, the Don of a crime family. Vito's youngest son, Michael, who was a Marine during World War II, introduces his girlfriend, Kay Adams, to his family at the wedding. Vito is a powerful man, and he is kind to all those who give him respect but ruthless against those who do not. With Michael reluctant to take over, the future of the family becomes uncertain.",
+            "Genre": {
+                "Name": "Crime",
+                "Description": "Crime films focus on the criminal underworld, often involving law enforcement and criminal activities."
             },
-            Director: {
-                Name: "Francis Ford Coppola",
-                Bio: "Francis Ford Coppola is an American film director, producer, and screenwriter known for his work on classic films like The Godfather.",
-                Birth: "1939"
+            "Director": {
+                "Name": "Francis Ford Coppola",
+                "Bio": "Francis Ford Coppola is an American film director, producer, and screenwriter known for his work on classic films like The Godfather.",
+                "Birth": "1939",
+                "HeadShots": [
+                    "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQN04piug2dAL5PE3AZW5ALirB1ouF0ZwfcnXimjDCO3k2hZYoIMlS0VMsyGf8f4WvPc8IomGOuojBZiv0"
+                ]
             },
-            ImagePath: "https://xl.movieposterdb.com/22_07/1972/68646/xl_68646_8c811dec.jpg?v=2024-06-03%2013:09:13",
-            Featured: true
+            "ImagePath": "https://xl.movieposterdb.com/22_07/1972/68646/xl_68646_8c811dec.jpg?v=2024-06-03%2013:09:13",
+            "Featured": true,
+            "ReleaseYear": 1972
         },
         {
-            id: "666f35a493c7c89956dc00ef",
-            Title: "Pulp Fiction",
-            Description: "The lives of two mob hitmen, a boxer, a gangster, and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-            Genre: {
-                Name: "Crime",
-                Description: "Crime films focus on the criminal underworld, often involving law enforcement and criminal activities."
+            "id": "666f35a493c7c89956dc00ef",
+            "Title": "Pulp Fiction",
+            "Description": "The lives of two mob hitmen, a boxer, a gangster, and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+            "Plot": "The lives of two mob hitmen, Vincent Vega and Jules Winnfield, intertwine with those of their boss, Marsellus Wallace, his actress wife, Mia, a struggling boxer named Butch Coolidge, and a pair of petty criminals. The narrative structure is non-linear, with the story unfolding in a series of interrelated and out-of-sequence scenes. Each story builds on the others to create a tapestry of violence, redemption, and dark humor.",
+            "Genre": {
+                "Name": "Crime",
+                "Description": "Crime films focus on the criminal underworld, often involving law enforcement and criminal activities."
             },
-            Director: {
-                Name: "Quentin Tarantino",
-                Bio: "Quentin Tarantino is an American filmmaker known for his unique style and eclectic use of violence and dark humor.",
-                Birth: "1963"
+            "Director": {
+                "Name": "Quentin Tarantino",
+                "Bio": "Quentin Tarantino is an American filmmaker known for his unique style and eclectic use of violence and dark humor.",
+                "Birth": "1963",
+                "HeadShots": [
+                    "https://hips.hearstapps.com/hmg-prod/images/quentin-tarantino-attends-the-ee-british-academy-film-news-photo-1624744542.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*"
+                ]
             },
-            ImagePath: "https://xl.movieposterdb.com/07_10/1994/110912/xl_110912_55345443.jpg?v=2024-06-20%2005:24:20",
-            Featured: true
+            "ImagePath": "https://xl.movieposterdb.com/07_10/1994/110912/xl_110912_55345443.jpg?v=2024-06-20%2005:24:20",
+            "Featured": true,
+            "ReleaseYear": 1994
         },
         {
-            id: "666f35ab93c7c89956dc00f0",
-            Title: "Forrest Gump",
-            Description: "A man with a low IQ has accomplished great things in his life and been present during significant historical events in the 20th century United States.",
-            Genre: {
-                Name: "Drama",
-                Description: "Drama is a genre that focuses on realistic storytelling, often depicting emotional themes and character-driven narratives."
+            "id": "666f35ab93c7c89956dc00f0",
+            "Title": "Forrest Gump",
+            "Description": "A man with a low IQ has accomplished great things in his life and been present during significant historical events in the 20th century United States.",
+            "Plot": "Forrest Gump, a man with a low IQ, recounts his extraordinary life to strangers while waiting at a bus stop. Despite his limited intellectual abilities, Forrest's life is a series of astonishing events: he becomes a college football star, serves with distinction in Vietnam, captains a shrimp boat, and even inspires people to run across the country. Throughout these adventures, Forrest remains devoted to his childhood sweetheart, Jenny, whose life follows a more troubled path.",
+            "Genre": {
+                "Name": "Drama",
+                "Description": "Drama is a genre that focuses on realistic storytelling, often depicting emotional themes and character-driven narratives."
             },
-            Director: {
-                Name: "Robert Zemeckis",
-                Bio: "Robert Zemeckis is an American filmmaker known for his work on innovative and acclaimed films, including Back to the Future series.",
-                Birth: "1952"
+            "Director": {
+                "Name": "Robert Zemeckis",
+                "Bio": "Robert Zemeckis is an American filmmaker known for his work on innovative and acclaimed films, including Back to the Future series.",
+                "Birth": "1952",
+                "HeadShots": [
+                    "https://resizing.flixster.com/uHVTxKoX4pzTO2Q8uGWgK-z4GU8=/218x280/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/1983_v9_bc.jpg"
+                ]
             },
-            ImagePath: "https://xl.movieposterdb.com/12_04/1994/109830/xl_109830_58524cd6.jpg?v=2024-05-16%2006:45:49",
-            Featured: true
+            "ImagePath": "https://xl.movieposterdb.com/12_04/1994/109830/xl_109830_58524cd6.jpg?v=2024-05-16%2006:45:49",
+            "Featured": true,
+            "ReleaseYear": 1994
         },
         {
-            id: "666f35cc93c7c89956dc00f1",
-            Title: "The Shawshank Redemption",
-            Description: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-            Genre: {
-                Name: "Drama",
-                Description: "Drama is a genre that focuses on realistic storytelling, often depicting emotional themes and character-driven narratives."
+            "id": "666f35cc93c7c89956dc00f1",
+            "Title": "The Shawshank Redemption",
+            "Description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+            "Plot": "Andy Dufresne, a banker wrongly convicted of murdering his wife and her lover, is sentenced to life in Shawshank State Penitentiary. Despite the harsh realities of prison life, Andy befriends fellow inmate Ellis 'Red' Redding and earns the respect of the prison staff by leveraging his financial expertise. Over the years, Andy's unbreakable spirit and quiet tenacity inspire hope and camaraderie among the inmates, culminating in a daring escape plan.",
+            "Genre": {
+                "Name": "Drama",
+                "Description": "Drama is a genre that focuses on realistic storytelling, often depicting emotional themes and character-driven narratives."
             },
-            Director: {
-                Name: "Frank Darabont",
-                Bio: "Frank Darabont is an American filmmaker and screenwriter known for his work on horror and drama films.",
-                Birth: "1959"
+            "Director": {
+                "Name": "Frank Darabont",
+                "Bio": "Frank Darabont is an American filmmaker and screenwriter known for his work on horror and drama films.",
+                "Birth": "1959",
+                "HeadShots": [
+                    "https://images.squarespace-cdn.com/content/v1/5bbcad0f2727be3646b9fee1/d6e0f272-3dc3-4908-9fdd-528b62add484/A63F0CCB-DE64-4FAB-BC96-D9D20990217E.jpeg?format=2500w"
+                ]
             },
-            ImagePath: "https://xl.movieposterdb.com/05_03/1994/0111161/xl_8494_0111161_3bb8e662.jpg?v=2024-05-30%2020:55:56",
-            Featured: true
+            "ImagePath": "https://xl.movieposterdb.com/05_03/1994/0111161/xl_8494_0111161_3bb8e662.jpg?v=2024-05-30%2020:55:56",
+            "Featured": true,
+            "ReleaseYear": 1994
         },
         {
-            id: "666f35d393c7c89956dc00f2",
-            Title: "Inception",
-            Description: "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
-            Genre: {
-                Name: "Science Fiction",
-                Description: "Science fiction is a genre that explores futuristic concepts, often involving advanced science and technology."
+            "id": "666f35d393c7c89956dc00f2",
+            "Title": "Inception",
+            "Description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
+            "Plot": "Dom Cobb is a skilled thief, the best in the dangerous art of extraction: stealing valuable secrets from deep within the subconscious during the dream state. Cobb's rare ability has made him a coveted player in industrial espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Cobb is offered a chance at redemption when he is given a seemingly impossible task: to plant an idea in someone's mind. If he succeeds, it will be the perfect crime.",
+            "Genre": {
+                "Name": "Science Fiction",
+                "Description": "Science fiction is a genre that explores futuristic concepts, often involving advanced science and technology."
             },
-            Director: {
-                Name: "Christopher Nolan",
-                Bio: "Christopher Nolan is a British-American film director, producer, and screenwriter known for his complex narratives and innovative visuals.",
-                Birth: "1970"
+            "Director": {
+                "Name": "Christopher Nolan",
+                "Bio": "Christopher Nolan is a British-American film director, producer, and screenwriter known for his complex narratives and innovative visuals.",
+                "Birth": "1970",
+                "HeadShots": [
+                    "https://www.hollywoodreporter.com/wp-content/uploads/2023/07/GettyImages-1542858165-H-2023.jpg?w=1296&h=730&crop=1&resize=1000%2C563"
+                ]
             },
-            ImagePath: "https://xl.movieposterdb.com/10_06/2010/1375666/xl_1375666_07030c72.jpg?v=2024-06-14%2019:23:46",
-            Featured: true
+            "ImagePath": "https://xl.movieposterdb.com/10_06/2010/1375666/xl_1375666_07030c72.jpg?v=2024-06-14%2019:23:46",
+            "Featured": true,
+            "ReleaseYear": 2010
         },
         {
-            id: "666f35d693c7c89956dc00f3",
-            Title: "The Lion King",
-            Description: "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
-            Genre: {
-                Name: "Animation",
-                Description: "Animation film is a genre in which the images are primarily created through animation techniques."
+            "id": "666f35d693c7c89956dc00f3",
+            "Title": "The Lion King",
+            "Description": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
+            "Plot": "In the Pride Lands of Africa, a young lion prince named Simba is born. His father, King Mufasa, teaches him about the circle of life and his responsibilities as future king. However, Simba's uncle Scar covets the throne and conspires to kill Mufasa and Simba, making it appear as an accident. Believing he is responsible for his father's death, Simba flees the kingdom, only to return years later to reclaim his rightful place as king.",
+            "Genre": {
+                "Name": "Animation",
+                "Description": "Animation film is a genre in which the images are primarily created through animation techniques."
             },
-            Director: {
-                Name: "Roger Allers and Rob Minkoff",
-                Bio: "Roger Allers is an American film director, screenwriter, and animator. Rob Minkoff is an American filmmaker.",
-                Birth: "1949 (Allers), 1962 (Minkoff)"
+            "Director": {
+                "Name": "Roger Allers and Rob Minkoff",
+                "Bio": "Roger Allers is an American film director, screenwriter, and animator. Rob Minkoff is an American filmmaker.",
+                "Birth": "1949 (Allers), 1962 (Minkoff)",
+                "HeadShots": [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoq60ua7sA8jddDHBQAYkHirb4lEtXHbGQ0Q&s"
+                ]
             },
-            ImagePath: "https://xl.movieposterdb.com/22_11/1994/323073/xl_the-lion-king-movie-poster_07016269.jpg?v=2024-05-23%2005:28:23",
-            Featured: true
+            "ImagePath": "https://xl.movieposterdb.com/22_11/1994/323073/xl_the-lion-king-movie-poster_07016269.jpg?v=2024-05-23%2005:28:23",
+            "Featured": true,
+            "ReleaseYear": 1994
         },
         {
-            id: "666f35fb93c7c89956dc00f4",
-            Title: "Fight Club",
-            Description: "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into something much, much more.",
-            Genre: {
-                Name: "Drama",
-                Description: "Drama is a genre that focuses on realistic storytelling, often depicting emotional themes and character-driven narratives."
+            "id": "666f35fb93c7c89956dc00f4",
+            "Title": "Fight Club",
+            "Description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into something much, much more.",
+            "Plot": "An unnamed narrator, disillusioned with his white-collar job, suffers from chronic insomnia. He finds relief by attending support groups for various afflictions, posing as a sufferer. His life changes radically when he meets Tyler Durden, a charismatic soap salesman. Together, they start an underground fight club as a form of male bonding. However, as the club evolves, it becomes something much more sinister, leading the narrator to discover shocking truths about himself and Tyler.",
+            "Genre": {
+                "Name": "Drama",
+                "Description": "Drama is a genre that focuses on realistic storytelling, often depicting emotional themes and character-driven narratives."
             },
-            Director: {
-                Name: "David Fincher",
-                Bio: "David Fincher is an American film director, known for his meticulous and darkly stylized films, including Se7en and Gone Girl.",
-                Birth: "1962"
+            "Director": {
+                "Name": "David Fincher",
+                "Bio": "David Fincher is an American film director, known for his meticulous and darkly stylized films, including Se7en and Gone Girl.",
+                "Birth": "1962",
+                "HeadShots": [
+                    "https://m.media-amazon.com/images/M/MV5BMTc1NDkwMTQ2MF5BMl5BanBnXkFtZTcwMzY0ODkyMg@@._V1_.jpg"
+                ]
             },
-            ImagePath: "https://xl.movieposterdb.com/05_02/1999/0137523/xl_7868_0137523_d46e33b9.jpg?v=2024-06-10%2019:55:53",
-            Featured: true
+            "ImagePath": "https://xl.movieposterdb.com/05_02/1999/0137523/xl_7868_0137523_d46e33b9.jpg?v=2024-06-10%2019:55:53",
+            "Featured": true,
+            "ReleaseYear": 1999
         },
         {
-            id: "666f360193c7c89956dc00f5",
-            Title: "The Matrix",
-            Description: "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-            Genre: {
-                Name: "Science Fiction",
-                Description: "Science fiction is a genre that explores futuristic concepts, often involving advanced science and technology."
+            "id": "666f360193c7c89956dc00f5",
+            "Title": "The Matrix",
+            "Description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+            "Plot": "Thomas Anderson, a computer hacker known by his alias 'Neo,' discovers that the reality he knows is a simulated reality called 'The Matrix,' created by intelligent machines to subdue the human population. With the help of Morpheus and Trinity, Neo learns about his role as 'The One,' destined to liberate humanity from the machine oppression. As he explores his powers, Neo must confront the powerful agents that stand in his way, particularly the relentless Agent Smith.",
+            "Genre": {
+                "Name": "Science Fiction",
+                "Description": "Science fiction is a genre that explores futuristic concepts, often involving advanced science and technology."
             },
-            Director: {
-                Name: "Lana and Lilly Wachowski",
-                Bio: "Lana and Lilly Wachowski are American filmmakers known for their groundbreaking work in science fiction and fantasy films.",
-                Birth: "1965 (Lana), 1967 (Lilly)"
+            "Director": {
+                "Name": "Lana and Lilly Wachowski",
+                "Bio": "Lana and Lilly Wachowski are American filmmakers known for their groundbreaking work in science fiction and fantasy films.",
+                "Birth": "1965 (Lana), 1967 (Lilly)",
+                "HeadShots": [
+                    "https://d.newsweek.com/en/full/435085/gettyimages-185781732.jpg"
+                ]
             },
-            ImagePath: "https://xl.movieposterdb.com/05_05/1999/0133093/xl_18427_0133093_b67474af.jpg",
-            Featured: true
+            "ImagePath": "https://xl.movieposterdb.com/05_05/1999/0133093/xl_18427_0133093_b67474af.jpg",
+            "Featured": true,
+            "ReleaseYear": 1999
         },
         {
-            id: "666f360593c7c89956dc00f6",
-            Title: "Gladiator",
-            Description: "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
-            Genre: {
-                Name: "Action",
-                Description: "Action films are characterized by a lot of excitement, including high-energy scenes, chases, and combat sequences."
+            "id": "666f360593c7c89956dc00f6",
+            "Title": "Gladiator",
+            "Description": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+            "Plot": "Maximus Decimus Meridius, a powerful Roman general, is betrayed when the emperor's ambitious son, Commodus, murders his father and seizes the throne. Reduced to slavery, Maximus becomes a gladiator and rises through the ranks of the arena to avenge the murders of his family and his emperor. His journey takes him from the blood-soaked sands of the Colosseum to the heart of the Roman Empire, where he faces Commodus in a final confrontation.",
+            "Genre": {
+                "Name": "Action",
+                "Description": "Action films are characterized by a lot of excitement, including high-energy scenes, chases, and combat sequences."
             },
-            Director: {
-                Name: "Ridley Scott",
-                Bio: "Ridley Scott is a British filmmaker known for his work on iconic films such as Alien and Blade Runner.",
-                Birth: "1937"
+            "Director": {
+                "Name": "Ridley Scott",
+                "Bio": "Ridley Scott is a British filmmaker known for his work on iconic films such as Alien and Blade Runner.",
+                "Birth": "1937",
+                "HeadShots": [
+                    "https://hips.hearstapps.com/hmg-prod/images/ridley-scott-gettyimages-1339598287.jpg?crop=0.9994444444444445xw:1xh;center,top&resize=640:*"
+                ]
             },
-            ImagePath: "https://xl.movieposterdb.com/08_12/2000/172495/xl_172495_93f99923.jpg?v=2024-05-16%2006:53:31",
-            Featured: true
+            "ImagePath": "https://xl.movieposterdb.com/08_12/2000/172495/xl_172495_93f99923.jpg?v=2024-05-16%2006:53:31",
+            "Featured": true,
+            "ReleaseYear": 2000
         }
     ]);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
@@ -27621,7 +27671,7 @@ const MainView = ()=>{
         columnNumber: 5
     }, undefined);
 };
-_s(MainView, "XRmWSqicB2EMqKDmYNgqRQl8wYY=");
+_s(MainView, "0UsEv4uQdhvfuZ/gkYYDis7bVRQ=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -27673,6 +27723,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _movieViewModal = require("../movie-view-modal/movie-view-modal");
+var _movieCardScss = require("./movie-card.scss");
 const MovieCard = ({ movie, onMovieClick })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "movie-card",
@@ -27692,48 +27743,57 @@ const MovieCard = ({ movie, onMovieClick })=>{
                             alt: ""
                         }, void 0, false, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 11,
+                            lineNumber: 12,
                             columnNumber: 29
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 10,
+                        lineNumber: 11,
                         columnNumber: 25
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "movie-card-title",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "movie-card-title-container",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                    children: movie.Title
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "movie-card-title-container",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                    children: [
+                                        movie.Title,
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                            fileName: "src/components/movie-card/movie-card.jsx",
+                                            lineNumber: 17,
+                                            columnNumber: 50
+                                        }, undefined),
+                                        movie.ReleaseYear
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 16,
+                                    columnNumber: 33
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    id: "genre-name",
+                                    children: movie.Genre.Name
                                 }, void 0, false, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 15,
-                                    columnNumber: 29
+                                    lineNumber: 20,
+                                    columnNumber: 33
                                 }, undefined)
-                            }, void 0, false, {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 14,
-                                columnNumber: 29
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                children: movie.Genre.Name
-                            }, void 0, false, {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 17,
-                                columnNumber: 29
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 15,
+                            columnNumber: 29
+                        }, undefined)
+                    }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 13,
+                        lineNumber: 14,
                         columnNumber: 25
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 9,
+                lineNumber: 10,
                 columnNumber: 21
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27741,13 +27801,13 @@ const MovieCard = ({ movie, onMovieClick })=>{
                 children: movie.Description
             }, void 0, false, {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 20,
+                lineNumber: 24,
                 columnNumber: 21
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/movie-card/movie-card.jsx",
-        lineNumber: 5,
+        lineNumber: 6,
         columnNumber: 13
     }, undefined);
 };
@@ -27760,7 +27820,7 @@ $RefreshReg$(_c, "MovieCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","../movie-view-modal/movie-view-modal":"fj2bU"}],"fj2bU":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","../movie-view-modal/movie-view-modal":"fj2bU","./movie-card.scss":"d6HH4"}],"fj2bU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3509 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27771,6 +27831,8 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieViewModal", ()=>MovieViewModal);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _movieViewScss = require("./movie-view.scss");
+var _directorCard = require("../director-card/director-card");
 const MovieViewModal = ({ show, movie, onClose })=>{
     if (!show) return null;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27782,53 +27844,224 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "movie-view-modal-header",
                     children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                            children: movie.Name
-                        }, void 0, false, {
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                    children: movie.Title
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                    lineNumber: 15,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                    id: "year",
+                                    children: movie.ReleaseYear
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                    lineNumber: 16,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                            lineNumber: 12,
+                            lineNumber: 14,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "close-button",
+                            className: "button-generic",
                             onClick: onClose,
-                            children: "X"
+                            children: "Close"
                         }, void 0, false, {
                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                            lineNumber: 13,
+                            lineNumber: 18,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                    lineNumber: 11,
+                    lineNumber: 13,
                     columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-view-modal-content",
-                    children: movie.Title
-                }, void 0, false, {
+                    className: "movie-view-modal-movie",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "modal-poster-container",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "modal-poster-image",
+                                src: movie.ImagePath,
+                                alt: ""
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 22,
+                                columnNumber: 21
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                            lineNumber: 21,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "modal-plot",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                    children: "Genre"
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                    lineNumber: 25,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: movie.Genre.Name
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                    lineNumber: 26,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                    children: "Plot"
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                    lineNumber: 27,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: movie.Plot
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                    lineNumber: 28,
+                                    columnNumber: 21
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                            lineNumber: 24,
+                            columnNumber: 17
+                        }, undefined)
+                    ]
+                }, void 0, true, {
                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                    lineNumber: 15,
+                    lineNumber: 20,
+                    columnNumber: 13
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-view-modal-director",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "modal-headshot-container",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "modal-headshot-image",
+                                src: movie.Director.HeadShots[0],
+                                alt: ""
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 33,
+                                columnNumber: 21
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                            lineNumber: 32,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "modal-plot",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                    children: "Bio"
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                    lineNumber: 36,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: movie.Director.Bio
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                    lineNumber: 37,
+                                    columnNumber: 21
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: [
+                                        "Born: ",
+                                        movie.Director.Birth
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                    lineNumber: 38,
+                                    columnNumber: 21
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                            lineNumber: 35,
+                            columnNumber: 17
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                    lineNumber: 31,
                     columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "movie-view-modal-footer",
-                    children: "Footer"
-                }, void 0, false, {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "button-generic",
+                                children: "Add to favourites"
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 44,
+                                columnNumber: 23
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                            lineNumber: 44,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "button-generic",
+                                children: "Thumbs up"
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 45,
+                                columnNumber: 23
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                            lineNumber: 45,
+                            columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "button-generic",
+                                children: "Thumbs down"
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 46,
+                                columnNumber: 23
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                            lineNumber: 46,
+                            columnNumber: 17
+                        }, undefined)
+                    ]
+                }, void 0, true, {
                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                    lineNumber: 18,
+                    lineNumber: 43,
                     columnNumber: 13
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-            lineNumber: 10,
+            lineNumber: 12,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-        lineNumber: 9,
+        lineNumber: 11,
         columnNumber: 6
     }, undefined);
 };
@@ -27841,7 +28074,92 @@ $RefreshReg$(_c, "MovieViewModal");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la"}],"bbzZy":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","./movie-view.scss":"iB9t7","../director-card/director-card":"cJ3MH"}],"iB9t7":[function() {},{}],"cJ3MH":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$15d4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$15d4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DirectorCard", ()=>DirectorCard);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _directorCardScss = require("./director-card.scss");
+const DirectorCard = ({ movie })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "director-card-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "director-card-headshot-container",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    className: "director-card-image",
+                    src: movie.Director.HeadShots[0],
+                    alt: ""
+                }, void 0, false, {
+                    fileName: "src/components/director-card/director-card.jsx",
+                    lineNumber: 7,
+                    columnNumber: 13
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/director-card/director-card.jsx",
+                lineNumber: 6,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "director-card-details",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: "Bio"
+                    }, void 0, false, {
+                        fileName: "src/components/director-card/director-card.jsx",
+                        lineNumber: 10,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: movie.Director.Bio
+                    }, void 0, false, {
+                        fileName: "src/components/director-card/director-card.jsx",
+                        lineNumber: 11,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: "Born: "
+                    }, void 0, false, {
+                        fileName: "src/components/director-card/director-card.jsx",
+                        lineNumber: 12,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: movie.Director.Birth
+                    }, void 0, false, {
+                        fileName: "src/components/director-card/director-card.jsx",
+                        lineNumber: 13,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/director-card/director-card.jsx",
+                lineNumber: 9,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/director-card/director-card.jsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = DirectorCard;
+var _c;
+$RefreshReg$(_c, "DirectorCard");
+
+  $parcel$ReactRefreshHelpers$15d4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./director-card.scss":"2OiJ0","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la"}],"2OiJ0":[function() {},{}],"d6HH4":[function() {},{}],"bbzZy":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2a49 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27852,6 +28170,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SideBar", ()=>SideBar);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _sideBarScss = require("./side-bar.scss");
 const SideBar = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "sidebar-container",
@@ -27860,7 +28179,7 @@ const SideBar = ()=>{
                 className: "sidbar-header"
             }, void 0, false, {
                 fileName: "src/components/side-bar/side-bar.jsx",
-                lineNumber: 4,
+                lineNumber: 6,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27870,26 +28189,26 @@ const SideBar = ()=>{
                         children: "Filters"
                     }, void 0, false, {
                         fileName: "src/components/side-bar/side-bar.jsx",
-                        lineNumber: 7,
+                        lineNumber: 9,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         children: "logout"
                     }, void 0, false, {
                         fileName: "src/components/side-bar/side-bar.jsx",
-                        lineNumber: 8,
+                        lineNumber: 10,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/side-bar/side-bar.jsx",
-                lineNumber: 6,
+                lineNumber: 8,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/side-bar/side-bar.jsx",
-        lineNumber: 3,
+        lineNumber: 5,
         columnNumber: 9
     }, undefined);
 };
@@ -27899,7 +28218,7 @@ const SideBar = ()=>{
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la"}],"97I93":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","./side-bar.scss":"04YXq"}],"04YXq":[function() {},{}],"97I93":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f9e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27912,24 +28231,34 @@ parcelHelpers.export(exports, "HeaderBar", ()=>HeaderBar);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _logoSvg = require("../../../public/img/logo.svg");
 var _logoSvgDefault = parcelHelpers.interopDefault(_logoSvg);
+var _headerBarScss = require("./header-bar.scss");
 const HeaderBar = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "header-bar",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                src: (0, _logoSvgDefault.default),
-                alt: "Logo",
-                height: "60px"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "logo-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        className: "logo",
+                        src: (0, _logoSvgDefault.default),
+                        alt: "Logo"
+                    }, void 0, false, {
+                        fileName: "src/components/header-bar/header-bar.jsx",
+                        lineNumber: 7,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: "myMovies"
+                    }, void 0, false, {
+                        fileName: "src/components/header-bar/header-bar.jsx",
+                        lineNumber: 8,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/components/header-bar/header-bar.jsx",
-                lineNumber: 4,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "MyMovies"
-            }, void 0, false, {
-                fileName: "src/components/header-bar/header-bar.jsx",
-                lineNumber: 5,
+                lineNumber: 6,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27942,27 +28271,27 @@ const HeaderBar = ()=>{
                         placeholder: "Search for a movie..."
                     }, void 0, false, {
                         fileName: "src/components/header-bar/header-bar.jsx",
-                        lineNumber: 7,
+                        lineNumber: 12,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "button-search",
+                        className: "button-generic",
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/components/header-bar/header-bar.jsx",
-                        lineNumber: 8,
+                        lineNumber: 13,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/header-bar/header-bar.jsx",
-                lineNumber: 6,
+                lineNumber: 11,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/header-bar/header-bar.jsx",
-        lineNumber: 3,
+        lineNumber: 5,
         columnNumber: 13
     }, undefined);
 };
@@ -27975,7 +28304,7 @@ $RefreshReg$(_c, "HeaderBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","../../../public/img/logo.svg":"lqNGK"}],"lqNGK":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","../../../public/img/logo.svg":"lqNGK","./header-bar.scss":"99HcC"}],"lqNGK":[function(require,module,exports) {
 module.exports = require("125f1f860d822223").getBundleURL("byUka") + "logo.7efc0074.svg" + "?" + Date.now();
 
 },{"125f1f860d822223":"fWaqB"}],"fWaqB":[function(require,module,exports) {
@@ -28013,6 +28342,6 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}]},["a28iG","1FsAG","d8Dch"], "d8Dch", "parcelRequirebd5d")
+},{}],"99HcC":[function() {},{}]},["a28iG","1FsAG","d8Dch"], "d8Dch", "parcelRequirebd5d")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
