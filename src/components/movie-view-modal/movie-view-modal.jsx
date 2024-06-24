@@ -18,7 +18,7 @@ export const MovieViewModal = ( {show, movie, onClose} ) => {
                 <button className="button-generic" onClick={onClose}>Close</button>
             </div>
             <div className="movie-view-modal-movie">
-                <div className="modal-poster-container">
+                <div className="modal-poster-container contain">
                     <img className="modal-poster-image" src={movie.ImagePath} alt="" />
                 </div>
                 <div className="modal-plot">
@@ -39,7 +39,11 @@ export const MovieViewModal = ( {show, movie, onClose} ) => {
 
                 </div>
             </div>
+            <div className="movie-view-modal-cast">
+                <div className="modal-headshot-container">
 
+                </div>
+            </div>
             <div className="movie-view-modal-footer">
                 <span><button className="button-generic">Add to favourites</button></span>
                 <span><button className="button-generic">Thumbs up</button></span>

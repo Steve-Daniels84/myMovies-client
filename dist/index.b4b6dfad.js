@@ -27886,7 +27886,7 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                     className: "movie-view-modal-movie",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "modal-poster-container",
+                            className: "modal-poster-container contain",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                 className: "modal-poster-image",
                                 src: movie.ImagePath,
@@ -28003,6 +28003,20 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                     columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "movie-view-modal-cast",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "modal-headshot-container"
+                    }, void 0, false, {
+                        fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                        lineNumber: 43,
+                        columnNumber: 17
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                    lineNumber: 42,
+                    columnNumber: 13
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "movie-view-modal-footer",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -28011,12 +28025,12 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                                 children: "Add to favourites"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 44,
+                                lineNumber: 48,
                                 columnNumber: 23
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                            lineNumber: 44,
+                            lineNumber: 48,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -28025,12 +28039,12 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                                 children: "Thumbs up"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 45,
+                                lineNumber: 49,
                                 columnNumber: 23
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                            lineNumber: 45,
+                            lineNumber: 49,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -28039,18 +28053,18 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                                 children: "Thumbs down"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 46,
+                                lineNumber: 50,
                                 columnNumber: 23
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                            lineNumber: 46,
+                            lineNumber: 50,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                    lineNumber: 43,
+                    lineNumber: 47,
                     columnNumber: 13
                 }, undefined)
             ]
