@@ -38,14 +38,17 @@ export const SimilarMovies = ({ genre }) => {
 
   return (
     <div>
+      <h3>Similar Movies</h3>
+    <div className="similar-movies-container">
+      
       {similarMovies.map((movie) => (
-        <div className="similar-movies-container" key={movie.Id}>
-            <h3>{movie.Title}</h3>
+        <div key={movie.Id}>
             <div className="similar-movie-image-container">
                 <img className="similar-movie-image" src={movie.ImagePath} alt={movie.Title} />
             </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

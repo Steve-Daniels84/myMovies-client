@@ -28736,39 +28736,45 @@ const SimilarMovies = ({ genre })=>{
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: similarMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: "Similar Movies"
+            }, void 0, false, {
+                fileName: "src/components/similar-movies/similar-movies.jsx",
+                lineNumber: 41,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "similar-movies-container",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                        children: movie.Title
-                    }, void 0, false, {
-                        fileName: "src/components/similar-movies/similar-movies.jsx",
-                        lineNumber: 43,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "similar-movie-image-container",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            className: "similar-movie-image",
-                            src: movie.ImagePath,
-                            alt: movie.Title
+                children: similarMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "similar-movie-image-container",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "similar-movie-image",
+                                src: movie.ImagePath,
+                                alt: movie.Title
+                            }, void 0, false, {
+                                fileName: "src/components/similar-movies/similar-movies.jsx",
+                                lineNumber: 47,
+                                columnNumber: 17
+                            }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/similar-movies/similar-movies.jsx",
-                            lineNumber: 45,
-                            columnNumber: 17
+                            lineNumber: 46,
+                            columnNumber: 13
                         }, undefined)
-                    }, void 0, false, {
+                    }, movie.Id, false, {
                         fileName: "src/components/similar-movies/similar-movies.jsx",
-                        lineNumber: 44,
-                        columnNumber: 13
-                    }, undefined)
-                ]
-            }, movie.Id, true, {
+                        lineNumber: 45,
+                        columnNumber: 9
+                    }, undefined))
+            }, void 0, false, {
                 fileName: "src/components/similar-movies/similar-movies.jsx",
                 lineNumber: 42,
-                columnNumber: 9
-            }, undefined))
-    }, void 0, false, {
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/components/similar-movies/similar-movies.jsx",
         lineNumber: 40,
         columnNumber: 5

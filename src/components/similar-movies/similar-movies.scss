@@ -1,14 +1,16 @@
 .similar-movies-container {
-
+display: flex;
+width: 100%;
+overflow-x: scroll;
+justify-content: space-around;
+text-align: center;
 }
 
 .similar-movie-image-container {
-    border: 1px solid black;
-    width:  50px;
-    height:  50px;
+    margin: 10px;
+    height: 150px;
 }
 
 .similar-movie-image {
-    width: 50px;
-    height: 50px;
+max-height: 150px;
 }

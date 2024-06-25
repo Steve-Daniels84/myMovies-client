@@ -23,6 +23,7 @@ body {
   border: 1px solid #000;
   border-radius: 8px;
   width: clamp(50vw, 500px, 100vw);
+  max-height: 80vh;
   padding: 20px;
   overflow: scroll;
 }
@@ -76,15 +77,21 @@ body {
   display: flex;
 }
 
+.similar-movies-container {
+  text-align: center;
+  justify-content: space-around;
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+}
+
 .similar-movie-image-container {
-  border: 1px solid #000;
-  width: 50px;
-  height: 50px;
+  height: 150px;
+  margin: 10px;
 }
 
 .similar-movie-image {
-  width: 50px;
-  height: 50px;
+  max-height: 150px;
 }
 
 .movie-detail-container {

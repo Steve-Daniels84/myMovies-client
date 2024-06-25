@@ -20,6 +20,7 @@
     padding: 20px;
     border-radius: 8px;
     width: clamp(50vw, 500px ,100vw);
+    max-height: 80vh;
     border: 1px solid black;
     overflow: scroll;
   }
