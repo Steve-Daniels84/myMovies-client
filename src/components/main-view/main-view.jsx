@@ -3,6 +3,7 @@ import { HeaderBar } from "../header-bar/header-bar";
 import { SideBar } from "../side-bar/side-bar";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieViewModal } from "../movie-view-modal/movie-view-modal";
+import spinner from "../../../public/img/spinner.gif"
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
@@ -50,7 +51,7 @@ useEffect(() => {
   };
 
   if (movies.length === 0) {
-    return <div>No movies found!</div>;
+    return <div className="loading-spinner-container"><img className="loading-spinner" src={spinner} alt="loading spinner"/></div>;
   }
   return (
     <div className="main-view">

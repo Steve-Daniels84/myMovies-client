@@ -8,6 +8,13 @@ body {
   display: flex;
 }
 
+.loading-spinner-container {
+  text-align: center;
+  align-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .movie-view-modal-backdrop {
   z-index: 1000;
   background: #00000080;
