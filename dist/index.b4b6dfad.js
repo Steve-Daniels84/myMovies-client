@@ -27422,7 +27422,7 @@ const MainView = ()=>{
         children: "No movies found!"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 52,
+        lineNumber: 53,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27430,7 +27430,7 @@ const MainView = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerBar.HeaderBar), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 56,
+                lineNumber: 57,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27439,12 +27439,12 @@ const MainView = ()=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sideBar.SideBar), {}, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 59,
+                            lineNumber: 60,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 58,
+                        lineNumber: 59,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27454,18 +27454,18 @@ const MainView = ()=>{
                                 onMovieClick: ()=>handleOpenModal(movie)
                             }, movie.Id, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 63,
+                                lineNumber: 64,
                                 columnNumber: 13
                             }, undefined))
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 57,
+                lineNumber: 58,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieViewModal.MovieViewModal), {
@@ -27474,13 +27474,13 @@ const MainView = ()=>{
                 onClose: handleCloseModal
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 71,
+                lineNumber: 72,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 55,
+        lineNumber: 56,
         columnNumber: 5
     }, undefined);
 };
@@ -27662,6 +27662,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _movieViewScss = require("./movie-view.scss");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _similarMovies = require("../similar-movies/similar-movies");
 const MovieViewModal = ({ show, movie, onClose })=>{
     if (!show) return null;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27679,7 +27680,7 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                                     children: movie.Title
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                    lineNumber: 15,
+                                    lineNumber: 16,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -27687,13 +27688,13 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                                     children: movie.ReleaseYear
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                    lineNumber: 16,
+                                    lineNumber: 17,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                            lineNumber: 14,
+                            lineNumber: 15,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27702,13 +27703,13 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                             children: "Close"
                         }, void 0, false, {
                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                            lineNumber: 18,
+                            lineNumber: 19,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                    lineNumber: 13,
+                    lineNumber: 14,
                     columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27722,12 +27723,12 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                                 alt: ""
                             }, void 0, false, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 22,
+                                lineNumber: 23,
                                 columnNumber: 21
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                            lineNumber: 21,
+                            lineNumber: 22,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27737,40 +27738,40 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                                     children: "Genre"
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                    lineNumber: 25,
+                                    lineNumber: 26,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                     children: movie.Genre.Name
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                    lineNumber: 26,
+                                    lineNumber: 27,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                     children: "Plot"
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                    lineNumber: 27,
+                                    lineNumber: 28,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                     children: movie.Plot
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                    lineNumber: 28,
+                                    lineNumber: 29,
                                     columnNumber: 21
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                            lineNumber: 24,
+                            lineNumber: 25,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                    lineNumber: 20,
+                    lineNumber: 21,
                     columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27784,12 +27785,12 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                                 alt: ""
                             }, void 0, false, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 33,
+                                lineNumber: 34,
                                 columnNumber: 21
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                            lineNumber: 32,
+                            lineNumber: 33,
                             columnNumber: 17
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27799,14 +27800,14 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                                     children: "Bio"
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                    lineNumber: 36,
+                                    lineNumber: 37,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                     children: movie.Director.Bio
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                    lineNumber: 37,
+                                    lineNumber: 38,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27816,33 +27817,33 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                    lineNumber: 38,
+                                    lineNumber: 39,
                                     columnNumber: 21
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                            lineNumber: 35,
+                            lineNumber: 36,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                    lineNumber: 31,
+                    lineNumber: 32,
                     columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "movie-view-modal-cast",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "modal-headshot-container"
+                    className: "movie-view-modal-director",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _similarMovies.SimilarMovies), {
+                        genre: movie.Genre.Name
                     }, void 0, false, {
                         fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                        lineNumber: 43,
-                        columnNumber: 17
+                        lineNumber: 44,
+                        columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                    lineNumber: 42,
+                    lineNumber: 43,
                     columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27852,20 +27853,6 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                 className: "button-generic",
                                 children: "Add to favourites"
-                            }, void 0, false, {
-                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 48,
-                                columnNumber: 23
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                            lineNumber: 48,
-                            columnNumber: 17
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: "button-generic",
-                                children: "Thumbs up"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
                                 lineNumber: 49,
@@ -27879,7 +27866,7 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                 className: "button-generic",
-                                children: "Thumbs down"
+                                children: "Thumbs up"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
                                 lineNumber: 50,
@@ -27889,22 +27876,36 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
                             lineNumber: 50,
                             columnNumber: 17
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "button-generic",
+                                children: "Thumbs down"
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 51,
+                                columnNumber: 23
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                            lineNumber: 51,
+                            columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                    lineNumber: 47,
+                    lineNumber: 48,
                     columnNumber: 13
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-            lineNumber: 12,
+            lineNumber: 13,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-        lineNumber: 11,
+        lineNumber: 12,
         columnNumber: 6
     }, undefined);
 };
@@ -27935,7 +27936,7 @@ $RefreshReg$(_c, "MovieViewModal");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","./movie-view.scss":"iB9t7","prop-types":"7wKI2"}],"iB9t7":[function() {},{}],"7wKI2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","./movie-view.scss":"iB9t7","prop-types":"7wKI2","../similar-movies/similar-movies":"3b1j4"}],"iB9t7":[function() {},{}],"7wKI2":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -28682,7 +28683,108 @@ printWarning = function(text) {
 };
 module.exports = checkPropTypes;
 
-},{"24ba1e58d167a82c":"jZTZJ","898bc82f39d83f7c":"fqKuf"}],"d6HH4":[function() {},{}],"bbzZy":[function(require,module,exports) {
+},{"24ba1e58d167a82c":"jZTZJ","898bc82f39d83f7c":"fqKuf"}],"3b1j4":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$fdcc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$fdcc.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SimilarMovies", ()=>SimilarMovies);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _similarMoviesScss = require("./similar-movies.scss");
+var _s = $RefreshSig$();
+const SimilarMovies = ({ genre })=>{
+    _s();
+    const [similarMovies, setSimilarMovies] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies/" + genre).then((response)=>response.json()).then((data)=>{
+            const movies = data.map((movie)=>{
+                return {
+                    Id: movie._id,
+                    Title: movie.Title,
+                    ImagePath: movie.ImagePath,
+                    ReleaseYear: movie.ReleaseYear,
+                    Description: movie.Description,
+                    Plot: movie.Plot,
+                    Genre: {
+                        Name: movie.Genre.Name,
+                        Description: movie.Genre.Description
+                    },
+                    Director: {
+                        Name: movie.Director.Name,
+                        Bio: movie.Director.Bio,
+                        Birth: movie.Director.Birth,
+                        HeadShots: movie.Director.HeadShots
+                    }
+                };
+            });
+            setSimilarMovies(movies);
+        });
+    }, [
+        genre
+    ]); // Adding genre as a dependency to useEffect
+    if (!similarMovies.length) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+        children: "No similar movies"
+    }, void 0, false, {
+        fileName: "src/components/similar-movies/similar-movies.jsx",
+        lineNumber: 36,
+        columnNumber: 12
+    }, undefined);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: similarMovies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "similar-movies-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                        children: movie.Title
+                    }, void 0, false, {
+                        fileName: "src/components/similar-movies/similar-movies.jsx",
+                        lineNumber: 43,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "similar-movie-image-container",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "similar-movie-image",
+                            src: movie.ImagePath,
+                            alt: movie.Title
+                        }, void 0, false, {
+                            fileName: "src/components/similar-movies/similar-movies.jsx",
+                            lineNumber: 45,
+                            columnNumber: 17
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/similar-movies/similar-movies.jsx",
+                        lineNumber: 44,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, movie.Id, true, {
+                fileName: "src/components/similar-movies/similar-movies.jsx",
+                lineNumber: 42,
+                columnNumber: 9
+            }, undefined))
+    }, void 0, false, {
+        fileName: "src/components/similar-movies/similar-movies.jsx",
+        lineNumber: 40,
+        columnNumber: 5
+    }, undefined);
+};
+_s(SimilarMovies, "KYAUM/7/iXATg/OB+v0A+5zi1o4=");
+_c = SimilarMovies;
+var _c;
+$RefreshReg$(_c, "SimilarMovies");
+
+  $parcel$ReactRefreshHelpers$fdcc.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","react":"21dqq","./similar-movies.scss":"5At0z"}],"5At0z":[function() {},{}],"d6HH4":[function() {},{}],"bbzZy":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2a49 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

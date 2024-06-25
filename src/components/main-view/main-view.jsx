@@ -37,6 +37,7 @@ useEffect(() => {
 
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  
 
   const handleOpenModal = (movie) => {
     setSelectedMovie(movie);

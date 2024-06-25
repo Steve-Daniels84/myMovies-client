@@ -21,7 +21,7 @@
     border-radius: 8px;
     width: clamp(50vw, 500px ,100vw);
     border: 1px solid black;
-
+    overflow: scroll;
   }
 
 .movie-view-modal-header {
