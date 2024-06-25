@@ -1,5 +1,7 @@
+import React from "react";
 import {MovieViewModal} from "../movie-view-modal/movie-view-modal";
-import "./movie-card.scss"
+import "./movie-card.scss";
+import PropTypes from "prop-types";
 
 export const MovieCard = ({ movie, onMovieClick }) => {
     return (
@@ -26,4 +28,16 @@ export const MovieCard = ({ movie, onMovieClick }) => {
                     </div>
             </div>
     );
+};
+
+MovieCard.propTypes = {
+    movie: PropTypes.shape({
+        Title: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
+        ReleaseYear: PropTypes.string.isRequired,
+        ImagePath: PropTypes.string.isRequired,
+        Genre: PropTypes.shape ({
+            Name: PropTypes.string.isRequired
+        })
+    })
 }

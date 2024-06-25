@@ -1,5 +1,5 @@
 import './movie-view.scss';
-import {DirectorCard} from "../director-card/director-card"
+import PropTypes from "prop-types";
 
 export const MovieViewModal = ( {show, movie, onClose} ) => {
 
@@ -52,4 +52,23 @@ export const MovieViewModal = ( {show, movie, onClose} ) => {
         </div>
     </div>
    )
+};
+
+MovieViewModal.propTypes = {
+    movie: PropTypes.shape({
+        Title: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
+        Plot: PropTypes.string.isRequired,
+        ReleaseYear: PropTypes.string.isRequired,
+        ImagePath: PropTypes.string.isRequired,
+        Director: PropTypes.shape ({
+            Name: PropTypes.string.isRequired,
+            Bio: PropTypes.string.isRequired,
+            Birth: PropTypes.string.isRequired,
+            HeadShots: PropTypes.array.isRequired
+        }),
+        Genre: PropTypes.shape ({
+            Name: PropTypes.string.isRequired,
+        })
+    })
 }
