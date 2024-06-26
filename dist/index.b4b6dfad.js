@@ -27745,14 +27745,20 @@ const MovieViewModal = ({ show, movie, onClose })=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "modal-plot",
                             children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                    children: "Genre"
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                        children: "Genre:"
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                        lineNumber: 26,
+                                        columnNumber: 27
+                                    }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
                                     lineNumber: 26,
                                     columnNumber: 21
                                 }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                     children: movie.Genre.Name
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",

@@ -23,8 +23,8 @@ export const MovieViewModal = ( {show, movie, onClose} ) => {
                     <img className="modal-poster-image" src={movie.ImagePath} alt="" />
                 </div>
                 <div className="modal-plot">
-                    <h3>Genre</h3>
-                    <p>{movie.Genre.Name}</p>
+                    <span><h3>Genre:</h3></span>
+                    <span>{movie.Genre.Name}</span>
                     <h3>Plot</h3>
                     <p>{movie.Plot}</p>
                 </div>
