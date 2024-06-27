@@ -1,0 +1,16 @@
+.similar-movies-container {
+display: flex;
+width: 100%;
+overflow-x: scroll;
+justify-content: space-around;
+text-align: center;
+}
+
+.similar-movie-image-container {
+    margin: 10px;
+    height: 150px;
+}
+
+.similar-movie-image {
+max-height: 150px;
+}

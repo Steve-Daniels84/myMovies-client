@@ -1,5 +1,5 @@
-import logo from "../../../public/img/logo.svg"
-import "./header-bar.scss"
+import logo from "../../../public/img/logo.svg";
+import "./header-bar.scss";
 
 export const HeaderBar = () => {
     return (<div className="header-bar">

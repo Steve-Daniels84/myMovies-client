@@ -18,8 +18,8 @@
     }
     
   .movie-card {
-      height: 25rem;
-      width: 25rem;
+      height: 20rem;
+      width: 20rem;
       border-radius: 20px;
       padding: 5px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -37,7 +37,7 @@
     
   .movie-card-header {
        display: flex;
-       height: 250px;
+       height: 200px;
     }
     
   .movie-card-image-container {
@@ -63,7 +63,7 @@
     height: 45px;
     }
 
-  #movie-genre {
+    #movie-genre {
     margin-top: 20px;
     }
     
@@ -74,6 +74,5 @@
     
     .movie-card-description {
       padding: 10px;
-      font-size: small;
-      font-size: 16;    
+      font-size: 14;    
     }
