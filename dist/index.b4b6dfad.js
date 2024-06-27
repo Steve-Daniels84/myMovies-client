@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"a28iG":[function(require,module,exports) {
+})({"jevAQ":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -583,9 +583,9 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"1FsAG":[function(require,module,exports) {
-var Refresh = require("eda023826eb36cf7");
-var ErrorOverlay = require("adbf189cc8039990");
+},{}],"k65zC":[function(require,module,exports) {
+var Refresh = require("869e006a0763f0b0");
+var ErrorOverlay = require("7f946c096fb92d80");
 Refresh.injectIntoGlobalHook(window);
 window.$RefreshReg$ = function() {};
 window.$RefreshSig$ = function() {
@@ -604,11 +604,11 @@ window.addEventListener("parcelhmraccept", ()=>{
     ErrorOverlay.dismissRuntimeErrors();
 });
 
-},{"eda023826eb36cf7":"7Sm1P","adbf189cc8039990":"392Vk"}],"7Sm1P":[function(require,module,exports) {
+},{"869e006a0763f0b0":"7LnTi","7f946c096fb92d80":"hlmUn"}],"7LnTi":[function(require,module,exports) {
 "use strict";
-module.exports = require("2f5322f3aec9648f");
+module.exports = require("abc1218c02c12565");
 
-},{"2f5322f3aec9648f":"2b3Li"}],"2b3Li":[function(require,module,exports) {
+},{"abc1218c02c12565":"h0pm8"}],"h0pm8":[function(require,module,exports) {
 /** @license React v0.9.0
  * react-refresh-runtime.development.js
  *
@@ -1068,8 +1068,8 @@ module.exports = require("2f5322f3aec9648f");
     exports.setSignature = setSignature;
 })();
 
-},{}],"392Vk":[function(require,module,exports) {
-var process = require("d6e84b72ab73ec0d");
+},{}],"hlmUn":[function(require,module,exports) {
+var process = require("f5db6e127cc21458");
 !function(e, t) {
     module.exports = t();
 }(window, function() {
@@ -2799,7 +2799,7 @@ var process = require("d6e84b72ab73ec0d");
     ]);
 });
 
-},{"d6e84b72ab73ec0d":"ea8uo"}],"ea8uo":[function(require,module,exports) {
+},{"f5db6e127cc21458":"d5jf4"}],"d5jf4":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -2982,7 +2982,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","./index.scss":"lJZlQ","./components/main-view/main-view":"4gflv"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27225,145 +27225,7 @@ module.exports = require("ef03b89c8fe2794e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"bh9la":[function(require,module,exports) {
-"use strict";
-var Refresh = require("3997a3c812ede84e");
-function debounce(func, delay) {
-    {
-        let timeout = undefined;
-        let lastTime = 0;
-        return function(args) {
-            // Call immediately if last call was more than the delay ago.
-            // Otherwise, set a timeout. This means the first call is fast
-            // (for the common case of a single update), and subsequent updates
-            // are batched.
-            let now = Date.now();
-            if (now - lastTime > delay) {
-                lastTime = now;
-                func.call(null, args);
-            } else {
-                clearTimeout(timeout);
-                timeout = setTimeout(function() {
-                    timeout = undefined;
-                    lastTime = Date.now();
-                    func.call(null, args);
-                }, delay);
-            }
-        };
-    }
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30);
-// Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports;
-                // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
-                // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-}
-// When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        var typeID = id + " %exports% " + key;
-        Refresh.register(exportValue, typeID);
-    }
-}
-
-},{"3997a3c812ede84e":"7Sm1P"}],"lJZlQ":[function() {},{}],"4gflv":[function(require,module,exports) {
+},{}],"4gflv":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f7a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27505,7 +27367,131 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","react":"21dqq","../movie-card/movie-card":"bwuIu","react/jsx-dev-runtime":"iTorj","../side-bar/side-bar":"bbzZy","../header-bar/header-bar":"97I93","../movie-view-modal/movie-view-modal":"fj2bU","../../../public/img/spinner.gif":"gbnwo"}],"gYsYj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../header-bar/header-bar":"97I93","../side-bar/side-bar":"bbzZy","../movie-card/movie-card":"bwuIu","../movie-view-modal/movie-view-modal":"fj2bU","../../../public/img/spinner.gif":"7cmAf","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"97I93":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5f9e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5f9e.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "HeaderBar", ()=>HeaderBar);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _logoSvg = require("../../../public/img/logo.svg");
+var _logoSvgDefault = parcelHelpers.interopDefault(_logoSvg);
+var _headerBarScss = require("./header-bar.scss");
+const HeaderBar = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "header-bar",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "logo-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        className: "logo",
+                        src: (0, _logoSvgDefault.default),
+                        alt: "Logo"
+                    }, void 0, false, {
+                        fileName: "src/components/header-bar/header-bar.jsx",
+                        lineNumber: 7,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        children: "myMovies"
+                    }, void 0, false, {
+                        fileName: "src/components/header-bar/header-bar.jsx",
+                        lineNumber: 8,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/header-bar/header-bar.jsx",
+                lineNumber: 6,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "header-search-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        name: "search-input",
+                        id: "search-input",
+                        placeholder: "Search for a movie..."
+                    }, void 0, false, {
+                        fileName: "src/components/header-bar/header-bar.jsx",
+                        lineNumber: 12,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "button-generic",
+                        children: "Search"
+                    }, void 0, false, {
+                        fileName: "src/components/header-bar/header-bar.jsx",
+                        lineNumber: 13,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/header-bar/header-bar.jsx",
+                lineNumber: 11,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/header-bar/header-bar.jsx",
+        lineNumber: 5,
+        columnNumber: 13
+    }, undefined);
+};
+_c = HeaderBar;
+var _c;
+$RefreshReg$(_c, "HeaderBar");
+
+  $parcel$ReactRefreshHelpers$5f9e.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../../../public/img/logo.svg":"kY3jK","./header-bar.scss":"99HcC","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"kY3jK":[function(require,module,exports) {
+module.exports = require("1ca1e359418f788b").getBundleURL("byUka") + "logo.7efc0074.svg" + "?" + Date.now();
+
+},{"1ca1e359418f788b":"95GEp"}],"95GEp":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"99HcC":[function() {},{}],"aRELh":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27535,7 +27521,204 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"bwuIu":[function(require,module,exports) {
+},{}],"6ZIFf":[function(require,module,exports) {
+"use strict";
+var Refresh = require("3f1430ac5e8549dc");
+function debounce(func, delay) {
+    {
+        let timeout = undefined;
+        let lastTime = 0;
+        return function(args) {
+            // Call immediately if last call was more than the delay ago.
+            // Otherwise, set a timeout. This means the first call is fast
+            // (for the common case of a single update), and subsequent updates
+            // are batched.
+            let now = Date.now();
+            if (now - lastTime > delay) {
+                lastTime = now;
+                func.call(null, args);
+            } else {
+                clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    timeout = undefined;
+                    lastTime = Date.now();
+                    func.call(null, args);
+                }, delay);
+            }
+        };
+    }
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30);
+// Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports;
+                // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
+                // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+}
+// When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        var typeID = id + " %exports% " + key;
+        Refresh.register(exportValue, typeID);
+    }
+}
+
+},{"3f1430ac5e8549dc":"7LnTi"}],"bbzZy":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2a49 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2a49.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SideBar", ()=>SideBar);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _sideBarScss = require("./side-bar.scss");
+const SideBar = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "sidebar-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "sidbar-header"
+            }, void 0, false, {
+                fileName: "src/components/side-bar/side-bar.jsx",
+                lineNumber: 6,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "sidebar-filter-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: "Filters"
+                    }, void 0, false, {
+                        fileName: "src/components/side-bar/side-bar.jsx",
+                        lineNumber: 9,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        children: "logout"
+                    }, void 0, false, {
+                        fileName: "src/components/side-bar/side-bar.jsx",
+                        lineNumber: 10,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/side-bar/side-bar.jsx",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/side-bar/side-bar.jsx",
+        lineNumber: 5,
+        columnNumber: 9
+    }, undefined);
+};
+
+  $parcel$ReactRefreshHelpers$2a49.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./side-bar.scss":"04YXq","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"04YXq":[function() {},{}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27659,7 +27842,7 @@ $RefreshReg$(_c, "MovieCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","../movie-view-modal/movie-view-modal":"fj2bU","./movie-card.scss":"d6HH4","prop-types":"7wKI2","react":"21dqq"}],"fj2bU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-view-modal/movie-view-modal":"fj2bU","./movie-card.scss":"d6HH4","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"fj2bU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3509 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27953,7 +28136,7 @@ $RefreshReg$(_c, "MovieViewModal");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","./movie-view.scss":"iB9t7","prop-types":"7wKI2","../similar-movies/similar-movies":"3b1j4"}],"iB9t7":[function() {},{}],"7wKI2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"iB9t7","prop-types":"7wKI2","../similar-movies/similar-movies":"3b1j4","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"iB9t7":[function() {},{}],"7wKI2":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -28807,192 +28990,9 @@ $RefreshReg$(_c, "SimilarMovies");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","react":"21dqq","./similar-movies.scss":"5At0z"}],"5At0z":[function() {},{}],"d6HH4":[function() {},{}],"bbzZy":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$2a49 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$2a49.prelude(module);
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./similar-movies.scss":"5At0z","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"5At0z":[function() {},{}],"d6HH4":[function() {},{}],"7cmAf":[function(require,module,exports) {
+module.exports = require("d52e41e3bbcb50f").getBundleURL("byUka") + "spinner.d44fa907.gif" + "?" + Date.now();
 
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "SideBar", ()=>SideBar);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _sideBarScss = require("./side-bar.scss");
-const SideBar = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "sidebar-container",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "sidbar-header"
-            }, void 0, false, {
-                fileName: "src/components/side-bar/side-bar.jsx",
-                lineNumber: 6,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "sidebar-filter-container",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        children: "Filters"
-                    }, void 0, false, {
-                        fileName: "src/components/side-bar/side-bar.jsx",
-                        lineNumber: 9,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        children: "logout"
-                    }, void 0, false, {
-                        fileName: "src/components/side-bar/side-bar.jsx",
-                        lineNumber: 10,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/side-bar/side-bar.jsx",
-                lineNumber: 8,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/side-bar/side-bar.jsx",
-        lineNumber: 5,
-        columnNumber: 9
-    }, undefined);
-};
-
-  $parcel$ReactRefreshHelpers$2a49.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","./side-bar.scss":"04YXq"}],"04YXq":[function() {},{}],"97I93":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$5f9e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$5f9e.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "HeaderBar", ()=>HeaderBar);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _logoSvg = require("../../../public/img/logo.svg");
-var _logoSvgDefault = parcelHelpers.interopDefault(_logoSvg);
-var _headerBarScss = require("./header-bar.scss");
-const HeaderBar = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "header-bar",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "logo-container",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                        className: "logo",
-                        src: (0, _logoSvgDefault.default),
-                        alt: "Logo"
-                    }, void 0, false, {
-                        fileName: "src/components/header-bar/header-bar.jsx",
-                        lineNumber: 7,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        children: "myMovies"
-                    }, void 0, false, {
-                        fileName: "src/components/header-bar/header-bar.jsx",
-                        lineNumber: 8,
-                        columnNumber: 13
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/header-bar/header-bar.jsx",
-                lineNumber: 6,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "header-search-container",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        type: "text",
-                        name: "search-input",
-                        id: "search-input",
-                        placeholder: "Search for a movie..."
-                    }, void 0, false, {
-                        fileName: "src/components/header-bar/header-bar.jsx",
-                        lineNumber: 12,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "button-generic",
-                        children: "Search"
-                    }, void 0, false, {
-                        fileName: "src/components/header-bar/header-bar.jsx",
-                        lineNumber: 13,
-                        columnNumber: 13
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/header-bar/header-bar.jsx",
-                lineNumber: 11,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/header-bar/header-bar.jsx",
-        lineNumber: 5,
-        columnNumber: 13
-    }, undefined);
-};
-_c = HeaderBar;
-var _c;
-$RefreshReg$(_c, "HeaderBar");
-
-  $parcel$ReactRefreshHelpers$5f9e.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gYsYj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bh9la","../../../public/img/logo.svg":"lqNGK","./header-bar.scss":"99HcC"}],"lqNGK":[function(require,module,exports) {
-module.exports = require("125f1f860d822223").getBundleURL("byUka") + "logo.7efc0074.svg" + "?" + Date.now();
-
-},{"125f1f860d822223":"fWaqB"}],"fWaqB":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"99HcC":[function() {},{}],"gbnwo":[function(require,module,exports) {
-module.exports = require("ca80796b463ce825").getBundleURL("byUka") + "spinner.d44fa907.gif" + "?" + Date.now();
-
-},{"ca80796b463ce825":"fWaqB"}]},["a28iG","1FsAG","d8Dch"], "d8Dch", "parcelRequirebd5d")
+},{"d52e41e3bbcb50f":"95GEp"}],"lJZlQ":[function() {},{}]},["jevAQ","k65zC","d8Dch"], "d8Dch", "parcelRequirebd5d")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

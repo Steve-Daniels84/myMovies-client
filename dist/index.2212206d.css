@@ -1,18 +1,53 @@
-body {
-  margin: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.main-content {
-  height: 95vh;
+.header-bar {
+  color: gold;
+  background-color: #ad0e0e;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
   display: flex;
 }
 
-.loading-spinner-container {
-  text-align: center;
-  align-content: center;
-  width: 100%;
-  min-height: 100vh;
+.logo-container {
+  width: 3rem;
+  display: flex;
+}
+
+.logo-container h1 {
+  margin-left: .5rem;
+}
+
+.header-search-container {
+  padding-right: 1rem;
+}
+
+#search-input {
+  border-radius: 8px;
+  width: 15rem;
+  height: 2.5rem;
+  margin: 1rem;
+  padding: 4px;
+}
+
+.button-generic {
+  color: #000;
+  cursor: pointer;
+  background-color: gold;
+  border-radius: 8px;
+  width: 100px;
+  height: 2.5rem;
+  font-weight: 800;
+}
+
+.sidebar-container {
+  border-right: 1px solid #000;
+  width: 20vw;
+  height: 95vh;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.sidebar-filter-container {
+  height: 100%;
 }
 
 .movie-view-modal-backdrop {
@@ -173,59 +208,24 @@ body {
   font-size: 14px;
 }
 
-.sidebar-container {
-  border-right: 1px solid #000;
-  width: 20vw;
-  height: 95vh;
-  padding: 10px;
-  overflow: hidden;
-}
-
-.sidebar-filter-container {
-  height: 100%;
-}
-
 * {
   box-sizing: border-box;
 }
 
-.header-bar {
-  color: gold;
-  background-color: #ad0e0e;
-  justify-content: space-between;
-  align-items: center;
-  height: 10vh;
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-content {
+  height: 95vh;
   display: flex;
 }
 
-.logo-container {
-  width: 3rem;
-  display: flex;
-}
-
-.logo-container h1 {
-  margin-left: .5rem;
-}
-
-.header-search-container {
-  padding-right: 1rem;
-}
-
-#search-input {
-  border-radius: 8px;
-  width: 15rem;
-  height: 2.5rem;
-  margin: 1rem;
-  padding: 4px;
-}
-
-.button-generic {
-  color: #000;
-  cursor: pointer;
-  background-color: gold;
-  border-radius: 8px;
-  width: 100px;
-  height: 2.5rem;
-  font-weight: 800;
+.loading-spinner-container {
+  text-align: center;
+  align-content: center;
+  width: 100%;
+  min-height: 100vh;
 }
 /*# sourceMappingURL=index.2212206d.css.map */
