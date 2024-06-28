@@ -4,7 +4,7 @@ import { Login } from "../login/login";
 import "./signup-login.scss";
 import LoginImage from "../../../public/img/loginImage.png"
 
-export const SignupLogin = ({setUser}) => {
+export const SignupLogin = ({setUser, setToken}) => {
 
     const [isSignup, setIsSignup] = useState(false);
 
@@ -32,7 +32,7 @@ export const SignupLogin = ({setUser}) => {
                     <div>
                         <button onClick={() => { setIsSignup(!isSignup) }}>SignUp</button>
                     </div>
-                    <Login onLoggedIn={(user) => setUser(user)} />
+                    <Login onLoggedIn={(user, token) => {setUser(user); setToken(token);}} />
                 </div>
             </div>
         )

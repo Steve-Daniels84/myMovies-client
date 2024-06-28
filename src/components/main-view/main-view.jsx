@@ -7,14 +7,25 @@ import { SignupLogin } from "../signup-login/signup-login";
 import spinner from "../../../public/img/spinner.gif"
 
 export const MainView = () => {
+
   const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(null);
+  const [token, setToken] = useState(null);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const storedUser = localStorage.getItem(user);
+  const storedToken = localStorage.getItem(token);
 
 useEffect(() => {
+
+  if (!token) {
+    return;
+  }
+
   if (user) {
-    fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies")
+    fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies", {
+      headers: {Authorization: `Bearer ${token}`}
+    })
       .then((response) => response.json())
       .then((data) => {
         const movies = data.map((movie) => {
@@ -43,7 +54,10 @@ useEffect(() => {
 }, [user]);
 
 if (!user) {
-  return <SignupLogin setUser={setUser}/>;
+  return <SignupLogin 
+          setUser={setUser}
+          setToken={setToken}
+          />;
 }
 
   const handleOpenModal = (movie) => {
@@ -56,6 +70,12 @@ if (!user) {
     setShowModal(false);
   };
 
+  const handleLogout = () => {
+    setUser(null);
+    setToken(null);
+    localStorage.clear();
+}
+
   if (movies.length === 0) {
     return <div className="loading-spinner-container"><img className="loading-spinner" src={spinner} alt="loading spinner"/></div>;
   }
@@ -64,7 +84,9 @@ if (!user) {
       <HeaderBar />
       <div className="main-content">
         <div>
-          <SideBar setUser={setUser}/>
+          <SideBar 
+            handleLogout= {handleLogout}
+          />
         </div>
         <div className="movie-card-grid">
           {movies.map((movie) => (
@@ -80,6 +102,7 @@ if (!user) {
         show={showModal}
         movie={selectedMovie}
         onClose={handleCloseModal}
+        token={token}
       />
     </div>
   );

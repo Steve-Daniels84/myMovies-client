@@ -2,7 +2,7 @@ import './movie-view.scss';
 import PropTypes from "prop-types";
 import { SimilarMovies } from '../similar-movies/similar-movies';
 
-export const MovieViewModal = ( {show, movie, onClose} ) => {
+export const MovieViewModal = ( {show, movie, onClose, token} ) => {
 
     if(!show) {
         return null
@@ -43,6 +43,7 @@ export const MovieViewModal = ( {show, movie, onClose} ) => {
             <div className="movie-view-modal-director">
             <SimilarMovies 
                     genre={movie.Genre.Name}
+                    token={token}
                 />
             </div>
             <div className="movie-view-modal-footer">

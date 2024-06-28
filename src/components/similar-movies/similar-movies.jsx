@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import './similar-movies.scss';
 
-export const SimilarMovies = ({ genre }) => {
+export const SimilarMovies = ({ genre, token }) => {
   const [similarMovies, setSimilarMovies] = useState([]);
 
   useEffect(() => {
-    fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies/" + genre)
+    fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies/" + genre, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
       .then((response) => response.json())
       .then((data) => {
         const movies = data.map((movie) => {

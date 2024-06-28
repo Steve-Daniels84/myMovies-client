@@ -11,7 +11,7 @@ export const Login = ({onLoggedIn}) => {
 
         const data = {
             Username: username,
-            Password: password
+            Password: password,
         };
 
         fetch("https://mymovies-api-d8738180d851.herokuapp.com/login", {
@@ -20,16 +20,17 @@ export const Login = ({onLoggedIn}) => {
                         "Content-Type": "application/json"
                     },
             body: JSON.stringify(data)})
-            .then((response) => {
-                if (response.ok) {
-                  onLoggedIn(username);
+            .then((response) => response.json())
+            .then((data) => {
+                if (data) {
+                    localStorage.setItem("user", username);
+                    localStorage.setItem("token", data.token);
+                    onLoggedIn(username, data.token);
                 } else {
-                  alert("Login failed");
+                  console.log("Login failed");
                 }
         })
     }
-
-
 
 return (
     
