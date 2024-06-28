@@ -6,41 +6,36 @@ import LoginImage from "../../../public/img/loginImage.png"
 
 export const SignupLogin = ({setUser}) => {
 
-    const [signup, setSignup] = useState(false);
-    const [login, setLogin] = useState(true);
+    const [isSignup, setIsSignup] = useState(false);
 
-    if (signup === true && login === false) {
+
 
     return (
-        <div className="signup-login-container">
-            <div className="login-image-container">
-                <img src={LoginImage} alt="" />
-            </div>
-            <div className="form-container">
-                <div> 
-                    <button onClick={(e) => {setSignup(true); setLogin(false)}}>Login</button>
-
-                </div>
-                <SignUp />
-            </div>
-        </div>
-        )
-    }
-
-    if (login === true && signup === false) {
-        return (
+        isSignup ? (
             <div className="signup-login-container">
                 <div className="login-image-container">
                     <img src={LoginImage} alt="" />
                 </div>
                 <div className="form-container">
-                    <div> 
-
-                    <button onClick={(e) => {setSignup(false); setLogin(true)}}>SignUp</button>
+                    <div>
+                        <button onClick={() => { setIsSignup(!isSignup) }}>Login</button>
                     </div>
-                    <Login onLoggedIn={(user) => setUser(user)}/>
+                    <SignUp />
                 </div>
             </div>
-            )
-    }
-}
+        ) : (
+            <div className="signup-login-container">
+                <div className="login-image-container">
+                    <img src={LoginImage} alt="" />
+                </div>
+                <div className="form-container">
+                    <div>
+                        <button onClick={() => { setIsSignup(!isSignup) }}>SignUp</button>
+                    </div>
+                    <Login onLoggedIn={(user) => setUser(user)} />
+                </div>
+            </div>
+        )
+    );
+}    
+

@@ -2,12 +2,12 @@ import { useState } from "react";
 import "./signup.scss";
 
 export const SignUp = () => {
-    
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const [email, setEmail] = useState("");
-        const [password, setPassword] = useState("");
+
 
         const data = {
             Email: email,
