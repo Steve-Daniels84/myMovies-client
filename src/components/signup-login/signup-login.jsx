@@ -6,10 +6,10 @@ import LoginImage from "../../../public/img/loginImage.png"
 
 export const SignupLogin = ({setUser}) => {
 
-    const [signup, setSignup] = useState(null);
+    const [signup, setSignup] = useState(false);
     const [login, setLogin] = useState(true);
 
-    if (signup) {
+    if (signup === true && login === false) {
 
     return (
         <div className="signup-login-container">
@@ -18,8 +18,8 @@ export const SignupLogin = ({setUser}) => {
             </div>
             <div className="form-container">
                 <div> 
-                    <button>Login</button>
-                    <button>SignUp</button>
+                    <button onClick={(e) => {setSignup(true); setLogin(false)}}>Login</button>
+
                 </div>
                 <SignUp />
             </div>
@@ -27,7 +27,7 @@ export const SignupLogin = ({setUser}) => {
         )
     }
 
-    if (login) {
+    if (login === true && signup === false) {
         return (
             <div className="signup-login-container">
                 <div className="login-image-container">
@@ -35,8 +35,8 @@ export const SignupLogin = ({setUser}) => {
                 </div>
                 <div className="form-container">
                     <div> 
-                        <button>Login</button>
-                        <button>SignUp</button>
+
+                    <button onClick={(e) => {setSignup(false); setLogin(true)}}>SignUp</button>
                     </div>
                     <Login onLoggedIn={(user) => setUser(user)}/>
                 </div>
