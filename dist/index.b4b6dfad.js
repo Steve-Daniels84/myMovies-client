@@ -28154,7 +28154,7 @@ MovieViewModal.propTypes = {
         Director: (0, _propTypesDefault.default).shape({
             Name: (0, _propTypesDefault.default).string.isRequired,
             Bio: (0, _propTypesDefault.default).string.isRequired,
-            Birth: (0, _propTypesDefault.default).string.isRequired,
+            Birth: (0, _propTypesDefault.default).string,
             HeadShots: (0, _propTypesDefault.default).array.isRequired
         }),
         Genre: (0, _propTypesDefault.default).shape({

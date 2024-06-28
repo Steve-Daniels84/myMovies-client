@@ -66,7 +66,7 @@ MovieViewModal.propTypes = {
         Director: PropTypes.shape ({
             Name: PropTypes.string.isRequired,
             Bio: PropTypes.string.isRequired,
-            Birth: PropTypes.string.isRequired,
+            Birth: PropTypes.string,
             HeadShots: PropTypes.array.isRequired
         }),
         Genre: PropTypes.shape ({

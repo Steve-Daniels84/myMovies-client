@@ -154,8 +154,6 @@
 .movie-card {
   cursor: pointer;
   border-radius: 20px;
-  width: 20rem;
-  height: 20rem;
   padding: 5px;
   transition: scale 1s;
   box-shadow: 0 4px 8px #0003, 0 6px 20px #00000030;
@@ -167,14 +165,14 @@
 }
 
 .movie-card-header {
-  height: 200px;
+  height: 150px;
   display: flex;
 }
 
 .movie-card-image-container {
   text-align: center;
   width: 100%;
-  max-width: 200px;
+  max-width: 150px;
   height: 100%;
 }
 
@@ -182,12 +180,12 @@
   object-fit: contain;
   max-width: 100%;
   max-height: 100%;
-  padding: 10px;
+  padding: 5px;
 }
 
 .movie-card-title {
   text-align: left;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .movie-card-title-container {
