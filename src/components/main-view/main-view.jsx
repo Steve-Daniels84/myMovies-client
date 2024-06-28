@@ -3,10 +3,16 @@ import { HeaderBar } from "../header-bar/header-bar";
 import { SideBar } from "../side-bar/side-bar";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieViewModal } from "../movie-view-modal/movie-view-modal";
+import { SignupLogin } from "../signup-login/signup-login";
 import spinner from "../../../public/img/spinner.gif"
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
+  const [user, setUser] = useState(null);
+
+  if (!user) {
+    return <SignupLogin />;
+  }
 
 useEffect(() => {
   fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies")

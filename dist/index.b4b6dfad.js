@@ -27241,12 +27241,19 @@ var _headerBar = require("../header-bar/header-bar");
 var _sideBar = require("../side-bar/side-bar");
 var _movieCard = require("../movie-card/movie-card");
 var _movieViewModal = require("../movie-view-modal/movie-view-modal");
+var _signupLogin = require("../signup-login/signup-login");
 var _spinnerGif = require("../../../public/img/spinner.gif");
 var _spinnerGifDefault = parcelHelpers.interopDefault(_spinnerGif);
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
     const [movies, setMovies] = (0, _react.useState)([]);
+    const [user, setUser] = (0, _react.useState)(null);
+    if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupLogin.SignupLogin), {}, void 0, false, {
+        fileName: "src/components/main-view/main-view.jsx",
+        lineNumber: 14,
+        columnNumber: 12
+    }, undefined);
     (0, _react.useEffect)(()=>{
         fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
             const movies = data.map((movie)=>{
@@ -27290,12 +27297,12 @@ const MainView = ()=>{
             alt: "loading spinner"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 54,
+            lineNumber: 60,
             columnNumber: 55
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 54,
+        lineNumber: 60,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27303,7 +27310,7 @@ const MainView = ()=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerBar.HeaderBar), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 58,
+                lineNumber: 64,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27312,12 +27319,12 @@ const MainView = ()=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sideBar.SideBar), {}, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 61,
+                            lineNumber: 67,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 60,
+                        lineNumber: 66,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27327,18 +27334,18 @@ const MainView = ()=>{
                                 onMovieClick: ()=>handleOpenModal(movie)
                             }, movie.Id, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 65,
+                                lineNumber: 71,
                                 columnNumber: 13
                             }, undefined))
                     }, void 0, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 63,
+                        lineNumber: 69,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 59,
+                lineNumber: 65,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieViewModal.MovieViewModal), {
@@ -27347,17 +27354,17 @@ const MainView = ()=>{
                 onClose: handleCloseModal
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 73,
+                lineNumber: 79,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 57,
+        lineNumber: 63,
         columnNumber: 5
     }, undefined);
 };
-_s(MainView, "e7OVgStUReuCpUVee2Y09vBQsx0=");
+_s(MainView, "g5IPI6O0zmuhTZg+CcNU7Z69W6A=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -27367,7 +27374,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../header-bar/header-bar":"97I93","../side-bar/side-bar":"bbzZy","../movie-card/movie-card":"bwuIu","../movie-view-modal/movie-view-modal":"fj2bU","../../../public/img/spinner.gif":"7cmAf","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"97I93":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../header-bar/header-bar":"97I93","../side-bar/side-bar":"bbzZy","../movie-card/movie-card":"bwuIu","../movie-view-modal/movie-view-modal":"fj2bU","../../../public/img/spinner.gif":"7cmAf","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf","../signup-login/signup-login":"eRc6I"}],"97I93":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f9e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28993,6 +29000,312 @@ $RefreshReg$(_c, "SimilarMovies");
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./similar-movies.scss":"5At0z","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"5At0z":[function() {},{}],"d6HH4":[function() {},{}],"7cmAf":[function(require,module,exports) {
 module.exports = require("d52e41e3bbcb50f").getBundleURL("byUka") + "spinner.d44fa907.gif" + "?" + Date.now();
 
-},{"d52e41e3bbcb50f":"95GEp"}],"lJZlQ":[function() {},{}]},["jevAQ","k65zC","d8Dch"], "d8Dch", "parcelRequirebd5d")
+},{"d52e41e3bbcb50f":"95GEp"}],"eRc6I":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e063 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e063.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SignupLogin", ()=>SignupLogin);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _signup = require("../signup/signup");
+var _login = require("../login/login");
+var _signupLoginScss = require("./signup-login.scss");
+var _loginImagePng = require("../../../public/img/loginImage.png");
+var _loginImagePngDefault = parcelHelpers.interopDefault(_loginImagePng);
+var _s = $RefreshSig$();
+const SignupLogin = ()=>{
+    _s();
+    const [signup, setSignup] = (0, _react.useState)(true);
+    const [login, setLogin] = (0, _react.useState)(null);
+    if (signup) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "signup-login-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "login-image-container",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: (0, _loginImagePngDefault.default),
+                    alt: ""
+                }, void 0, false, {
+                    fileName: "src/components/signup-login/signup-login.jsx",
+                    lineNumber: 17,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/signup-login/signup-login.jsx",
+                lineNumber: 16,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "form-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                children: "Login"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-login/signup-login.jsx",
+                                lineNumber: 21,
+                                columnNumber: 21
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                children: "SignUp"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-login/signup-login.jsx",
+                                lineNumber: 22,
+                                columnNumber: 21
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/signup-login/signup-login.jsx",
+                        lineNumber: 20,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signup.SignUp), {}, void 0, false, {
+                        fileName: "src/components/signup-login/signup-login.jsx",
+                        lineNumber: 24,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/signup-login/signup-login.jsx",
+                lineNumber: 19,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/signup-login/signup-login.jsx",
+        lineNumber: 15,
+        columnNumber: 9
+    }, undefined);
+    if (login) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "signup-login-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "login-image-container",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: (0, _loginImagePngDefault.default),
+                    alt: ""
+                }, void 0, false, {
+                    fileName: "src/components/signup-login/signup-login.jsx",
+                    lineNumber: 34,
+                    columnNumber: 21
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/signup-login/signup-login.jsx",
+                lineNumber: 33,
+                columnNumber: 17
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "form-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                children: "Login"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-login/signup-login.jsx",
+                                lineNumber: 38,
+                                columnNumber: 25
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                children: "SignUp"
+                            }, void 0, false, {
+                                fileName: "src/components/signup-login/signup-login.jsx",
+                                lineNumber: 39,
+                                columnNumber: 25
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/signup-login/signup-login.jsx",
+                        lineNumber: 37,
+                        columnNumber: 21
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _login.Login), {}, void 0, false, {
+                        fileName: "src/components/signup-login/signup-login.jsx",
+                        lineNumber: 41,
+                        columnNumber: 21
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/signup-login/signup-login.jsx",
+                lineNumber: 36,
+                columnNumber: 17
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/signup-login/signup-login.jsx",
+        lineNumber: 32,
+        columnNumber: 13
+    }, undefined);
+};
+_s(SignupLogin, "DPnIfUC8D5PXOmlDp2MaRloIFs8=");
+_c = SignupLogin;
+var _c;
+$RefreshReg$(_c, "SignupLogin");
+
+  $parcel$ReactRefreshHelpers$e063.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./signup-login.scss":"4e1PS","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf","../../../public/img/loginImage.png":"8ioyt","../signup/signup":"e82v8","../login/login":"hFosw"}],"4e1PS":[function() {},{}],"8ioyt":[function(require,module,exports) {
+module.exports = require("9a1f1798da788a29").getBundleURL("byUka") + "loginImage.98d10cfd.png" + "?" + Date.now();
+
+},{"9a1f1798da788a29":"95GEp"}],"e82v8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2677 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2677.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "SignUp", ()=>SignUp);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _signupScss = require("./signup.scss");
+const SignUp = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+        className: "login-form-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                children: "Email:"
+            }, void 0, false, {
+                fileName: "src/components/signup/signup.jsx",
+                lineNumber: 8,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                type: "email",
+                required: true
+            }, void 0, false, {
+                fileName: "src/components/signup/signup.jsx",
+                lineNumber: 11,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                children: "Password:"
+            }, void 0, false, {
+                fileName: "src/components/signup/signup.jsx",
+                lineNumber: 15,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                type: "text",
+                required: true
+            }, void 0, false, {
+                fileName: "src/components/signup/signup.jsx",
+                lineNumber: 18,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                type: "submit",
+                children: "Submit"
+            }, void 0, false, {
+                fileName: "src/components/signup/signup.jsx",
+                lineNumber: 22,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/signup/signup.jsx",
+        lineNumber: 7,
+        columnNumber: 5
+    }, undefined);
+};
+_c = SignUp;
+var _c;
+$RefreshReg$(_c, "SignUp");
+
+  $parcel$ReactRefreshHelpers$2677.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./signup.scss":"1g7Gq","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"1g7Gq":[function() {},{}],"hFosw":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2447 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2447.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Login", ()=>Login);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _loginScss = require("./login.scss");
+const Login = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+        className: "login-form-container",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                children: "Username:"
+            }, void 0, false, {
+                fileName: "src/components/login/login.jsx",
+                lineNumber: 8,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                type: "text",
+                required: true
+            }, void 0, false, {
+                fileName: "src/components/login/login.jsx",
+                lineNumber: 12,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                fileName: "src/components/login/login.jsx",
+                lineNumber: 16,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                children: "Password:"
+            }, void 0, false, {
+                fileName: "src/components/login/login.jsx",
+                lineNumber: 17,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                type: "text",
+                required: true
+            }, void 0, false, {
+                fileName: "src/components/login/login.jsx",
+                lineNumber: 21,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                fileName: "src/components/login/login.jsx",
+                lineNumber: 25,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                type: "submit",
+                children: "Submit"
+            }, void 0, false, {
+                fileName: "src/components/login/login.jsx",
+                lineNumber: 26,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/login/login.jsx",
+        lineNumber: 7,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Login;
+var _c;
+$RefreshReg$(_c, "Login");
+
+  $parcel$ReactRefreshHelpers$2447.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./login.scss":"3oY16","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"3oY16":[function() {},{}],"lJZlQ":[function() {},{}]},["jevAQ","k65zC","d8Dch"], "d8Dch", "parcelRequirebd5d")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
