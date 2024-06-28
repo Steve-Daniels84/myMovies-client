@@ -11,7 +11,7 @@ export const MainView = () => {
   const [user, setUser] = useState(null);
 
   if (!user) {
-    return <SignupLogin />;
+    return <SignupLogin setUser={setUser}/>;
   }
 
 useEffect(() => {
@@ -64,7 +64,7 @@ useEffect(() => {
       <HeaderBar />
       <div className="main-content">
         <div>
-          <SideBar />
+          <SideBar setUser={setUser}/>
         </div>
         <div className="movie-card-grid">
           {movies.map((movie) => (

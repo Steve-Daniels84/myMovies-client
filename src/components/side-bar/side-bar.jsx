@@ -7,7 +7,7 @@ export const SideBar = (() => {
             </div>
             <div className="sidebar-filter-container">
                 <h2>Filters</h2>
-                <button>logout</button>
+                <button onClick={() => {setUser("");}}>logout</button>
             </div>
         </div>
     )

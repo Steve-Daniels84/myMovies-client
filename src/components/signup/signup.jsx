@@ -1,6 +1,10 @@
 import "./signup.scss";
 
 export const SignUp = () => {
+    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
 
 return (
     

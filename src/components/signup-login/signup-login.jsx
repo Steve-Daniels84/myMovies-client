@@ -4,10 +4,10 @@ import { Login } from "../login/login";
 import "./signup-login.scss";
 import LoginImage from "../../../public/img/loginImage.png"
 
-export const SignupLogin = () => {
+export const SignupLogin = ({setUser}) => {
 
-    const [signup, setSignup] = useState(true);
-    const [login, setLogin] = useState(null);
+    const [signup, setSignup] = useState(null);
+    const [login, setLogin] = useState(true);
 
     if (signup) {
 
@@ -38,7 +38,7 @@ export const SignupLogin = () => {
                         <button>Login</button>
                         <button>SignUp</button>
                     </div>
-                    <Login />
+                    <Login onLoggedIn={(user) => setUser(user)}/>
                 </div>
             </div>
             )

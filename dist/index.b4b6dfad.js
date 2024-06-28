@@ -27249,7 +27249,9 @@ const MainView = ()=>{
     _s();
     const [movies, setMovies] = (0, _react.useState)([]);
     const [user, setUser] = (0, _react.useState)(null);
-    if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupLogin.SignupLogin), {}, void 0, false, {
+    if (!user) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupLogin.SignupLogin), {
+        setUser: setUser
+    }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
         lineNumber: 14,
         columnNumber: 12
@@ -27317,7 +27319,9 @@ const MainView = ()=>{
                 className: "main-content",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sideBar.SideBar), {}, void 0, false, {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sideBar.SideBar), {
+                            setUser: setUser
+                        }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
                             lineNumber: 67,
                             columnNumber: 11
@@ -27700,6 +27704,9 @@ const SideBar = ()=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        onClick: ()=>{
+                            setUser("");
+                        },
                         children: "logout"
                     }, void 0, false, {
                         fileName: "src/components/side-bar/side-bar.jsx",
@@ -29018,10 +29025,10 @@ var _signupLoginScss = require("./signup-login.scss");
 var _loginImagePng = require("../../../public/img/loginImage.png");
 var _loginImagePngDefault = parcelHelpers.interopDefault(_loginImagePng);
 var _s = $RefreshSig$();
-const SignupLogin = ()=>{
+const SignupLogin = ({ setUser })=>{
     _s();
-    const [signup, setSignup] = (0, _react.useState)(true);
-    const [login, setLogin] = (0, _react.useState)(null);
+    const [signup, setSignup] = (0, _react.useState)(null);
+    const [login, setLogin] = (0, _react.useState)(true);
     if (signup) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "signup-login-container",
         children: [
@@ -29125,7 +29132,9 @@ const SignupLogin = ()=>{
                         lineNumber: 37,
                         columnNumber: 21
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _login.Login), {}, void 0, false, {
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _login.Login), {
+                        onLoggedIn: (user)=>setUser(user)
+                    }, void 0, false, {
                         fileName: "src/components/signup-login/signup-login.jsx",
                         lineNumber: 41,
                         columnNumber: 21
@@ -29143,7 +29152,7 @@ const SignupLogin = ()=>{
         columnNumber: 13
     }, undefined);
 };
-_s(SignupLogin, "DPnIfUC8D5PXOmlDp2MaRloIFs8=");
+_s(SignupLogin, "U0Pu0f5FOls94A7OEuSG2eCRQvs=");
 _c = SignupLogin;
 var _c;
 $RefreshReg$(_c, "SignupLogin");
@@ -29169,6 +29178,9 @@ parcelHelpers.export(exports, "SignUp", ()=>SignUp);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _signupScss = require("./signup.scss");
 const SignUp = ()=>{
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
         className: "login-form-container",
         children: [
@@ -29176,7 +29188,7 @@ const SignUp = ()=>{
                 children: "Email:"
             }, void 0, false, {
                 fileName: "src/components/signup/signup.jsx",
-                lineNumber: 8,
+                lineNumber: 12,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -29184,14 +29196,14 @@ const SignUp = ()=>{
                 required: true
             }, void 0, false, {
                 fileName: "src/components/signup/signup.jsx",
-                lineNumber: 11,
+                lineNumber: 15,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
                 children: "Password:"
             }, void 0, false, {
                 fileName: "src/components/signup/signup.jsx",
-                lineNumber: 15,
+                lineNumber: 19,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -29199,7 +29211,7 @@ const SignUp = ()=>{
                 required: true
             }, void 0, false, {
                 fileName: "src/components/signup/signup.jsx",
-                lineNumber: 18,
+                lineNumber: 22,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -29207,13 +29219,13 @@ const SignUp = ()=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/signup/signup.jsx",
-                lineNumber: 22,
+                lineNumber: 26,
                 columnNumber: 5
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/signup/signup.jsx",
-        lineNumber: 7,
+        lineNumber: 11,
         columnNumber: 5
     }, undefined);
 };
@@ -29237,49 +29249,80 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Login", ()=>Login);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
 var _loginScss = require("./login.scss");
-const Login = ()=>{
+var _s = $RefreshSig$();
+const Login = ({ onLoggedIn })=>{
+    _s();
+    const [username, setUsername] = (0, _react.useState)("");
+    const [password, setPassword] = (0, _react.useState)("");
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        const data = {
+            Username: username,
+            Password: password
+        };
+        fetch("https://mymovies-api-d8738180d851.herokuapp.com/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }).then((response)=>{
+            if (response.ok) onLoggedIn(username);
+            else alert("Login failed");
+        });
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
         className: "login-form-container",
+        onSubmit: handleSubmit,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
                 children: "Username:"
             }, void 0, false, {
                 fileName: "src/components/login/login.jsx",
-                lineNumber: 8,
+                lineNumber: 37,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                 type: "text",
+                value: username,
+                onChange: (e)=>{
+                    setUsername(e.target.value);
+                },
                 required: true
             }, void 0, false, {
                 fileName: "src/components/login/login.jsx",
-                lineNumber: 12,
+                lineNumber: 40,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                 fileName: "src/components/login/login.jsx",
-                lineNumber: 16,
+                lineNumber: 46,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
                 children: "Password:"
             }, void 0, false, {
                 fileName: "src/components/login/login.jsx",
-                lineNumber: 17,
+                lineNumber: 47,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                type: "text",
+                type: "password",
+                value: password,
+                onChange: (e)=>{
+                    setPassword(e.target.value);
+                },
                 required: true
             }, void 0, false, {
                 fileName: "src/components/login/login.jsx",
-                lineNumber: 21,
+                lineNumber: 50,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                 fileName: "src/components/login/login.jsx",
-                lineNumber: 25,
+                lineNumber: 56,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -29287,16 +29330,17 @@ const Login = ()=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/login/login.jsx",
-                lineNumber: 26,
+                lineNumber: 57,
                 columnNumber: 5
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/login/login.jsx",
-        lineNumber: 7,
+        lineNumber: 36,
         columnNumber: 5
     }, undefined);
 };
+_s(Login, "Lrw7JeD9zj6OUWhT/IH4OIvPKEk=");
 _c = Login;
 var _c;
 $RefreshReg$(_c, "Login");
@@ -29306,6 +29350,6 @@ $RefreshReg$(_c, "Login");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./login.scss":"3oY16","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"3oY16":[function() {},{}],"lJZlQ":[function() {},{}]},["jevAQ","k65zC","d8Dch"], "d8Dch", "parcelRequirebd5d")
+},{"react/jsx-dev-runtime":"iTorj","./login.scss":"3oY16","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf","react":"21dqq"}],"3oY16":[function() {},{}],"lJZlQ":[function() {},{}]},["jevAQ","k65zC","d8Dch"], "d8Dch", "parcelRequirebd5d")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
