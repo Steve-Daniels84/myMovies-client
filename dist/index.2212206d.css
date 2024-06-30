@@ -225,6 +225,10 @@
   height: 100vh;
 }
 
+input:invalid {
+  border: 1px solid red;
+}
+
 .login-form-container {
   text-align: left;
   margin: 100px;
