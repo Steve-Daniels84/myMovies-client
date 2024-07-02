@@ -1,43 +1,37 @@
 import React from "react";
-import {MovieViewModal} from "../movie-view-modal/movie-view-modal";
+import { MovieViewModal } from "../movie-view-modal/movie-view-modal";
 import "./movie-card.scss";
 import PropTypes from "prop-types";
+import { Button, Card } from "react-bootstrap";
 
 export const MovieCard = ({ movie, onMovieClick }) => {
-    return (
-            <div className="movie-card"
-                onClick={() => {
-                    onMovieClick(movie)
-                }}
-                >   <div className="movie-card-header">
-                        <div className="movie-card-image-container">
-                            <img className="poster-image" src={movie.ImagePath} alt="" />
-                        </div>
-                        <div className="movie-card-title">
-                            <div className="movie-card-title-container">
-                                <h3>
-                                    {movie.Title}<br></br>
-                                    {movie.ReleaseYear}
-                                </h3>
-                                <p id="genre-name">{movie.Genre.Name}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="movie-card-description">
-                        {movie.Description}
-                    </div>
-            </div>
-    );
+  return (
+    <div
+      className="movie-card"
+      onClick={() => {
+        onMovieClick(movie);
+      }}
+    >
+      <Card onClick={() => onMovieClick(movie)}>
+        <Card.Img variant="top" src={movie.ImagePath} />
+        <Card.Body>
+          <Card.Title>{movie.Title}</Card.Title>
+          <card-text>{movie.Genre.Name}</card-text>
+          <Card.Text>{movie.Director.Name}</Card.Text>
+        </Card.Body>
+      </Card>
+    </div>
+  );
 };
 
 MovieCard.propTypes = {
-    movie: PropTypes.shape({
-        Title: PropTypes.string.isRequired,
-        Description: PropTypes.string.isRequired,
-        ReleaseYear: PropTypes.string.isRequired,
-        ImagePath: PropTypes.string.isRequired,
-        Genre: PropTypes.shape ({
-            Name: PropTypes.string.isRequired
-        })
-    })
-}
+  movie: PropTypes.shape({
+    Title: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
+    ReleaseYear: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired,
+    Genre: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+    }),
+  }),
+};
