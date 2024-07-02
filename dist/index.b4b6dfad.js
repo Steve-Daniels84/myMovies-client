@@ -29212,10 +29212,7 @@ $RefreshReg$(_c, "SignupLogin");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./signup-login.scss":"4e1PS","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf","../../../public/img/loginImage.png":"8ioyt","../signup/signup":"e82v8","../login/login":"hFosw","../login-message/login-message":"eUyDo"}],"4e1PS":[function() {},{}],"8ioyt":[function(require,module,exports) {
-module.exports = require("9a1f1798da788a29").getBundleURL("byUka") + "loginImage.98d10cfd.png" + "?" + Date.now();
-
-},{"9a1f1798da788a29":"95GEp"}],"e82v8":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../signup/signup":"e82v8","../login/login":"hFosw","../login-message/login-message":"eUyDo","./signup-login.scss":"4e1PS","../../../public/img/loginImage.png":"8ioyt","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"e82v8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2677 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -29357,7 +29354,7 @@ $RefreshReg$(_c, "SignUp");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./signup.scss":"1g7Gq","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf","react":"21dqq"}],"1g7Gq":[function() {},{}],"hFosw":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./signup.scss":"1g7Gq","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"1g7Gq":[function() {},{}],"hFosw":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2447 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -29486,7 +29483,7 @@ $RefreshReg$(_c, "Login");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./login.scss":"3oY16","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf","react":"21dqq","../login-message/login-message":"eUyDo"}],"3oY16":[function() {},{}],"eUyDo":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./login.scss":"3oY16","../login-message/login-message":"eUyDo","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"3oY16":[function() {},{}],"eUyDo":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$865c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -29519,6 +29516,9 @@ $RefreshReg$(_c, "LoginMessage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","./login-message.scss":"h4tRm","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","react/jsx-dev-runtime":"iTorj"}],"h4tRm":[function() {},{}],"lJZlQ":[function() {},{}]},["jevAQ","k65zC","d8Dch"], "d8Dch", "parcelRequirebd5d")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./login-message.scss":"h4tRm","@parcel/transformer-js/src/esmodule-helpers.js":"aRELh","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6ZIFf"}],"h4tRm":[function() {},{}],"4e1PS":[function() {},{}],"8ioyt":[function(require,module,exports) {
+module.exports = require("9a1f1798da788a29").getBundleURL("byUka") + "loginImage.98d10cfd.png" + "?" + Date.now();
+
+},{"9a1f1798da788a29":"95GEp"}],"lJZlQ":[function() {},{}]},["jevAQ","k65zC","d8Dch"], "d8Dch", "parcelRequirebd5d")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
