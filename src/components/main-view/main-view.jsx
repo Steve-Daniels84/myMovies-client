@@ -2,9 +2,13 @@ import { useState, useEffect } from "react";
 import { HeaderBar } from "../header-bar/header-bar";
 import { SideBar } from "../side-bar/side-bar";
 import { MovieCard } from "../movie-card/movie-card";
-import { MovieViewModal } from "../movie-view-modal/movie-view-modal";
 import { SignupLogin } from "../signup-login/signup-login";
-import spinner from "../../../public/img/spinner.gif"
+import spinner from "../../../public/img/spinner.gif";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { Container } from "react-bootstrap";
+import { MovieViewModal } from "../movie-view-modal/movie-view-modal";
+
 
 export const MainView = () => {
 
@@ -53,14 +57,8 @@ useEffect(() => {
   }
 }, [user]);
 
-if (!user) {
-  return <SignupLogin 
-          setUser={setUser}
-          setToken={setToken}
-          />;
-}
-
   const handleOpenModal = (movie) => {
+    console.log('Clicked')
     setSelectedMovie(movie);
     setShowModal(true);
   };
@@ -76,34 +74,52 @@ if (!user) {
     localStorage.clear();
 }
 
-  if (movies.length === 0) {
-    return <div className="loading-spinner-container"><img className="loading-spinner" src={spinner} alt="loading spinner"/></div>;
-  }
+
+
   return (
-    <div className="main-view">
-      <HeaderBar />
-      <div className="main-content">
-        <div>
+    <Row>
+      {!user ? (
+        <>
+        <SignupLogin 
+          setUser={setUser}
+          setToken={setToken}
+          />;
+        </>
+      ) : movies.length === 0 ? (
+        <div className="loading-spinner-container"><img className="loading-spinner" src={spinner} alt="loading spinner"/></div>
+      ) : (
+        <>
+
+            <HeaderBar />
+
+      <Row>
+        <Col md={3}>            
           <SideBar 
             handleLogout= {handleLogout}
           />
-        </div>
-        <div className="movie-card-grid">
-          {movies.map((movie) => (
-            <MovieCard
-              key={movie.Id}
-              movie={movie}
-              onMovieClick={() => handleOpenModal(movie)}
-            />
-          ))}
-        </div>
-      </div>
-      <MovieViewModal
+      </Col>
+        <Col >
+        <Row>
+            {movies.map((movie) => (
+              <MovieCard
+                key={movie.Id}
+                movie={movie}
+                onMovieClick={() => handleOpenModal(movie)}
+              />
+            ))}
+            </Row>
+        </Col>
+    </Row>
+    {showModal && (
+            <MovieViewModal
         show={showModal}
         movie={selectedMovie}
         onClose={handleCloseModal}
         token={token}
       />
-    </div>
+    )}
+        </>
+      )}
+</Row>
   );
 };
