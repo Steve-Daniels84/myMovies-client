@@ -13,7 +13,7 @@ export const MovieCard = ({ movie, onMovieClick }) => {
       
       <Card className="movie-card" onClick={() => onMovieClick(movie)} style={{height: "100%", margin: "2rem"}} >
       <Container style={{height: "75%", textAlign:"center"}} >
-        <Card.Img variant="top" src={movie.ImagePath} style={{width:"100%", height:"100%", scale:"0.8"}} fluid/>
+        <Card.Img variant="top" src={movie.ImagePath} style={{width:"100%", height:"100%", scale:"0.8"}}/>
         </Container>
         <Card.Body style={{height: "25%"}}>
           <Card.Title style={{fontSize: "14px"}}>{movie.Title}</Card.Title>

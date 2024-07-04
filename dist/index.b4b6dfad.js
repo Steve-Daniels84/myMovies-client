@@ -27806,8 +27806,7 @@ const MovieCard = ({ movie, onMovieClick })=>{
                             width: "100%",
                             height: "100%",
                             scale: "0.8"
-                        },
-                        fluid: true
+                        }
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
                         lineNumber: 16,
