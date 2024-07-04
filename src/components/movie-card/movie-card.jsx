@@ -9,16 +9,15 @@ import Col from "react-bootstrap/Col";
 export const MovieCard = ({ movie, onMovieClick }) => {
   return (
 
-    <Col md={4} sm={4} xs={6} >
+    <Col md={4} sm={4} xs={6} style={{height:"20rem", width:"20rem"}}>
       
-      <Card className="movie-card" onClick={() => onMovieClick(movie)} style={{maxHeight: "100%", margin: "2rem"}} fluid>
-      <Container style={{maxHeight: "30rem"}} fluid>
-        <Card.Img variant="top" src={movie.ImagePath} />
+      <Card className="movie-card" onClick={() => onMovieClick(movie)} style={{height: "100%", margin: "2rem"}} >
+      <Container style={{height: "75%", textAlign:"center"}} >
+        <Card.Img variant="top" src={movie.ImagePath} style={{width:"100%", height:"100%", scale:"0.8"}} fluid/>
         </Container>
-        <Card.Body>
-
-          <Card.Title>{movie.Title}</Card.Title>
-          <card-text style={{overflow: "hide"}}>{movie.Genre.Name}</card-text>
+        <Card.Body style={{height: "25%"}}>
+          <Card.Title style={{fontSize: "14px"}}>{movie.Title}</Card.Title>
+          <card-text style={{fontSize: "12px"}}>{movie.Genre.Name}</card-text>
         </Card.Body>
       </Card>
       </Col>

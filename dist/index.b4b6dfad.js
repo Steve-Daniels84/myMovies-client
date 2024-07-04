@@ -27341,49 +27341,36 @@ const MainView = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerBar.HeaderBar), {}, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 93,
+                    lineNumber: 92,
                     columnNumber: 13
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                            md: 3,
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sideBar.SideBar), {
-                                handleLogout: handleLogout
-                            }, void 0, false, {
-                                fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 97,
-                                columnNumber: 11
-                            }, undefined)
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                            style: {
+                                height: "100vh"
+                            },
+                            children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                                    movie: movie,
+                                    onMovieClick: ()=>handleOpenModal(movie)
+                                }, movie.Id, false, {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 97,
+                                    columnNumber: 15
+                                }, undefined))
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 96,
-                            columnNumber: 9
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
-                                children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
-                                        movie: movie,
-                                        onMovieClick: ()=>handleOpenModal(movie)
-                                    }, movie.Id, false, {
-                                        fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 104,
-                                        columnNumber: 15
-                                    }, undefined))
-                            }, void 0, false, {
-                                fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 102,
-                                columnNumber: 9
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 101,
+                            lineNumber: 95,
                             columnNumber: 9
                         }, undefined)
-                    ]
-                }, void 0, true, {
+                    }, void 0, false, {
+                        fileName: "src/components/main-view/main-view.jsx",
+                        lineNumber: 94,
+                        columnNumber: 9
+                    }, undefined)
+                }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 95,
+                    lineNumber: 93,
                     columnNumber: 7
                 }, undefined),
                 showModal && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieViewModal.MovieViewModal), {
@@ -27393,7 +27380,7 @@ const MainView = ()=>{
                     token: token
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 114,
+                    lineNumber: 107,
                     columnNumber: 13
                 }, undefined)
             ]
@@ -27734,7 +27721,7 @@ const SideBar = ({ handleLogout })=>{
                 className: "sidebar-filter-container",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        children: "Filters"
+                        children: "Filter"
                     }, void 0, false, {
                         fileName: "src/components/side-bar/side-bar.jsx",
                         lineNumber: 10,
@@ -27795,23 +27782,32 @@ const MovieCard = ({ movie, onMovieClick })=>{
         md: 4,
         sm: 4,
         xs: 6,
+        style: {
+            height: "20rem",
+            width: "20rem"
+        },
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
             className: "movie-card",
             onClick: ()=>onMovieClick(movie),
             style: {
-                maxHeight: "100%",
+                height: "100%",
                 margin: "2rem"
             },
-            fluid: true,
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
                     style: {
-                        maxHeight: "30rem"
+                        height: "75%",
+                        textAlign: "center"
                     },
-                    fluid: true,
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Img, {
                         variant: "top",
-                        src: movie.ImagePath
+                        src: movie.ImagePath,
+                        style: {
+                            width: "100%",
+                            height: "100%",
+                            scale: "0.8"
+                        },
+                        fluid: true
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
                         lineNumber: 16,
@@ -27823,22 +27819,28 @@ const MovieCard = ({ movie, onMovieClick })=>{
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
+                    style: {
+                        height: "25%"
+                    },
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Title, {
+                            style: {
+                                fontSize: "14px"
+                            },
                             children: movie.Title
                         }, void 0, false, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 20,
+                            lineNumber: 19,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("card-text", {
                             style: {
-                                overflow: "hide"
+                                fontSize: "12px"
                             },
                             children: movie.Genre.Name
                         }, void 0, false, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 21,
+                            lineNumber: 20,
                             columnNumber: 11
                         }, undefined)
                     ]

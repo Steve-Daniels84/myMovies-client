@@ -89,17 +89,10 @@ useEffect(() => {
         <div className="loading-spinner-container"><img className="loading-spinner" src={spinner} alt="loading spinner"/></div>
       ) : (
         <>
-
             <HeaderBar />
-
-      <Row>
-        <Col md={3}>            
-          <SideBar 
-            handleLogout= {handleLogout}
-          />
-      </Col>
-        <Col >
-        <Row>
+      <Row >
+        <Col>
+        <Row style={{height:"100vh"}}>
             {movies.map((movie) => (
               <MovieCard
                 key={movie.Id}
