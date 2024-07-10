@@ -180,8 +180,6 @@
 }
 
 .movie-card {
-  height: 20rem;
-  width: 20rem;
   border-radius: 20px;
   padding: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -196,13 +194,13 @@
 
 .movie-card-header {
   display: flex;
-  height: 200px;
+  height: 150px;
 }
 
 .movie-card-image-container {
   height: 100%;
   width: 100%;
-  max-width: 200px;
+  max-width: 150px;
   text-align: center;
 }
 
@@ -210,11 +208,11 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  padding: 10px;
+  padding: 5px;
 }
 
 .movie-card-title {
-  margin-left: 10px;
+  margin-left: 5px;
   text-align: left;
 }
 
@@ -234,6 +232,53 @@
 .movie-card-description {
   padding: 10px;
   font-size: 14;
+}
+.login-form-container {
+  text-align: left;
+  padding: 20px;
+  margin: 100px;
+}
+
+.login-form-container input {
+  height: 30px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+.login-form-container {
+  text-align: left;
+  padding: 20px;
+  margin: 100px;
+}
+
+.login-form-container input {
+  height: 30px;
+  width: 100%;
+  border-radius: 5px;
+}
+.signup-login-container {
+  width: 100vw;
+  display: flex;
+}
+
+.login-image-container {
+  width: 75vw;
+  height: 100vh;
+}
+
+.login-image-container {
+  text-align: center;
+}
+
+.form-container {
+  width: 25vw;
+  height: 100vh;
+  text-align: center;
+  background-color: white;
+  border: 1px solid black;
 }
 * {
   box-sizing: border-box;

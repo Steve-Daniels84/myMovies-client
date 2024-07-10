@@ -28912,7 +28912,7 @@ if ("development" === 'production') {
 }
 },{"react-dom":"../node_modules/react-dom/index.js"}],"../public/img/logo.svg":[function(require,module,exports) {
 module.exports = "/logo.c0ea850f.svg";
-},{}],"../../../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{}],"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -28937,7 +28937,7 @@ function getBaseURL(url) {
 }
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 function updateLink(link) {
   var newLink = link.cloneNode();
@@ -28963,11 +28963,11 @@ function reloadCSS() {
   }, 50);
 }
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/header-bar/header-bar.scss":[function(require,module,exports) {
+},{"./bundle-url":"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/header-bar/header-bar.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/header-bar/header-bar.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/header-bar/header-bar.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29001,28 +29001,32 @@ var HeaderBar = exports.HeaderBar = function HeaderBar() {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/side-bar/side-bar.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/side-bar/side-bar.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.SideBar = void 0;
+var _react = require("react");
 require("./side-bar.scss");
-var SideBar = exports.SideBar = function SideBar() {
+var SideBar = exports.SideBar = function SideBar(_ref) {
+  var handleLogout = _ref.handleLogout;
   return /*#__PURE__*/React.createElement("div", {
     className: "sidebar-container"
   }, /*#__PURE__*/React.createElement("div", {
     className: "sidbar-header"
   }), /*#__PURE__*/React.createElement("div", {
     className: "sidebar-filter-container"
-  }, /*#__PURE__*/React.createElement("h2", null, "Filters"), /*#__PURE__*/React.createElement("button", null, "logout")));
+  }, /*#__PURE__*/React.createElement("h2", null, "Filters"), /*#__PURE__*/React.createElement("button", {
+    onClick: handleLogout
+  }, "Logout")));
 };
-},{"./side-bar.scss":"components/side-bar/side-bar.scss"}],"components/movie-view-modal/movie-view.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./side-bar.scss":"components/side-bar/side-bar.scss"}],"components/movie-view-modal/movie-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
+},{"_css_loader":"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -29957,7 +29961,7 @@ if ("development" !== 'production') {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/similar-movies/similar-movies.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/similar-movies/similar-movies.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29975,13 +29979,18 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 var SimilarMovies = exports.SimilarMovies = function SimilarMovies(_ref) {
-  var genre = _ref.genre;
+  var genre = _ref.genre,
+    token = _ref.token;
   var _useState = (0, _react.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
     similarMovies = _useState2[0],
     setSimilarMovies = _useState2[1];
   (0, _react.useEffect)(function () {
-    fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies/" + genre).then(function (response) {
+    fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies/" + genre, {
+      headers: {
+        Authorization: "Bearer ".concat(token)
+      }
+    }).then(function (response) {
       return response.json();
     }).then(function (data) {
       var movies = data.map(function (movie) {
@@ -30039,7 +30048,8 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e
 var MovieViewModal = exports.MovieViewModal = function MovieViewModal(_ref) {
   var show = _ref.show,
     movie = _ref.movie,
-    onClose = _ref.onClose;
+    onClose = _ref.onClose,
+    token = _ref.token;
   if (!show) {
     return null;
   }
@@ -30078,7 +30088,8 @@ var MovieViewModal = exports.MovieViewModal = function MovieViewModal(_ref) {
   }, /*#__PURE__*/React.createElement("h3", null, "Bio"), /*#__PURE__*/React.createElement("p", null, movie.Director.Bio), /*#__PURE__*/React.createElement("p", null, "Born: ", movie.Director.Birth))), /*#__PURE__*/React.createElement("div", {
     className: "movie-view-modal-director"
   }, /*#__PURE__*/React.createElement(_similarMovies.SimilarMovies, {
-    genre: movie.Genre.Name
+    genre: movie.Genre.Name,
+    token: token
   })), /*#__PURE__*/React.createElement("div", {
     className: "movie-view-modal-footer"
   }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("button", {
@@ -30099,7 +30110,7 @@ MovieViewModal.propTypes = {
     Director: _propTypes.default.shape({
       Name: _propTypes.default.string.isRequired,
       Bio: _propTypes.default.string.isRequired,
-      Birth: _propTypes.default.string.isRequired,
+      Birth: _propTypes.default.string,
       HeadShots: _propTypes.default.array.isRequired
     }),
     Genre: _propTypes.default.shape({
@@ -30111,7 +30122,7 @@ MovieViewModal.propTypes = {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/movie-card/movie-card.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/movie-card/movie-card.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30160,7 +30171,284 @@ MovieCard.propTypes = {
     })
   })
 };
-},{"react":"../node_modules/react/index.js","../movie-view-modal/movie-view-modal":"components/movie-view-modal/movie-view-modal.jsx","./movie-card.scss":"components/movie-card/movie-card.scss","prop-types":"../node_modules/prop-types/index.js"}],"../public/img/spinner.gif":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../movie-view-modal/movie-view-modal":"components/movie-view-modal/movie-view-modal.jsx","./movie-card.scss":"components/movie-card/movie-card.scss","prop-types":"../node_modules/prop-types/index.js"}],"components/signup/signup.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/signup/signup.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SignUp = void 0;
+var _react = require("react");
+require("./signup.scss");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+var SignUp = exports.SignUp = function SignUp(_ref) {
+  var setMessage = _ref.setMessage;
+  var _useState = (0, _react.useState)(""),
+    _useState2 = _slicedToArray(_useState, 2),
+    email = _useState2[0],
+    setEmail = _useState2[1];
+  var _useState3 = (0, _react.useState)(""),
+    _useState4 = _slicedToArray(_useState3, 2),
+    password = _useState4[0],
+    setPassword = _useState4[1];
+  var _useState5 = (0, _react.useState)(""),
+    _useState6 = _slicedToArray(_useState5, 2),
+    username = _useState6[0],
+    setUsername = _useState6[1];
+  var handleSignup = function handleSignup(event) {
+    event.preventDefault();
+    var data = {
+      Email: email,
+      Username: username,
+      Password: password
+    };
+    fetch("https://mymovies-api-d8738180d851.herokuapp.com/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    }).then(function (response) {
+      if (response.ok) {
+        setMessage("Successfully signed up!");
+        window.location.reload();
+      } else {
+        return response.json().then(function (data) {
+          var errors = data.errors;
+          var errorMessage = "Signup failed: ";
+          if (Array.isArray(errors)) {
+            errors.forEach(function (e) {
+              errorMessage += "".concat(e.msg);
+            });
+          } else {
+            errorMessage += data.message || "An unknown error occurred.";
+          }
+          setMessage(errorMessage);
+        });
+      }
+    }).catch(function (err) {
+      setMessage("Error: ".concat(err.message || err));
+    });
+  };
+  return /*#__PURE__*/React.createElement("form", {
+    className: "login-form-container",
+    onSubmit: handleSignup
+  }, /*#__PURE__*/React.createElement("label", null, "Username:"), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    value: username,
+    onChange: function onChange(e) {
+      setUsername(e.target.value);
+    },
+    required: true
+  }), /*#__PURE__*/React.createElement("label", null), /*#__PURE__*/React.createElement("label", null, "Email:"), /*#__PURE__*/React.createElement("input", {
+    placeholder: "example@example.com",
+    type: "email",
+    value: email,
+    onChange: function onChange(e) {
+      setEmail(e.target.value);
+    },
+    required: true
+  }), /*#__PURE__*/React.createElement("label", null, "Password:"), /*#__PURE__*/React.createElement("input", {
+    type: "password",
+    value: password,
+    onChange: function onChange(e) {
+      setPassword(e.target.value);
+    },
+    minLength: 12,
+    required: true
+  }), /*#__PURE__*/React.createElement("button", {
+    type: "submit"
+  }, "Submit"));
+};
+},{"react":"../node_modules/react/index.js","./signup.scss":"components/signup/signup.scss"}],"components/login/login.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/login-message/login-message.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/login-message/login-message.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.LoginMessage = void 0;
+var _react = require("react");
+require("./login-message.scss");
+var LoginMessage = exports.LoginMessage = function LoginMessage(_ref) {
+  var message = _ref.message;
+  if (!message) {
+    return null;
+  }
+  return /*#__PURE__*/React.createElement("div", {
+    className: "login-message"
+  }, message);
+};
+},{"react":"../node_modules/react/index.js","./login-message.scss":"components/login-message/login-message.scss"}],"components/login/login.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Login = void 0;
+var _react = require("react");
+require("./login.scss");
+var _loginMessage = require("../login-message/login-message");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+var Login = exports.Login = function Login(_ref) {
+  var onLoggedIn = _ref.onLoggedIn,
+    setMessage = _ref.setMessage;
+  var _useState = (0, _react.useState)(""),
+    _useState2 = _slicedToArray(_useState, 2),
+    username = _useState2[0],
+    setUsername = _useState2[1];
+  var _useState3 = (0, _react.useState)(""),
+    _useState4 = _slicedToArray(_useState3, 2),
+    password = _useState4[0],
+    setPassword = _useState4[1];
+  var handleSubmit = function handleSubmit(event) {
+    event.preventDefault();
+    var data = {
+      Username: username,
+      Password: password
+    };
+    fetch("https://mymovies-api-d8738180d851.herokuapp.com/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    }).then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      if (data.token) {
+        localStorage.setItem("user", username);
+        localStorage.setItem("token", data.token);
+        onLoggedIn(username, data.token);
+      } else {
+        setMessage(data.message);
+      }
+    });
+  };
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_loginMessage.LoginMessage, null), /*#__PURE__*/React.createElement("form", {
+    className: "login-form-container",
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/React.createElement("label", null, "Username:"), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    value: username,
+    onChange: function onChange(e) {
+      setUsername(e.target.value);
+    },
+    required: true
+  }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("label", null, "Password:"), /*#__PURE__*/React.createElement("input", {
+    type: "password",
+    value: password,
+    onChange: function onChange(e) {
+      setPassword(e.target.value);
+    },
+    required: true
+  }), /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("button", {
+    type: "submit"
+  }, "Submit")));
+};
+},{"react":"../node_modules/react/index.js","./login.scss":"components/login/login.scss","../login-message/login-message":"components/login-message/login-message.jsx"}],"components/signup-login/signup-login.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../public/img/loginImage.png":[function(require,module,exports) {
+module.exports = "/loginImage.59528870.png";
+},{}],"components/signup-login/signup-login.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SignupLogin = void 0;
+var _react = require("react");
+var _signup = require("../signup/signup");
+var _login = require("../login/login");
+var _loginMessage = require("../login-message/login-message");
+require("./signup-login.scss");
+var _loginImage = _interopRequireDefault(require("../../../public/img/loginImage.png"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+var SignupLogin = exports.SignupLogin = function SignupLogin(_ref) {
+  var setUser = _ref.setUser,
+    setToken = _ref.setToken;
+  var _useState = (0, _react.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    isSignup = _useState2[0],
+    setIsSignup = _useState2[1];
+  var _useState3 = (0, _react.useState)(""),
+    _useState4 = _slicedToArray(_useState3, 2),
+    message = _useState4[0],
+    setMessage = _useState4[1];
+  return isSignup ? /*#__PURE__*/React.createElement("div", {
+    className: "signup-login-container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "login-image-container"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: _loginImage.default,
+    alt: ""
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "form-container"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      setIsSignup(!isSignup);
+    }
+  }, "Login"), /*#__PURE__*/React.createElement("div", {
+    className: "login-message-container"
+  }, /*#__PURE__*/React.createElement(_loginMessage.LoginMessage, {
+    message: message
+  }))), /*#__PURE__*/React.createElement(_signup.SignUp, {
+    setMessage: setMessage
+  }))) : /*#__PURE__*/React.createElement("div", {
+    className: "signup-login-container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "login-image-container"
+  }, /*#__PURE__*/React.createElement("img", {
+    src: _loginImage.default,
+    alt: ""
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "form-container"
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      setIsSignup(!isSignup);
+    }
+  }, "SignUp"), /*#__PURE__*/React.createElement("div", {
+    className: "login-message-container"
+  }, /*#__PURE__*/React.createElement(_loginMessage.LoginMessage, {
+    message: message
+  }))), /*#__PURE__*/React.createElement(_login.Login, {
+    onLoggedIn: function onLoggedIn(user, token) {
+      setUser(user);
+      setToken(token);
+    },
+    setMessage: setMessage
+  })));
+};
+},{"react":"../node_modules/react/index.js","../signup/signup":"components/signup/signup.jsx","../login/login":"components/login/login.jsx","../login-message/login-message":"components/login-message/login-message.jsx","./signup-login.scss":"components/signup-login/signup-login.scss","../../../public/img/loginImage.png":"../public/img/loginImage.png"}],"../public/img/spinner.gif":[function(require,module,exports) {
 module.exports = "/spinner.dd48f136.gif";
 },{}],"components/main-view/main-view.jsx":[function(require,module,exports) {
 "use strict";
@@ -30174,6 +30462,7 @@ var _headerBar = require("../header-bar/header-bar");
 var _sideBar = require("../side-bar/side-bar");
 var _movieCard = require("../movie-card/movie-card");
 var _movieViewModal = require("../movie-view-modal/movie-view-modal");
+var _signupLogin = require("../signup-login/signup-login");
 var _spinner = _interopRequireDefault(require("../../../public/img/spinner.gif"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
@@ -30187,41 +30476,66 @@ var MainView = exports.MainView = function MainView() {
     _useState2 = _slicedToArray(_useState, 2),
     movies = _useState2[0],
     setMovies = _useState2[1];
-  (0, _react.useEffect)(function () {
-    fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies").then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      var movies = data.map(function (movie) {
-        return {
-          Id: movie._id,
-          Title: movie.Title,
-          ImagePath: movie.ImagePath,
-          ReleaseYear: movie.ReleaseYear,
-          Description: movie.Description,
-          Plot: movie.Plot,
-          Genre: {
-            Name: movie.Genre.Name,
-            Description: movie.Genre.Description
-          },
-          Director: {
-            Name: movie.Director.Name,
-            Bio: movie.Director.Bio,
-            Birth: movie.Director.Birth,
-            HeadShots: movie.Director.HeadShots
-          }
-        };
-      });
-      setMovies(movies);
-    });
-  });
   var _useState3 = (0, _react.useState)(null),
     _useState4 = _slicedToArray(_useState3, 2),
-    selectedMovie = _useState4[0],
-    setSelectedMovie = _useState4[1];
-  var _useState5 = (0, _react.useState)(false),
+    user = _useState4[0],
+    setUser = _useState4[1];
+  var _useState5 = (0, _react.useState)(null),
     _useState6 = _slicedToArray(_useState5, 2),
-    showModal = _useState6[0],
-    setShowModal = _useState6[1];
+    token = _useState6[0],
+    setToken = _useState6[1];
+  var _useState7 = (0, _react.useState)(null),
+    _useState8 = _slicedToArray(_useState7, 2),
+    selectedMovie = _useState8[0],
+    setSelectedMovie = _useState8[1];
+  var _useState9 = (0, _react.useState)(false),
+    _useState10 = _slicedToArray(_useState9, 2),
+    showModal = _useState10[0],
+    setShowModal = _useState10[1];
+  var storedUser = localStorage.getItem(user);
+  var storedToken = localStorage.getItem(token);
+  (0, _react.useEffect)(function () {
+    if (!token) {
+      return;
+    }
+    if (user) {
+      fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies", {
+        headers: {
+          Authorization: "Bearer ".concat(token)
+        }
+      }).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        var movies = data.map(function (movie) {
+          return {
+            Id: movie._id,
+            Title: movie.Title,
+            ImagePath: movie.ImagePath,
+            ReleaseYear: movie.ReleaseYear,
+            Description: movie.Description,
+            Plot: movie.Plot,
+            Genre: {
+              Name: movie.Genre.Name,
+              Description: movie.Genre.Description
+            },
+            Director: {
+              Name: movie.Director.Name,
+              Bio: movie.Director.Bio,
+              Birth: movie.Director.Birth,
+              HeadShots: movie.Director.HeadShots
+            }
+          };
+        });
+        setMovies(movies);
+      });
+    }
+  }, [user]);
+  if (!user) {
+    return /*#__PURE__*/React.createElement(_signupLogin.SignupLogin, {
+      setUser: setUser,
+      setToken: setToken
+    });
+  }
   var handleOpenModal = function handleOpenModal(movie) {
     setSelectedMovie(movie);
     setShowModal(true);
@@ -30229,6 +30543,11 @@ var MainView = exports.MainView = function MainView() {
   var handleCloseModal = function handleCloseModal() {
     setSelectedMovie(null);
     setShowModal(false);
+  };
+  var handleLogout = function handleLogout() {
+    setUser(null);
+    setToken(null);
+    localStorage.clear();
   };
   if (movies.length === 0) {
     return /*#__PURE__*/React.createElement("div", {
@@ -30243,7 +30562,9 @@ var MainView = exports.MainView = function MainView() {
     className: "main-view"
   }, /*#__PURE__*/React.createElement(_headerBar.HeaderBar, null), /*#__PURE__*/React.createElement("div", {
     className: "main-content"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_sideBar.SideBar, null)), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_sideBar.SideBar, {
+    handleLogout: handleLogout
+  })), /*#__PURE__*/React.createElement("div", {
     className: "movie-card-grid"
   }, movies.map(function (movie) {
     return /*#__PURE__*/React.createElement(_movieCard.MovieCard, {
@@ -30256,14 +30577,15 @@ var MainView = exports.MainView = function MainView() {
   }))), /*#__PURE__*/React.createElement(_movieViewModal.MovieViewModal, {
     show: showModal,
     movie: selectedMovie,
-    onClose: handleCloseModal
+    onClose: handleCloseModal,
+    token: token
   }));
 };
-},{"react":"../node_modules/react/index.js","../header-bar/header-bar":"components/header-bar/header-bar.jsx","../side-bar/side-bar":"components/side-bar/side-bar.jsx","../movie-card/movie-card":"components/movie-card/movie-card.jsx","../movie-view-modal/movie-view-modal":"components/movie-view-modal/movie-view-modal.jsx","../../../public/img/spinner.gif":"../public/img/spinner.gif"}],"index.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","../header-bar/header-bar":"components/header-bar/header-bar.jsx","../side-bar/side-bar":"components/side-bar/side-bar.jsx","../movie-card/movie-card":"components/movie-card/movie-card.jsx","../movie-view-modal/movie-view-modal":"components/movie-view-modal/movie-view-modal.jsx","../signup-login/signup-login":"components/signup-login/signup-login.jsx","../../../public/img/spinner.gif":"../public/img/spinner.gif"}],"index.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.jsx":[function(require,module,exports) {
 "use strict";
 
 var _client = require("react-dom/client");
@@ -30282,7 +30604,7 @@ var root = (0, _client.createRoot)(container);
 
 // Tells React to render your app in the root DOM element
 root.render( /*#__PURE__*/React.createElement(App, null));
-},{"react-dom/client":"../node_modules/react-dom/client.js","./components/main-view/main-view":"components/main-view/main-view.jsx","./index.scss":"index.scss"}],"../../../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react-dom/client":"../node_modules/react-dom/client.js","./components/main-view/main-view":"components/main-view/main-view.jsx","./index.scss":"index.scss"}],"../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -30307,7 +30629,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56377" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64134" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
@@ -30451,5 +30773,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../../opt/homebrew/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.jsx"], null)
+},{}]},{},["../../../../../.nvm/versions/node/v22.4.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.jsx"], null)
 //# sourceMappingURL=/src.78399e21.js.map
