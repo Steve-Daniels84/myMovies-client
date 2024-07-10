@@ -7,7 +7,7 @@ export const SideBar = ({handleLogout}) => {
             <div className="sidbar-header">
             </div>
             <div className="sidebar-filter-container">
-                <h2>Filters</h2>
+                <h2>Filter</h2>
                 <button onClick={handleLogout}>Logout</button>
             </div>
         </div>

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./login.scss";
 import { LoginMessage } from "../login-message/login-message";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 export const Login = ({ onLoggedIn , setMessage}) => {
   const [username, setUsername] = useState("");
@@ -38,9 +40,11 @@ export const Login = ({ onLoggedIn , setMessage}) => {
     <div>
         <LoginMessage />
 
-    <form className="login-form-container" onSubmit={handleSubmit}>
-      <label>Username:</label>
-      <input
+    <Form onSubmit={handleSubmit}>
+    <Form.Group controlId="formUsername">
+      <Form.Label>Username:</Form.Label>
+
+      <Form.Control
         type="text"
         value={username}
         onChange={(e) => {
@@ -48,19 +52,19 @@ export const Login = ({ onLoggedIn , setMessage}) => {
         }}
         required
       />
-      <br />
-      <label>Password:</label>
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-        required
+      </Form.Group>
+      <Form.Group controlId="formPassword"></Form.Group>
+        <Form.Label>Password:</Form.Label>
+        <Form.Control
+          type="password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+          required
       />
-      <br />
-      <button type="submit">Submit</button>
-    </form>
+      <Button type="submit">Submit</Button>
+    </Form>
     </div>
   );
 };
