@@ -192,7 +192,54 @@ export const MainView = () => {
                       />
                     )}
                   </>
-                )}
+                ) }
+              </>
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <>
+                {!user ? (
+                  <SignupLogin
+                    setUser={setUser}
+                    setToken={setToken}
+                    Signup={false}
+                  />
+                ) : movies.length === 0 ? (
+                  <div className="loading-spinner-container">
+                    <img
+                      className="loading-spinner"
+                      src={spinner}
+                      alt="loading spinner"
+                    />
+                  </div>
+                ) : (
+                  <>
+                    <HeaderBar />
+                    <Row>
+                      <Col>
+                        <Row style={{ height: "100vh" }}>
+                          {movies.map((movie) => (
+                            <MovieCard
+                              key={movie.Id}
+                              movie={movie}
+                              onMovieClick={() => handleOpenModal(movie)}
+                            />
+                          ))}
+                        </Row>
+                      </Col>
+                    </Row>
+                    {showModal && (
+                      <MovieViewModal
+                        show={showModal}
+                        movie={selectedMovie}
+                        onClose={handleCloseModal}
+                        token={token}
+                      />
+                    )}
+                  </>
+                ) }
               </>
             }
           />

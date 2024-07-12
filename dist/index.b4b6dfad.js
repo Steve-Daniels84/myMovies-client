@@ -27482,6 +27482,86 @@ const MainView = ()=>{
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 152,
                         columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                        path: "/",
+                        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                            children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupLogin.SignupLogin), {
+                                setUser: setUser,
+                                setToken: setToken,
+                                Signup: false
+                            }, void 0, false, {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 204,
+                                columnNumber: 19
+                            }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "loading-spinner-container",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                    className: "loading-spinner",
+                                    src: (0, _spinnerGifDefault.default),
+                                    alt: "loading spinner"
+                                }, void 0, false, {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 211,
+                                    columnNumber: 21
+                                }, void 0)
+                            }, void 0, false, {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 210,
+                                columnNumber: 19
+                            }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerBar.HeaderBar), {}, void 0, false, {
+                                        fileName: "src/components/main-view/main-view.jsx",
+                                        lineNumber: 219,
+                                        columnNumber: 21
+                                    }, void 0),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                                style: {
+                                                    height: "100vh"
+                                                },
+                                                children: movies.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                                                        movie: movie,
+                                                        onMovieClick: ()=>handleOpenModal(movie)
+                                                    }, movie.Id, false, {
+                                                        fileName: "src/components/main-view/main-view.jsx",
+                                                        lineNumber: 224,
+                                                        columnNumber: 29
+                                                    }, void 0))
+                                            }, void 0, false, {
+                                                fileName: "src/components/main-view/main-view.jsx",
+                                                lineNumber: 222,
+                                                columnNumber: 25
+                                            }, void 0)
+                                        }, void 0, false, {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 221,
+                                            columnNumber: 23
+                                        }, void 0)
+                                    }, void 0, false, {
+                                        fileName: "src/components/main-view/main-view.jsx",
+                                        lineNumber: 220,
+                                        columnNumber: 21
+                                    }, void 0),
+                                    showModal && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieViewModal.MovieViewModal), {
+                                        show: showModal,
+                                        movie: selectedMovie,
+                                        onClose: handleCloseModal,
+                                        token: token
+                                    }, void 0, false, {
+                                        fileName: "src/components/main-view/main-view.jsx",
+                                        lineNumber: 234,
+                                        columnNumber: 23
+                                    }, void 0)
+                                ]
+                            }, void 0, true)
+                        }, void 0, false)
+                    }, void 0, false, {
+                        fileName: "src/components/main-view/main-view.jsx",
+                        lineNumber: 199,
+                        columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
@@ -27510,7 +27590,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../header-bar/header-bar":"97I93","../side-bar/side-bar":"bbzZy","../movie-card/movie-card":"bwuIu","../signup-login/signup-login":"eRc6I","../../../public/img/spinner.gif":"iAGZ8","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap":"3AD9A","../movie-view-modal/movie-view-modal":"fj2bU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"97I93":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../header-bar/header-bar":"97I93","../side-bar/side-bar":"bbzZy","../movie-card/movie-card":"bwuIu","../signup-login/signup-login":"eRc6I","../../../public/img/spinner.gif":"iAGZ8","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","react-bootstrap":"3AD9A","../movie-view-modal/movie-view-modal":"fj2bU","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"97I93":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f9e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
