@@ -11,7 +11,6 @@ import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import thumbUp from '../../../public/img/thumbUp.svg';
 import thumbDown from '../../../public/img/thumbDown.svg';
-import { Col } from 'react-bootstrap';
 
 export const MovieViewModal = ( {show, movie, onClose, token} ) => {
 
