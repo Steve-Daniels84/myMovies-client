@@ -113,138 +113,141 @@ export const MainView = () => {
   //   );
 
   return (
-    <BrowserRouter>
-      <Row>
-        <Routes>
-          <Route
-            //path affected
-            path="/signup"
-            element={
-              <>
-                {user ? ( //condition
-                  <Navigate to="/movies" /> // render if true
-                ) : (
-                  <SignupLogin
-                    setUser={setUser}
-                    setToken={setToken}
-                    Signup={true}
-                  /> //render if false
-                )}
-              </>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <>
-                {user ? (
-                  <Navigate to="/movies" />
-                ) : (
-                  <SignupLogin
-                    setUser={setUser}
-                    setToken={setToken}
-                    Signup={false}
-                  />
-                )}
-              </>
-            }
-          />
-          <Route
-            path="/movies"
-            element={
-              <>
-                {!user ? (
-                  <SignupLogin
-                    setUser={setUser}
-                    setToken={setToken}
-                    Signup={false}
-                  />
-                ) : movies.length === 0 ? (
-                  <div className="loading-spinner-container">
-                    <img
-                      className="loading-spinner"
-                      src={spinner}
-                      alt="loading spinner"
+    <Col>
+      <BrowserRouter>
+        <Row>
+          <Routes>
+            <Route
+              //path affected
+              path="/signup"
+              element={
+                <>
+                  {user ? ( //condition
+                    <Navigate to="/movies" /> // render if true
+                  ) : (
+                    <SignupLogin
+                      setUser={setUser}
+                      setToken={setToken}
+                      Signup={true}
+                    /> //render if false
+                  )}
+                </>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <>
+                  {user ? (
+                    <Navigate to="/movies" />
+                  ) : (
+                    <SignupLogin
+                      setUser={setUser}
+                      setToken={setToken}
+                      Signup={false}
                     />
-                  </div>
-                ) : (
-                  <>
-                    <HeaderBar />
-                    <Row>
-                      <Col>
-                        <Row style={{ height: "100vh" }}>
-                          {movies.map((movie) => (
-                            <MovieCard
-                              key={movie.Id}
-                              movie={movie}
-                              onMovieClick={() => handleOpenModal(movie)}
-                            />
-                          ))}
-                        </Row>
-                      </Col>
-                    </Row>
-                    {showModal && (
-                      <MovieViewModal
-                        show={showModal}
-                        movie={selectedMovie}
-                        onClose={handleCloseModal}
-                        token={token}
-                      />
-                    )}
-                  </>
-                ) }
-              </>
-            }
-          />
-          <Route
-            path="/"
-            element={
-              <>
-                {!user ? (
-                  <SignupLogin
-                    setUser={setUser}
-                    setToken={setToken}
-                    Signup={false}
-                  />
-                ) : movies.length === 0 ? (
-                  <div className="loading-spinner-container">
-                    <img
-                      className="loading-spinner"
-                      src={spinner}
-                      alt="loading spinner"
+                  )}
+                </>
+              }
+            />
+            <Route
+              path="/movies"
+              element={
+                <>
+                  {!user ? (
+                    <SignupLogin
+                      setUser={setUser}
+                      setToken={setToken}
+                      Signup={false}
                     />
-                  </div>
-                ) : (
-                  <>
-                    <HeaderBar />
-                    <Row>
-                      <Col>
-                        <Row style={{ height: "100vh" }}>
-                          {movies.map((movie) => (
-                            <MovieCard
-                              key={movie.Id}
-                              movie={movie}
-                              onMovieClick={() => handleOpenModal(movie)}
-                            />
-                          ))}
-                        </Row>
-                      </Col>
-                    </Row>
-                    {showModal && (
-                      <MovieViewModal
-                        show={showModal}
-                        movie={selectedMovie}
-                        onClose={handleCloseModal}
-                        token={token}
+                  ) : movies.length === 0 ? (
+                    <div className="loading-spinner-container">
+                      <img
+                        className="loading-spinner"
+                        src={spinner}
+                        alt="loading spinner"
                       />
-                    )}
-                  </>
-                ) }
-              </>
-            }
-          />
-        </Routes>
-      </Row>
-    </BrowserRouter>
+                    </div>
+                  ) : (
+                    <>
+                      <HeaderBar />
+                      <Row>
+                        <Col>
+                          <SideBar handleLogout={handleLogout} />
+                          <Row style={{ height: "100vh" }}>
+                            {movies.map((movie) => (
+                              <MovieCard
+                                key={movie.Id}
+                                movie={movie}
+                                onMovieClick={() => handleOpenModal(movie)}
+                              />
+                            ))}
+                          </Row>
+                        </Col>
+                      </Row>
+                      {showModal && (
+                        <MovieViewModal
+                          show={showModal}
+                          movie={selectedMovie}
+                          onClose={handleCloseModal}
+                          token={token}
+                        />
+                      )}
+                    </>
+                  )}
+                </>
+              }
+            />
+            <Route
+              path="/"
+              element={
+                <>
+                  {!user ? (
+                    <SignupLogin
+                      setUser={setUser}
+                      setToken={setToken}
+                      Signup={false}
+                    />
+                  ) : movies.length === 0 ? (
+                    <div className="loading-spinner-container">
+                      <img
+                        className="loading-spinner"
+                        src={spinner}
+                        alt="loading spinner"
+                      />
+                    </div>
+                  ) : (
+                    <>
+                      <HeaderBar />
+                      <Row>
+                        <Col>
+                          <Row style={{ height: "100vh" }}>
+                            {movies.map((movie) => (
+                              <MovieCard
+                                key={movie.Id}
+                                movie={movie}
+                                onMovieClick={() => handleOpenModal(movie)}
+                              />
+                            ))}
+                          </Row>
+                        </Col>
+                      </Row>
+                      {showModal && (
+                        <MovieViewModal
+                          show={showModal}
+                          movie={selectedMovie}
+                          onClose={handleCloseModal}
+                          token={token}
+                        />
+                      )}
+                    </>
+                  )}
+                </>
+              }
+            />
+          </Routes>
+        </Row>
+      </BrowserRouter>
+    </Col>
   );
 };
