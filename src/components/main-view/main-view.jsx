@@ -123,7 +123,7 @@ export const MainView = () => {
               element={
                 <>
                   {user ? ( //condition
-                    <Navigate to="/movies" /> // render if true
+                    <Navigate to="/movies" replace/> // render if true
                   ) : (
                     <SignupLogin
                       setUser={setUser}
@@ -155,6 +155,41 @@ export const MainView = () => {
               element={
                 <>
                   {!user ? (
+                <Navigate to="/login"/>
+                  ) : (
+                    <>
+                      <HeaderBar onClick={handleLogout} user={user}/>
+                      <Row>
+                        <Col>
+                          <Row style={{ height: "100vh" }}>
+                            {movies.map((movie) => (
+                              <MovieCard
+                                key={movie.Id}
+                                movie={movie}
+                                onMovieClick={() => handleOpenModal(movie)}
+                              />
+                            ))}
+                          </Row>
+                        </Col>
+                      </Row>
+                      {showModal && (
+                        <MovieViewModal
+                          show={showModal}
+                          movie={selectedMovie}
+                          onClose={handleCloseModal}
+                          token={token}
+                        />
+                      )}
+                    </>
+                  )}
+                </>
+              }
+            />
+            <Route
+              path=""
+              element={
+                <>
+                  {!user ? (
                     <SignupLogin
                       setUser={setUser}
                       setToken={setToken}
@@ -173,7 +208,6 @@ export const MainView = () => {
                       <HeaderBar />
                       <Row>
                         <Col>
-                          <SideBar handleLogout={handleLogout} />
                           <Row style={{ height: "100vh" }}>
                             {movies.map((movie) => (
                               <MovieCard
