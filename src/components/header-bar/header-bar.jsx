@@ -6,12 +6,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import { Col, Row } from "react-bootstrap";
+import {useState} from "react";
+import {UserProfile} from "./user-profile/user-profile";
 
 
 
 export const HeaderBar = ({onClick, user}) => {
 
-console.log({user});
+const [showEdit, setShowEdit] = useState(false);
 
   return (
     <>
@@ -30,7 +32,8 @@ console.log({user});
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" style={{color:"#ffd700"}} className="justify-content-end">
           <Nav className="ms-auto">
-            <NavDropdown className="dropdown-title" title={user} id="basic-nav-dropdown" >
+            <NavDropdown className="dropdown-title" title={`${user}`} id="basic-nav-dropdown">
+            <UserProfile show={showEdit} setShow={setShowEdit} user={user}/>
             <Col>
               <Row className="d-flex justify-content-center">
                 <Button className="button-generic" onClick={onClick} style={{width: "75%"}}>Logout</Button>

@@ -71,7 +71,7 @@ export const MainView = () => {
     setToken(null);
     localStorage.clear();
   };
-
+  
   //   return (
   //     <Row>
   //       {!user ? (
@@ -205,7 +205,7 @@ export const MainView = () => {
                     </div>
                   ) : (
                     <>
-                      <HeaderBar />
+                      <HeaderBar user={user} />
                       <Row>
                         <Col>
                           <Row style={{ height: "100vh" }}>

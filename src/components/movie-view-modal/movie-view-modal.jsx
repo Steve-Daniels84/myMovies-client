@@ -9,10 +9,11 @@ import Image from 'react-bootstrap/Image';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import thumbUp from '../../../public/img/thumbUp.svg';
-import thumbDown from '../../../public/img/thumbDown.svg';
+import {AddFavouriteMovie} from '../../hooks/add-remove-favourite';
 
 export const MovieViewModal = ( {show, movie, onClose, token} ) => {
+
+
 
     if(!show) {
         return null
@@ -22,7 +23,7 @@ export const MovieViewModal = ( {show, movie, onClose, token} ) => {
 
      <div  onClick={onClose}>
         <>        
-        <Modal show={show} size='lg'>
+        <Modal show={show} size='lg' onClick={(e) => e.stopPropagation()}>
             <Modal.Header>
                 <Modal.Title>{movie.Title}</Modal.Title>
                 <CloseButton onClick={onClose} style={{cursor: "pointer"}}></CloseButton>
@@ -32,7 +33,10 @@ export const MovieViewModal = ( {show, movie, onClose, token} ) => {
                     <Col xs={5}>
                         <Image src={movie.ImagePath} fluid></Image>
                     </Col>
-                    <Col xs={7}>Genre: {movie.Genre.Name}</Col>
+                    <Col xs={7}>
+                    <p>Genre: {movie.Genre.Name}</p>
+                    <p>{movie.Plot}</p>
+                    </Col>
                 </Row>
                 <Row>
                     <Col xs={3}>
@@ -53,16 +57,12 @@ export const MovieViewModal = ( {show, movie, onClose, token} ) => {
             </Modal.Body>
             <Modal.Footer> 
                 <ButtonToolbar >
+
                     <ButtonGroup className='me-2'>
-                        <Button variant="outline-warning">
-                            <Image src={thumbUp}></Image>
-                        </Button>
-                        <Button variant="outline-warning">
-                            <Image src={thumbDown}></Image>
-                        </Button>
-                    </ButtonGroup>
-                    <ButtonGroup className='me-2'>
-                        <Button >+ Add</Button>
+                        <Button onClick={(event) => {
+                            event.stopPropagation();
+                            AddFavouriteMovie(movie.Id)
+                        }}>+ Add</Button>
                     </ButtonGroup>
                 </ButtonToolbar>
             </Modal.Footer>
