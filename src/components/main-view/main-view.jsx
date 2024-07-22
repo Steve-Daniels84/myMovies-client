@@ -56,7 +56,6 @@ export const MainView = () => {
   }, [user]);
 
   const handleOpenModal = (movie) => {
-    console.log("Clicked");
     setSelectedMovie(movie);
     setShowModal(true);
   };
@@ -178,6 +177,7 @@ export const MainView = () => {
                           movie={selectedMovie}
                           onClose={handleCloseModal}
                           token={token}
+                          user={storedUser}
                         />
                       )}
                     </>
@@ -205,7 +205,7 @@ export const MainView = () => {
                     </div>
                   ) : (
                     <>
-                      <HeaderBar user={user} />
+                      <HeaderBar onClick={handleLogout} user={user} />
                       <Row>
                         <Col>
                           <Row style={{ height: "100vh" }}>
@@ -221,10 +221,11 @@ export const MainView = () => {
                       </Row>
                       {showModal && (
                         <MovieViewModal
-                          show={showModal}
-                          movie={selectedMovie}
-                          onClose={handleCloseModal}
-                          token={token}
+                        show={showModal}
+                        movie={selectedMovie}
+                        onClose={handleCloseModal}
+                        token={token}
+                        user={user}
                         />
                       )}
                     </>
@@ -252,7 +253,7 @@ export const MainView = () => {
                     </div>
                   ) : (
                     <>
-                      <HeaderBar />
+                      <HeaderBar onClick={handleLogout}/>
                       <Row>
                         <Col>
                           <Row style={{ height: "100vh" }}>

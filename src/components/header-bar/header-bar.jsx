@@ -17,7 +17,7 @@ const [showEdit, setShowEdit] = useState(false);
 
   return (
     <>
-      <Navbar classname="header-bar" style={{backgroundColor: "rgb(173, 14, 14)"}}>
+      <Navbar className="header-bar" style={{backgroundColor: "rgb(173, 14, 14)"}}>
         <Container >
           <Navbar.Brand   style={{color: "#ffd700"}}>
             <img

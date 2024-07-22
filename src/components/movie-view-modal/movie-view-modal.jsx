@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import {AddFavouriteMovie} from '../../hooks/add-remove-favourite';
 
-export const MovieViewModal = ( {show, movie, onClose, token} ) => {
+export const MovieViewModal = ( {show, movie, onClose, token, user} ) => {
 
 
 
@@ -61,7 +61,7 @@ export const MovieViewModal = ( {show, movie, onClose, token} ) => {
                     <ButtonGroup className='me-2'>
                         <Button onClick={(event) => {
                             event.stopPropagation();
-                            AddFavouriteMovie(movie.Id)
+                            AddFavouriteMovie(movie, token)
                         }}>+ Add</Button>
                     </ButtonGroup>
                 </ButtonToolbar>

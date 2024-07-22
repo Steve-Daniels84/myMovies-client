@@ -25,9 +25,11 @@ export const Login = ({ onLoggedIn , setMessage}) => {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data)
         if (data.token) {
           localStorage.setItem("user", username);
           localStorage.setItem("token", data.token);
+          localStorage.setItem("userId", data.userId)
           onLoggedIn(username, data.token);
         } else {
           setMessage(data.message)

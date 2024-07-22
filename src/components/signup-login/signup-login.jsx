@@ -4,6 +4,7 @@ import { Login } from "../login/login";
 import { LoginMessage } from "../login-message/login-message";
 import "./signup-login.scss";
 import LoginImage from "../../../public/img/loginImage.png"
+
 export const SignupLogin = ({setUser, setToken, Signup}) => {
 
     const [isSignup, setIsSignup] = useState(Signup);
