@@ -9,6 +9,8 @@ import Col from "react-bootstrap/Col";
 import { Container } from "react-bootstrap";
 import { MovieViewModal } from "../movie-view-modal/movie-view-modal";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { GetUserFavourites } from '../../hooks/favourites';
+
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
@@ -16,8 +18,11 @@ export const MainView = () => {
   const [token, setToken] = useState(null);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [favourites, setFavourites] = useState([]);
   const storedUser = localStorage.getItem(user);
   const storedToken = localStorage.getItem(token);
+
+
 
   useEffect(() => {
     if (!token) {
@@ -52,8 +57,12 @@ export const MainView = () => {
           });
           setMovies(movies);
         });
+        GetUserFavourites()
+        .then((response) => {setFavourites(response)})
     }
   }, [user]);
+
+
 
   const handleOpenModal = (movie) => {
     setSelectedMovie(movie);
@@ -71,46 +80,6 @@ export const MainView = () => {
     localStorage.clear();
   };
   
-  //   return (
-  //     <Row>
-  //       {!user ? (
-  //         <>
-  //         <SignupLogin
-  //           setUser={setUser}
-  //           setToken={setToken}
-  //           />;
-  //         </>
-  //       ) : movies.length === 0 ? (
-  //         <div className="loading-spinner-container"><img className="loading-spinner" src={spinner} alt="loading spinner"/></div>
-  //       ) : (
-  //         <>
-  //             <HeaderBar />
-  //       <Row >
-  //         <Col>
-  //         <Row style={{height:"100vh"}}>
-  //             {movies.map((movie) => (
-  //               <MovieCard
-  //                 key={movie.Id}
-  //                 movie={movie}
-  //                 onMovieClick={() => handleOpenModal(movie)}
-  //               />
-  //             ))}
-  //             </Row>
-  //         </Col>
-  //     </Row>
-  //     {showModal && (
-  //             <MovieViewModal
-  //         show={showModal}
-  //         movie={selectedMovie}
-  //         onClose={handleCloseModal}
-  //         token={token}
-  //       />
-  //     )}
-  //         </>
-  //       )}
-  // </Row>
-  //   );
-
   return (
     <Col>
       <BrowserRouter>
@@ -226,6 +195,7 @@ export const MainView = () => {
                         onClose={handleCloseModal}
                         token={token}
                         user={user}
+                        favourites={favourites}
                         />
                       )}
                     </>
