@@ -139,6 +139,7 @@ export const MainView = () => {
                           onClose={handleCloseModal}
                           token={token}
                           user={user}
+                          setRefresh={setRefresh}
                         />
                       )}
                     </>
@@ -192,6 +193,7 @@ export const MainView = () => {
                           onClose={handleCloseModal}
                           token={token}
                           user={user}
+                          setRefresh={setRefresh}
                         />
                       )}
                     </>

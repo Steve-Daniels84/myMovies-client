@@ -27417,7 +27417,8 @@ const MainView = ()=>{
                                             movie: selectedMovie,
                                             onClose: handleCloseModal,
                                             token: token,
-                                            user: user
+                                            user: user,
+                                            setRefresh: setRefresh
                                         }, void 0, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
                                             lineNumber: 136,
@@ -27440,7 +27441,7 @@ const MainView = ()=>{
                                     Signup: false
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 154,
+                                    lineNumber: 155,
                                     columnNumber: 21
                                 }, void 0) : movies.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "loading-spinner-container",
@@ -27450,12 +27451,12 @@ const MainView = ()=>{
                                         alt: "loading spinner"
                                     }, void 0, false, {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 161,
+                                        lineNumber: 162,
                                         columnNumber: 23
                                     }, void 0)
                                 }, void 0, false, {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 160,
+                                    lineNumber: 161,
                                     columnNumber: 21
                                 }, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                     children: [
@@ -27466,7 +27467,7 @@ const MainView = ()=>{
                                             setRefresh: setRefresh
                                         }, void 0, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 169,
+                                            lineNumber: 170,
                                             columnNumber: 23
                                         }, void 0),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
@@ -27480,22 +27481,22 @@ const MainView = ()=>{
                                                             onMovieClick: ()=>handleOpenModal(movie)
                                                         }, movie.Id, false, {
                                                             fileName: "src/components/main-view/main-view.jsx",
-                                                            lineNumber: 179,
+                                                            lineNumber: 180,
                                                             columnNumber: 31
                                                         }, void 0))
                                                 }, void 0, false, {
                                                     fileName: "src/components/main-view/main-view.jsx",
-                                                    lineNumber: 177,
+                                                    lineNumber: 178,
                                                     columnNumber: 27
                                                 }, void 0)
                                             }, void 0, false, {
                                                 fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 176,
+                                                lineNumber: 177,
                                                 columnNumber: 25
                                             }, void 0)
                                         }, void 0, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 175,
+                                            lineNumber: 176,
                                             columnNumber: 23
                                         }, void 0),
                                         showModal && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieViewModal.MovieViewModal), {
@@ -27503,10 +27504,11 @@ const MainView = ()=>{
                                             movie: selectedMovie,
                                             onClose: handleCloseModal,
                                             token: token,
-                                            user: user
+                                            user: user,
+                                            setRefresh: setRefresh
                                         }, void 0, false, {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 189,
+                                            lineNumber: 190,
                                             columnNumber: 25
                                         }, void 0)
                                     ]
@@ -27514,7 +27516,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 149,
+                            lineNumber: 150,
                             columnNumber: 13
                         }, undefined)
                     ]
@@ -42476,16 +42478,38 @@ var _buttonToolbar = require("react-bootstrap/ButtonToolbar");
 var _buttonToolbarDefault = parcelHelpers.interopDefault(_buttonToolbar);
 var _favourites = require("../../hooks/favourites");
 var _react = require("react");
+var _users = require("../../hooks/users");
 var _s = $RefreshSig$();
-const MovieViewModal = ({ show, movie, onClose, token, user, favourites })=>{
+const MovieViewModal = ({ show, movie, onClose, token, setRefresh })=>{
     _s();
-    const [favourited, setFavourited] = (0, _react.useState)("");
-    const [favouriteTag, setFavouriteTag] = (0, _react.useState)("");
-    const [refresh, setRefresh] = (0, _react.useState)(false);
+    const [favourited, setFavourited] = (0, _react.useState)(false);
+    (0, _react.useEffect)(()=>{
+        const user = localStorage.getItem("user");
+        if (user) {
+            const data = JSON.parse(user);
+            if (data.FavouriteMovies && data.FavouriteMovies.includes(movie.Id)) setFavourited(true);
+            else setFavourited(false);
+        } else console.log("No user found in localStorage");
+    }, [
+        movie.Id
+    ]);
+    const handleFavourites = (event)=>{
+        if (event.target.id === "add") {
+            (0, _favourites.AddFavouriteMovie)(movie.Id);
+            (0, _users.GetUser)();
+            setRefresh((prev)=>!prev);
+            setFavourited(true);
+        } else {
+            (0, _favourites.DeleteFavouriteMovie)(movie.Id);
+            (0, _users.GetUser)();
+            setRefresh((prev)=>!prev);
+            setFavourited(false);
+        }
+    };
     if (!show) return null;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         onClick: onClose,
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: favourited === false ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _modalDefault.default), {
                 contentClassName: favourited,
                 show: show,
@@ -42499,13 +42523,13 @@ const MovieViewModal = ({ show, movie, onClose, token, user, favourites })=>{
                                     children: movie.Title
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                    lineNumber: 44,
-                                    columnNumber: 15
+                                    lineNumber: 67,
+                                    columnNumber: 17
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 43,
-                                columnNumber: 13
+                                lineNumber: 66,
+                                columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _closeButtonDefault.default), {
                                 onClick: onClose,
@@ -42514,14 +42538,14 @@ const MovieViewModal = ({ show, movie, onClose, token, user, favourites })=>{
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 47,
-                                columnNumber: 13
+                                lineNumber: 70,
+                                columnNumber: 15
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                        lineNumber: 42,
-                        columnNumber: 11
+                        lineNumber: 65,
+                        columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _modalDefault.default).Body, {
                         children: [
@@ -42534,13 +42558,13 @@ const MovieViewModal = ({ show, movie, onClose, token, user, favourites })=>{
                                             fluid: true
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                            lineNumber: 55,
-                                            columnNumber: 17
+                                            lineNumber: 78,
+                                            columnNumber: 19
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                        lineNumber: 54,
-                                        columnNumber: 15
+                                        lineNumber: 77,
+                                        columnNumber: 17
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                         xs: 7,
@@ -42552,27 +42576,27 @@ const MovieViewModal = ({ show, movie, onClose, token, user, favourites })=>{
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                                lineNumber: 58,
-                                                columnNumber: 17
+                                                lineNumber: 81,
+                                                columnNumber: 19
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                                 children: movie.Plot
                                             }, void 0, false, {
                                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                                lineNumber: 59,
-                                                columnNumber: 17
+                                                lineNumber: 82,
+                                                columnNumber: 19
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                        lineNumber: 57,
-                                        columnNumber: 15
+                                        lineNumber: 80,
+                                        columnNumber: 17
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 53,
-                                columnNumber: 13
+                                lineNumber: 76,
+                                columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
                                 children: [
@@ -42583,13 +42607,13 @@ const MovieViewModal = ({ show, movie, onClose, token, user, favourites })=>{
                                             fluid: true
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                            lineNumber: 64,
-                                            columnNumber: 17
+                                            lineNumber: 87,
+                                            columnNumber: 19
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                        lineNumber: 63,
-                                        columnNumber: 15
+                                        lineNumber: 86,
+                                        columnNumber: 17
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                         xs: 9,
@@ -42597,19 +42621,19 @@ const MovieViewModal = ({ show, movie, onClose, token, user, favourites })=>{
                                             children: movie.Director.Name
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                            lineNumber: 67,
-                                            columnNumber: 17
+                                            lineNumber: 90,
+                                            columnNumber: 19
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                        lineNumber: 66,
-                                        columnNumber: 15
+                                        lineNumber: 89,
+                                        columnNumber: 17
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 62,
-                                columnNumber: 13
+                                lineNumber: 85,
+                                columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _similarMovies.SimilarMovies), {
@@ -42617,76 +42641,294 @@ const MovieViewModal = ({ show, movie, onClose, token, user, favourites })=>{
                                     token: token
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                    lineNumber: 71,
-                                    columnNumber: 15
+                                    lineNumber: 94,
+                                    columnNumber: 17
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 70,
-                                columnNumber: 13
+                                lineNumber: 93,
+                                columnNumber: 15
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                        lineNumber: 52,
-                        columnNumber: 11
+                        lineNumber: 75,
+                        columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _modalDefault.default).Footer, {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                                className: "",
-                                children: favouriteTag
-                            }, void 0, false, {
-                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 75,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonToolbarDefault.default), {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
-                                        onClick: (event)=>{
-                                            event.stopPropagation();
-                                            (0, _favourites.AddFavouriteMovie)(movie, token);
-                                            setRefresh((prev)=>!prev);
-                                            setFavouriteTag("One of your Favourites!");
-                                            setFavourited("favourite");
-                                        },
-                                        children: "+ Add"
-                                    }, void 0, false, {
-                                        fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                        lineNumber: 78,
-                                        columnNumber: 17
-                                    }, undefined)
-                                }, void 0, false, {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonToolbarDefault.default), {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonGroupDefault.default), {
+                                    "aria-label": "Basic example",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                            variant: "primary",
+                                            onClick: handleFavourites,
+                                            id: "add",
+                                            children: "+"
+                                        }, void 0, false, {
+                                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                            lineNumber: 101,
+                                            columnNumber: 21
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                            variant: "primary",
+                                            disabled: true,
+                                            children: "-"
+                                        }, void 0, false, {
+                                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                            lineNumber: 108,
+                                            columnNumber: 21
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                    lineNumber: 77,
-                                    columnNumber: 15
+                                    lineNumber: 100,
+                                    columnNumber: 19
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                lineNumber: 76,
-                                columnNumber: 13
+                                lineNumber: 99,
+                                columnNumber: 17
                             }, undefined)
-                        ]
-                    }, void 0, true, {
+                        }, void 0, false, {
+                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                            lineNumber: 98,
+                            columnNumber: 15
+                        }, undefined)
+                    }, void 0, false, {
                         fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                        lineNumber: 74,
-                        columnNumber: 11
+                        lineNumber: 97,
+                        columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                lineNumber: 36,
-                columnNumber: 9
+                lineNumber: 59,
+                columnNumber: 11
+            }, undefined)
+        }, void 0, false) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _modalDefault.default), {
+                contentClassName: favourited,
+                show: show,
+                size: "lg",
+                onClick: (e)=>e.stopPropagation(),
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _modalDefault.default).Header, {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _modalDefault.default).Title, {
+                                    children: movie.Title
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                    lineNumber: 127,
+                                    columnNumber: 17
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 126,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _closeButtonDefault.default), {
+                                onClick: onClose,
+                                style: {
+                                    cursor: "pointer"
+                                }
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 130,
+                                columnNumber: 15
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                        lineNumber: 125,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _modalDefault.default).Body, {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                        xs: 5,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageDefault.default), {
+                                            src: movie.ImagePath,
+                                            fluid: true
+                                        }, void 0, false, {
+                                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                            lineNumber: 138,
+                                            columnNumber: 19
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                        lineNumber: 137,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                        xs: 7,
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                children: [
+                                                    "Genre: ",
+                                                    movie.Genre.Name
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                                lineNumber: 141,
+                                                columnNumber: 19
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                children: movie.Plot
+                                            }, void 0, false, {
+                                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                                lineNumber: 142,
+                                                columnNumber: 19
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                        lineNumber: 140,
+                                        columnNumber: 17
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 136,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                        xs: 3,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _imageDefault.default), {
+                                            src: movie.Director.HeadShots[0],
+                                            fluid: true
+                                        }, void 0, false, {
+                                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                            lineNumber: 147,
+                                            columnNumber: 19
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                        lineNumber: 146,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                        xs: 9,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: movie.Director.Name
+                                        }, void 0, false, {
+                                            fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                            lineNumber: 150,
+                                            columnNumber: 19
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                        lineNumber: 149,
+                                        columnNumber: 17
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 145,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _similarMovies.SimilarMovies), {
+                                    genre: movie.Genre.Name,
+                                    token: token
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                    lineNumber: 154,
+                                    columnNumber: 17
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 153,
+                                columnNumber: 15
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                        lineNumber: 135,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _modalDefault.default).Footer, {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                children: "One of your favourites!"
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 158,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonToolbarDefault.default), {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonGroupDefault.default), {
+                                        "aria-label": "Basic example",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                                id: "remove",
+                                                variant: "primary",
+                                                onClick: (event)=>{
+                                                    event.stopPropagation();
+                                                    (0, _favourites.AddFavouriteMovie)(movie, token);
+                                                    setRefresh((prev)=>!prev);
+                                                    setFavouriteTag("One of your Favourites!");
+                                                    setFavourited("favourite");
+                                                },
+                                                disabled: true,
+                                                children: "+"
+                                            }, void 0, false, {
+                                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                                lineNumber: 163,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
+                                                variant: "primary",
+                                                onClick: handleFavourites,
+                                                children: "-"
+                                            }, void 0, false, {
+                                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                                lineNumber: 177,
+                                                columnNumber: 21
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                        lineNumber: 162,
+                                        columnNumber: 19
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                    lineNumber: 161,
+                                    columnNumber: 17
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                                lineNumber: 160,
+                                columnNumber: 15
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                        lineNumber: 157,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
+                lineNumber: 119,
+                columnNumber: 11
             }, undefined)
         }, void 0, false)
     }, void 0, false, {
         fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-        lineNumber: 34,
+        lineNumber: 56,
         columnNumber: 5
     }, undefined);
 };
-_s(MovieViewModal, "lnR+icUQR3F351AECC0UwJStVt0=");
+_s(MovieViewModal, "ABfon4T3/N3iwc/jPUGLDYuu8Jk=");
 _c = MovieViewModal;
 MovieViewModal.propTypes = {
     movie: (0, _propTypesDefault.default).shape({
@@ -42714,7 +42956,7 @@ $RefreshReg$(_c, "MovieViewModal");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"iB9t7","prop-types":"7wKI2","../similar-movies/similar-movies":"3b1j4","react-bootstrap/Modal":"aNVmp","react-bootstrap/CloseButton":"1wmVl","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","react-bootstrap/Image":"cyVPa","react-bootstrap/ButtonGroup":"gXYCe","react-bootstrap/Button":"aPzUt","react-bootstrap/ButtonToolbar":"k88gW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","../../hooks/favourites":"1Uc0d"}],"iB9t7":[function() {},{}],"3b1j4":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"iB9t7","prop-types":"7wKI2","../similar-movies/similar-movies":"3b1j4","react-bootstrap/Modal":"aNVmp","react-bootstrap/CloseButton":"1wmVl","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","react-bootstrap/Image":"cyVPa","react-bootstrap/ButtonGroup":"gXYCe","react-bootstrap/Button":"aPzUt","react-bootstrap/ButtonToolbar":"k88gW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","../../hooks/favourites":"1Uc0d","../../hooks/users":"jL6hL"}],"iB9t7":[function() {},{}],"3b1j4":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fdcc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42846,10 +43088,11 @@ async function GetUserFavourites() {
     }
 }
 _c = GetUserFavourites;
-async function AddFavouriteMovie(movie, token) {
+async function AddFavouriteMovie(movie) {
     const userId = localStorage.getItem("userId");
+    const token = localStorage.getItem("token");
     try {
-        await fetch("https://mymovies-api-d8738180d851.herokuapp.com/users/" + userId + "/" + movie.Id, {
+        await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}/${movie}`, {
             method: "PUT",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -42862,10 +43105,11 @@ async function AddFavouriteMovie(movie, token) {
     }
 }
 _c1 = AddFavouriteMovie;
-async function DeleteFavouriteMovie(movie, token) {
+async function DeleteFavouriteMovie(movie) {
     const userId = localStorage.getItem("userId");
+    const token = localStorage.getItem("token");
     try {
-        await fetch("https://mymovies-api-d8738180d851.herokuapp.com/users/" + userId + "/" + movie.Id, {
+        await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}/${movie}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -42880,7 +43124,8 @@ async function DeleteFavouriteMovie(movie, token) {
 _c2 = DeleteFavouriteMovie;
 module.exports = {
     AddFavouriteMovie,
-    GetUserFavourites
+    GetUserFavourites,
+    DeleteFavouriteMovie
 };
 var _c, _c1, _c2;
 $RefreshReg$(_c, "GetUserFavourites");

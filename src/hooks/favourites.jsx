@@ -27,14 +27,12 @@ async function GetUserFavourites() {
     }
 }
 
-async function AddFavouriteMovie(movie, token) {
+async function AddFavouriteMovie(movie) {
   const userId = localStorage.getItem("userId");
+  const token = localStorage.getItem("token");
   try {
     await fetch(
-      "https://mymovies-api-d8738180d851.herokuapp.com/users/" +
-        userId +
-        "/" +
-        movie.Id,
+      `https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}/${movie}`,
       {
         method: "PUT",
         headers: {
@@ -49,14 +47,12 @@ async function AddFavouriteMovie(movie, token) {
   }
 }
 
-async function DeleteFavouriteMovie(movie, token) {
+async function DeleteFavouriteMovie(movie) {
   const userId = localStorage.getItem("userId");
+  const token = localStorage.getItem("token");
   try {
     await fetch(
-      "https://mymovies-api-d8738180d851.herokuapp.com/users/" +
-        userId +
-        "/" +
-        movie.Id,
+      `https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}/${movie}`,
       {
         method: "DELETE",
         headers: {
@@ -72,5 +68,5 @@ async function DeleteFavouriteMovie(movie, token) {
 }
 
 module.exports = {
-  AddFavouriteMovie, GetUserFavourites
+  AddFavouriteMovie, GetUserFavourites, DeleteFavouriteMovie
 };
