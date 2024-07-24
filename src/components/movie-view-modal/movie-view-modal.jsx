@@ -11,7 +11,7 @@ import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import { AddFavouriteMovie } from "../../hooks/favourites";
 import { useState, useEffect } from "react";
-import { GetUserFavourites } from '../../hooks/favourites';
+import { GetUserFavourites, AddFavouriteMovie } from '../../hooks/favourites';
 
 export const MovieViewModal = ({
   show,
@@ -25,23 +25,6 @@ export const MovieViewModal = ({
   const [favourited, setFavourited] = useState("");
   const [favouriteTag, setFavouriteTag] = useState("");
   const [refresh, setRefresh] = useState(false);
-
-  useEffect(() => {
-     function isFavourite(favourites, movieId) {
-      return favourites.includes(movieId);
-    }
-
-    const result = isFavourite(favourites, movie.Id);
-
-    if (result) {
-      setFavouriteTag("One of your Favourites!");
-      setFavourited("favourite");
-    } else {
-      setFavouriteTag("");
-      setFavourited("");
-    }
-  }, [favourites, movie.Id, refresh]);
-
 
   if (!show) {
     return null;

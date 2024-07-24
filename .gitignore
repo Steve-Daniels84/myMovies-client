@@ -3,4 +3,5 @@ node_modules
 .parcel-cache
 
 .env
-dist/
+/dist
+/backup
