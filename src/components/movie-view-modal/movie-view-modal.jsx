@@ -9,10 +9,10 @@ import Image from "react-bootstrap/Image";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-import { AddFavouriteMovie } from "../../hooks/favourites";
+import { AddFavouriteMovie } from "../../apis/favourites";
 import { useState, useEffect } from "react";
-import { GetUserFavourites, AddFavouriteMovie, DeleteFavouriteMovie } from "../../hooks/favourites";
-import { GetUser } from "../../hooks/users";
+import { GetUserFavourites, AddFavouriteMovie, DeleteFavouriteMovie } from "../../apis/favourites";
+import { GetUser } from "../../apis/users";
 
 export const MovieViewModal = ({  show, movie, onClose, token, setRefresh,}) => {
   const [favourited, setFavourited] = useState(false);
@@ -163,13 +163,7 @@ export const MovieViewModal = ({  show, movie, onClose, token, setRefresh,}) => 
                     <Button
                       id={"remove"}                      
                       variant="primary"
-                      onClick={(event) => {
-                        event.stopPropagation();
-                        AddFavouriteMovie(movie, token);
-                        setRefresh((prev) => !prev);
-                        setFavouriteTag("One of your Favourites!");
-                        setFavourited("favourite");
-                      }}
+                      onClick={handleFavourites}
                       disabled
                     >
                       +

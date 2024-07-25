@@ -1,7 +1,8 @@
 import "./user-profile.scss";
 import { Container, Card, Button, Form, Row, Col } from "react-bootstrap";
-import { UpdateUser, GetUser } from "../../../hooks/users";
+import { UpdateUser, GetUser } from "../../../apis/users";
 import { useState, useEffect } from "react";
+import { FavouritesList } from "./favourites-list/favourites-list";
 
 export const UserProfile = ({ show, setShow, user, onRefresh, setUser }) => {
   const [email, setEmail] = useState(user.email);
@@ -30,12 +31,16 @@ export const UserProfile = ({ show, setShow, user, onRefresh, setUser }) => {
 
       // Then, get the updated user data
       const newUserData = await GetUser();
-
+      //Set user state
       setUser(newUserData);
+      //Update user on local storage
       localStorage.setItem("user", JSON.stringify(newUserData));
+      //Refresh the app
       onRefresh();
+      //Close the edit window
       setShow(false);
     } catch (error) {
+      //Log any errors to console
       console.error("Error saving user data:", error);
     }
   };
@@ -49,6 +54,16 @@ export const UserProfile = ({ show, setShow, user, onRefresh, setUser }) => {
               {user.Username}
             </Card.Title>
             <p style={{ textAlign: "center" }}>{user.Email}</p>
+   
+            <Card.Title style={{ textAlign: "center" }}>
+              Your Favourites
+              </Card.Title>
+            {user.FavouriteMovies.map((movie, index) => (
+              <Col className="d-flex" style={{width: "100%"}}>
+              <FavouritesList key={index} movieId={movie} />
+              </Col>
+              
+            ))}
 
             <Button variant="link" onClick={handleEditClick}>
               Edit Profile

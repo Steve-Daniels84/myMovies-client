@@ -41913,8 +41913,9 @@ parcelHelpers.export(exports, "UserProfile", ()=>UserProfile);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _userProfileScss = require("./user-profile.scss");
 var _reactBootstrap = require("react-bootstrap");
-var _users = require("../../../hooks/users");
+var _users = require("../../../apis/users");
 var _react = require("react");
+var _favouritesList = require("./favourites-list/favourites-list");
 var _s = $RefreshSig$();
 const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
     _s();
@@ -41940,11 +41941,16 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
             await (0, _users.UpdateUser)(data);
             // Then, get the updated user data
             const newUserData = await (0, _users.GetUser)();
+            //Set user state
             setUser(newUserData);
+            //Update user on local storage
             localStorage.setItem("user", JSON.stringify(newUserData));
+            //Refresh the app
             onRefresh();
+            //Close the edit window
             setShow(false);
         } catch (error) {
+            //Log any errors to console
             console.error("Error saving user data:", error);
         }
     };
@@ -41959,7 +41965,7 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                         children: user.Username
                     }, void 0, false, {
                         fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                        lineNumber: 48,
+                        lineNumber: 53,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -41969,22 +41975,49 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                         children: user.Email
                     }, void 0, false, {
                         fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                        lineNumber: 51,
+                        lineNumber: 56,
                         columnNumber: 13
                     }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Title, {
+                        style: {
+                            textAlign: "center"
+                        },
+                        children: "Your Favourites"
+                    }, void 0, false, {
+                        fileName: "src/components/header-bar/user-profile/user-profile.jsx",
+                        lineNumber: 58,
+                        columnNumber: 13
+                    }, undefined),
+                    user.FavouriteMovies.map((movie, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                            className: "d-flex",
+                            style: {
+                                width: "100%"
+                            },
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _favouritesList.FavouritesList), {
+                                movieId: movie
+                            }, index, false, {
+                                fileName: "src/components/header-bar/user-profile/user-profile.jsx",
+                                lineNumber: 63,
+                                columnNumber: 15
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/components/header-bar/user-profile/user-profile.jsx",
+                            lineNumber: 62,
+                            columnNumber: 15
+                        }, undefined)),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                         variant: "link",
                         onClick: handleEditClick,
                         children: "Edit Profile"
                     }, void 0, false, {
                         fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                        lineNumber: 53,
+                        lineNumber: 68,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                lineNumber: 47,
+                lineNumber: 52,
                 columnNumber: 11
             }, undefined)
         }, void 0, false) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -42007,7 +42040,7 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                             children: "Username"
                                         }, void 0, false, {
                                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                            lineNumber: 64,
+                                            lineNumber: 79,
                                             columnNumber: 19
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -42016,13 +42049,13 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                             onChange: (e)=>setUsername(e.target.value)
                                         }, void 0, false, {
                                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                            lineNumber: 65,
+                                            lineNumber: 80,
                                             columnNumber: 19
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                    lineNumber: 63,
+                                    lineNumber: 78,
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -42032,7 +42065,7 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                             children: "Email"
                                         }, void 0, false, {
                                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                            lineNumber: 72,
+                                            lineNumber: 87,
                                             columnNumber: 19
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -42042,19 +42075,19 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                             onChange: (e)=>setEmail(e.target.value)
                                         }, void 0, false, {
                                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                            lineNumber: 73,
+                                            lineNumber: 88,
                                             columnNumber: 19
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                    lineNumber: 71,
+                                    lineNumber: 86,
                                     columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                            lineNumber: 62,
+                            lineNumber: 77,
                             columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -42072,7 +42105,7 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                    lineNumber: 86,
+                                    lineNumber: 101,
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -42084,30 +42117,30 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                     children: "Save"
                                 }, void 0, false, {
                                     fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                    lineNumber: 92,
+                                    lineNumber: 107,
                                     columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                            lineNumber: 82,
+                            lineNumber: 97,
                             columnNumber: 15
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                    lineNumber: 61,
+                    lineNumber: 76,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                lineNumber: 60,
+                lineNumber: 75,
                 columnNumber: 11
             }, undefined)
         }, void 0, false)
     }, void 0, false, {
         fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-        lineNumber: 44,
+        lineNumber: 49,
         columnNumber: 5
     }, undefined);
 };
@@ -42121,7 +42154,7 @@ $RefreshReg$(_c, "UserProfile");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./user-profile.scss":"ljMGE","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../../hooks/users":"jL6hL","react":"21dqq"}],"ljMGE":[function() {},{}],"km3Ru":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./user-profile.scss":"ljMGE","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","../../../apis/users":"8Ey2M","./favourites-list/favourites-list":"9Te8x"}],"ljMGE":[function() {},{}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 function debounce(func, delay) {
@@ -42259,7 +42292,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7422ead32dcc1e6b":"786KC"}],"jL6hL":[function(require,module,exports) {
+},{"7422ead32dcc1e6b":"786KC"}],"8Ey2M":[function(require,module,exports) {
 async function GetUser() {
     const userId = localStorage.getItem("userId"), token = localStorage.getItem("token");
     try {
@@ -42322,7 +42355,157 @@ var _c, _c1;
 $RefreshReg$(_c, "GetUser");
 $RefreshReg$(_c1, "UpdateUser");
 
-},{}],"bwuIu":[function(require,module,exports) {
+},{}],"9Te8x":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$31d3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$31d3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "FavouritesList", ()=>FavouritesList);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _useMovie = require("../../../../hooks/useMovie");
+var _reactBootstrap = require("react-bootstrap");
+var _s = $RefreshSig$();
+const FavouritesList = ({ movieId })=>{
+    _s();
+    const { movie, loading, error } = (0, _useMovie.useMovie)(movieId);
+    if (loading) console.log("loading");
+    if (error) console.log("error");
+    if (!movie) console.log("No movie found");
+    console.log(movie);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
+        className: "d-flex  justify-content-center align-items-center",
+        style: {
+            width: "100%",
+            textAlign: "center"
+        },
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                children: [
+                    " ",
+                    movie
+                ]
+            }, void 0, true, {
+                fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
+                lineNumber: 25,
+                columnNumber: 6
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
+                className: "d-flex  justify-content-center align-items-center",
+                variant: "primary",
+                style: {
+                    width: "10px",
+                    height: "20px"
+                },
+                children: "-"
+            }, void 0, false, {
+                fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
+                lineNumber: 26,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
+        lineNumber: 24,
+        columnNumber: 5
+    }, undefined);
+};
+_s(FavouritesList, "pRd39aKPQxRNUcNJ99PTK6rz2UM=", false, function() {
+    return [
+        (0, _useMovie.useMovie)
+    ];
+});
+_c = FavouritesList;
+var _c;
+$RefreshReg$(_c, "FavouritesList");
+
+  $parcel$ReactRefreshHelpers$31d3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../../../hooks/useMovie":"a1WWw"}],"a1WWw":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9346 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9346.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useMovie", ()=>useMovie);
+var _react = require("react");
+var _movies = require("../apis/movies");
+var _s = $RefreshSig$();
+const useMovie = (movieId)=>{
+    _s();
+    const [movie, setMovie] = (0, _react.useState)(null);
+    const [loading, setLoading] = (0, _react.useState)(true);
+    const [error, setError] = (0, _react.useState)(null);
+    const fetchMovie = (0, _react.useCallback)(async ()=>{
+        setLoading(true);
+        setError(null);
+        try {
+            const movieData = await (0, _movies.GetMovie)(movieId);
+            console.log(movieData);
+            setMovie(movieData);
+        } catch (err) {
+            setError(err);
+        } finally{
+            setLoading(false);
+        }
+    }, [
+        movieId
+    ]);
+    (0, _react.useEffect)(()=>{
+        if (movieId) fetchMovie();
+    }, [
+        movieId,
+        fetchMovie
+    ]);
+    return {
+        movie,
+        loading,
+        error
+    };
+};
+_s(useMovie, "f49WHuUkEMUH67x3wUQa0surfxk=");
+
+  $parcel$ReactRefreshHelpers$9346.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","../apis/movies":"fcUkE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fcUkE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GetMovie", ()=>GetMovie);
+const GetMovie = async (movieId)=>{
+    const userId = localStorage.getItem("userId");
+    const token = localStorage.getItem("token");
+    try {
+        const response = await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/movies/id/${movieId}`, {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        return await response.json();
+    } catch (error) {
+        console.error("Add favourite error:", error);
+        throw error;
+    }
+};
+_c = GetMovie;
+var _c;
+$RefreshReg$(_c, "GetMovie");
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42476,9 +42659,9 @@ var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _buttonToolbar = require("react-bootstrap/ButtonToolbar");
 var _buttonToolbarDefault = parcelHelpers.interopDefault(_buttonToolbar);
-var _favourites = require("../../hooks/favourites");
+var _favourites = require("../../apis/favourites");
 var _react = require("react");
-var _users = require("../../hooks/users");
+var _users = require("../../apis/users");
 var _s = $RefreshSig$();
 const MovieViewModal = ({ show, movie, onClose, token, setRefresh })=>{
     _s();
@@ -42870,13 +43053,7 @@ const MovieViewModal = ({ show, movie, onClose, token, setRefresh })=>{
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                                                 id: "remove",
                                                 variant: "primary",
-                                                onClick: (event)=>{
-                                                    event.stopPropagation();
-                                                    (0, _favourites.AddFavouriteMovie)(movie, token);
-                                                    setRefresh((prev)=>!prev);
-                                                    setFavouriteTag("One of your Favourites!");
-                                                    setFavourited("favourite");
-                                                },
+                                                onClick: handleFavourites,
                                                 disabled: true,
                                                 children: "+"
                                             }, void 0, false, {
@@ -42890,7 +43067,7 @@ const MovieViewModal = ({ show, movie, onClose, token, setRefresh })=>{
                                                 children: "-"
                                             }, void 0, false, {
                                                 fileName: "src/components/movie-view-modal/movie-view-modal.jsx",
-                                                lineNumber: 177,
+                                                lineNumber: 171,
                                                 columnNumber: 21
                                             }, undefined)
                                         ]
@@ -42956,7 +43133,7 @@ $RefreshReg$(_c, "MovieViewModal");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"iB9t7","prop-types":"7wKI2","../similar-movies/similar-movies":"3b1j4","react-bootstrap/Modal":"aNVmp","react-bootstrap/CloseButton":"1wmVl","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","react-bootstrap/Image":"cyVPa","react-bootstrap/ButtonGroup":"gXYCe","react-bootstrap/Button":"aPzUt","react-bootstrap/ButtonToolbar":"k88gW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","../../hooks/favourites":"1Uc0d","../../hooks/users":"jL6hL"}],"iB9t7":[function() {},{}],"3b1j4":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"iB9t7","prop-types":"7wKI2","../similar-movies/similar-movies":"3b1j4","react-bootstrap/Modal":"aNVmp","react-bootstrap/CloseButton":"1wmVl","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","react-bootstrap/Image":"cyVPa","react-bootstrap/ButtonGroup":"gXYCe","react-bootstrap/Button":"aPzUt","react-bootstrap/ButtonToolbar":"k88gW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","../../apis/favourites":"gqSNt","../../apis/users":"8Ey2M"}],"iB9t7":[function() {},{}],"3b1j4":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fdcc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43067,27 +43244,7 @@ $RefreshReg$(_c, "SimilarMovies");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./similar-movies.scss":"5At0z","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5At0z":[function() {},{}],"1Uc0d":[function(require,module,exports) {
-async function GetUserFavourites() {
-    const userId = localStorage.getItem("userId");
-    const token = localStorage.getItem("token");
-    try {
-        const response = await fetch("https://mymovies-api-d8738180d851.herokuapp.com/users/" + userId, {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        });
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const data = await response.json();
-        console.log(data);
-        const favourites = await data[0].FavouriteMovies;
-        return favourites;
-    } catch (error) {
-        console.error("Fetch error:", error);
-    }
-}
-_c = GetUserFavourites;
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./similar-movies.scss":"5At0z","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5At0z":[function() {},{}],"gqSNt":[function(require,module,exports) {
 async function AddFavouriteMovie(movie) {
     const userId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
@@ -43104,7 +43261,7 @@ async function AddFavouriteMovie(movie) {
         };
     }
 }
-_c1 = AddFavouriteMovie;
+_c = AddFavouriteMovie;
 async function DeleteFavouriteMovie(movie) {
     const userId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
@@ -43121,16 +43278,14 @@ async function DeleteFavouriteMovie(movie) {
         };
     }
 }
-_c2 = DeleteFavouriteMovie;
+_c1 = DeleteFavouriteMovie;
 module.exports = {
     AddFavouriteMovie,
-    GetUserFavourites,
     DeleteFavouriteMovie
 };
-var _c, _c1, _c2;
-$RefreshReg$(_c, "GetUserFavourites");
-$RefreshReg$(_c1, "AddFavouriteMovie");
-$RefreshReg$(_c2, "DeleteFavouriteMovie");
+var _c, _c1;
+$RefreshReg$(_c, "AddFavouriteMovie");
+$RefreshReg$(_c1, "DeleteFavouriteMovie");
 
 },{}],"d6HH4":[function() {},{}],"eRc6I":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e063 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");

@@ -52,7 +52,7 @@ export const MainView = () => {
       });
   }, [token, refresh]);
 
-  const handleOpenModal = (movie) => {
+    const handleOpenModal = (movie) => {
     setSelectedMovie(movie);
     setShowModal(true);
   };
