@@ -17,7 +17,6 @@ export const HeaderBar = ({ onClick, user, setUser, setRefresh }) => {
   };
 
   useEffect(() => {
-    // Ensure the dropdown title is updated when the user state changes
   }, [user]);
 
   return (
@@ -51,8 +50,9 @@ export const HeaderBar = ({ onClick, user, setUser, setRefresh }) => {
                 style={{ textAlign: "center" }}
               >
                 <Container style={{ height: "100%" }}>
+                  
                   <Row style={{ height: "75%" }}>
-                    <UserProfile
+                    <UserProfile style={{width: "100%"}}
                       show={showEdit}
                       setShow={setShowEdit}
                       user={user}

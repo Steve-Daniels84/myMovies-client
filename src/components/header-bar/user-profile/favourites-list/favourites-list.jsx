@@ -1,29 +1,30 @@
-import { useState, useEffect } from "react";
 import { useMovie } from "../../../../hooks/useMovie";
-import { Container, Row, Col, Button, ButtonGroup } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { useEffect } from "react";
 
-export const FavouritesList = ({movieId}) => {
-    
-    const {movie, loading, error} = useMovie(movieId);
+export const FavouritesList = ({ key, index, movieId, onRefresh }) => {
+  const { movie, loading, error } = useMovie(movieId);
 
-    if(loading) {
-        console.log("loading");
-    }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-    if (error) {
-        console.log("error")
-    }
+  if (error) {
+    console.log("error");
+    return <div>Error loading movie.</div>;
+  }
 
-    if (!movie) {
-        console.log("No movie found")
-    }
-   
- console.log(movie)
- 
+  if (!movie) {
+    console.log("No movie found");
+    return <div>No movie found.</div>;
+  }
+
   return (
-    <Row className="d-flex  justify-content-center align-items-center" style={{width: "100%", textAlign: "center"}}>
-     <Col> {movie}</Col>
-        <Button className="d-flex  justify-content-center align-items-center" variant="primary" style={{width: "10px", height: "20px"}}>-</Button>
-    </Row>
+    <Container
+      className="d-flex justify-content-center align-items-center"
+      style={{ width: "100%"}}
+    >
+      {movie.Title}
+    </Container>
   );
 };

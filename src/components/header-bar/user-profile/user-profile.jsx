@@ -59,8 +59,8 @@ export const UserProfile = ({ show, setShow, user, onRefresh, setUser }) => {
               Your Favourites
               </Card.Title>
             {user.FavouriteMovies.map((movie, index) => (
-              <Col className="d-flex" style={{width: "100%"}}>
-              <FavouritesList key={index} movieId={movie} />
+              <Col key={index} className="d-flex" style={{width: "100%"}}>
+              <FavouritesList  index={index} movieId={movie} />
               </Col>
               
             ))}

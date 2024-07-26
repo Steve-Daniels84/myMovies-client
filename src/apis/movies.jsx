@@ -17,8 +17,10 @@ export const GetMovie = async (movieId) => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
+    const data = await response.json();
 
-      return await response.json();
+      return data[0]
+      
     } catch (error) {
       console.error("Add favourite error:", error);
       throw error;

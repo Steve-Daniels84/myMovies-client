@@ -27585,9 +27585,7 @@ const HeaderBar = ({ onClick, user, setUser, setRefresh })=>{
     const handleRefresh = ()=>{
         setRefresh((prev)=>!prev);
     };
-    (0, _react.useEffect)(()=>{
-    // Ensure the dropdown title is updated when the user state changes
-    }, [
+    (0, _react.useEffect)(()=>{}, [
         user
     ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -27611,21 +27609,21 @@ const HeaderBar = ({ onClick, user, setUser, setRefresh })=>{
                                 className: "d-inline-block align-top"
                             }, void 0, false, {
                                 fileName: "src/components/header-bar/header-bar.jsx",
-                                lineNumber: 31,
+                                lineNumber: 30,
                                 columnNumber: 13
                             }, undefined),
                             "myMovies"
                         ]
                     }, void 0, true, {
                         fileName: "src/components/header-bar/header-bar.jsx",
-                        lineNumber: 30,
+                        lineNumber: 29,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Toggle, {
                         "aria-controls": "basic-navbar-nav"
                     }, void 0, false, {
                         fileName: "src/components/header-bar/header-bar.jsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _navbarDefault.default).Collapse, {
@@ -27653,6 +27651,9 @@ const HeaderBar = ({ onClick, user, setUser, setRefresh })=>{
                                                 height: "75%"
                                             },
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _userProfile.UserProfile), {
+                                                style: {
+                                                    width: "100%"
+                                                },
                                                 show: showEdit,
                                                 setShow: setShowEdit,
                                                 user: user,
@@ -27693,33 +27694,33 @@ const HeaderBar = ({ onClick, user, setUser, setRefresh })=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/header-bar/header-bar.jsx",
-                                    lineNumber: 53,
+                                    lineNumber: 52,
                                     columnNumber: 17
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/header-bar/header-bar.jsx",
-                                lineNumber: 47,
+                                lineNumber: 46,
                                 columnNumber: 15
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/header-bar/header-bar.jsx",
-                            lineNumber: 46,
+                            lineNumber: 45,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/header-bar/header-bar.jsx",
-                        lineNumber: 41,
+                        lineNumber: 40,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/header-bar/header-bar.jsx",
-                lineNumber: 29,
+                lineNumber: 28,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/header-bar/header-bar.jsx",
-            lineNumber: 25,
+            lineNumber: 24,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
@@ -41994,13 +41995,14 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                 width: "100%"
                             },
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _favouritesList.FavouritesList), {
+                                index: index,
                                 movieId: movie
-                            }, index, false, {
+                            }, void 0, false, {
                                 fileName: "src/components/header-bar/user-profile/user-profile.jsx",
                                 lineNumber: 63,
                                 columnNumber: 15
                             }, undefined)
-                        }, void 0, false, {
+                        }, index, false, {
                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
                             lineNumber: 62,
                             columnNumber: 15
@@ -42366,55 +42368,53 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "FavouritesList", ()=>FavouritesList);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
 var _useMovie = require("../../../../hooks/useMovie");
 var _reactBootstrap = require("react-bootstrap");
+var _react = require("react");
 var _s = $RefreshSig$();
-const FavouritesList = ({ movieId })=>{
+const FavouritesList = ({ key, index, movieId, onRefresh })=>{
     _s();
     const { movie, loading, error } = (0, _useMovie.useMovie)(movieId);
-    if (loading) console.log("loading");
-    if (error) console.log("error");
-    if (!movie) console.log("No movie found");
-    console.log(movie);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
-        className: "d-flex  justify-content-center align-items-center",
-        style: {
-            width: "100%",
-            textAlign: "center"
-        },
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
-                children: [
-                    " ",
-                    movie
-                ]
-            }, void 0, true, {
-                fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
-                lineNumber: 25,
-                columnNumber: 6
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
-                className: "d-flex  justify-content-center align-items-center",
-                variant: "primary",
-                style: {
-                    width: "10px",
-                    height: "20px"
-                },
-                children: "-"
-            }, void 0, false, {
-                fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
-                lineNumber: 26,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true, {
+    if (loading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "Loading..."
+    }, void 0, false, {
         fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
-        lineNumber: 24,
+        lineNumber: 9,
+        columnNumber: 12
+    }, undefined);
+    if (error) {
+        console.log("error");
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: "Error loading movie."
+        }, void 0, false, {
+            fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
+            lineNumber: 14,
+            columnNumber: 12
+        }, undefined);
+    }
+    if (!movie) {
+        console.log("No movie found");
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: "No movie found."
+        }, void 0, false, {
+            fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
+            lineNumber: 19,
+            columnNumber: 12
+        }, undefined);
+    }
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
+        className: "d-flex justify-content-center align-items-center",
+        style: {
+            width: "100%"
+        },
+        children: movie.Title
+    }, void 0, false, {
+        fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
+        lineNumber: 23,
         columnNumber: 5
     }, undefined);
 };
-_s(FavouritesList, "pRd39aKPQxRNUcNJ99PTK6rz2UM=", false, function() {
+_s(FavouritesList, "QD2Ot8tpMY422zBL+E+wrmqAoT4=", false, function() {
     return [
         (0, _useMovie.useMovie)
     ];
@@ -42428,7 +42428,7 @@ $RefreshReg$(_c, "FavouritesList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../../../hooks/useMovie":"a1WWw"}],"a1WWw":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../../../hooks/useMovie":"a1WWw","react":"21dqq"}],"a1WWw":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9346 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42451,7 +42451,6 @@ const useMovie = (movieId)=>{
         setError(null);
         try {
             const movieData = await (0, _movies.GetMovie)(movieId);
-            console.log(movieData);
             setMovie(movieData);
         } catch (err) {
             setError(err);
@@ -42495,7 +42494,8 @@ const GetMovie = async (movieId)=>{
             }
         });
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        return await response.json();
+        const data = await response.json();
+        return data[0];
     } catch (error) {
         console.error("Add favourite error:", error);
         throw error;
