@@ -1,93 +1,203 @@
-import './movie-view.scss';
+import "./movie-view.scss";
 import PropTypes from "prop-types";
-import { SimilarMovies } from '../similar-movies/similar-movies';
-import Modal from 'react-bootstrap/Modal';
-import CloseButton from 'react-bootstrap/CloseButton';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Image from 'react-bootstrap/Image';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Button from 'react-bootstrap/Button';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import thumbUp from '../../../public/img/thumbUp.svg';
-import thumbDown from '../../../public/img/thumbDown.svg';
-import { Col } from 'react-bootstrap';
+import { SimilarMovies } from "../similar-movies/similar-movies";
+import Modal from "react-bootstrap/Modal";
+import CloseButton from "react-bootstrap/CloseButton";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Image from "react-bootstrap/Image";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Button from "react-bootstrap/Button";
+import ButtonToolbar from "react-bootstrap/ButtonToolbar";
+import { AddFavouriteMovie } from "../../apis/favourites";
+import { useState, useEffect } from "react";
+import { GetUserFavourites, AddFavouriteMovie, DeleteFavouriteMovie } from "../../apis/favourites";
+import { GetUser } from "../../apis/users";
 
-export const MovieViewModal = ( {show, movie, onClose, token} ) => {
+export const MovieViewModal = ({  show, movie, onClose, token, setRefresh,}) => {
+  const [favourited, setFavourited] = useState(false);
 
-    if(!show) {
-        return null
+  useEffect(() => {
+    const user = localStorage.getItem('user');
+
+    if (user) {
+      const data = JSON.parse(user);
+      if (data.FavouriteMovies && data.FavouriteMovies.includes(movie.Id)) {
+        setFavourited(true);
+      } else {
+        setFavourited(false);
+      }
+    } else {
+      console.log('No user found in localStorage');
     }
+  }, [movie.Id]);
 
-   return (
+  const handleFavourites = (event) => {
+    if (event.target.id === "add") {
+      AddFavouriteMovie(movie.Id);
+      GetUser();      
+      setRefresh(prev => !prev);
+      setFavourited(true);
+    } else {
+      DeleteFavouriteMovie(movie.Id);
+      GetUser();
+      setRefresh(prev => !prev);
+      setFavourited(false);
+    }
+  }
 
-     <div  onClick={onClose}>
-        <>        
-        <Modal show={show} size='lg'>
+ 
+
+  if (!show) {
+    return null;
+  }
+
+  return (
+    <div onClick={onClose}>
+      {favourited === false ? (
+        <>
+          <Modal
+            contentClassName={favourited}
+            show={show}
+            size="lg"
+            onClick={(e) => e.stopPropagation()}
+          >
             <Modal.Header>
+              <Col>
                 <Modal.Title>{movie.Title}</Modal.Title>
-                <CloseButton onClick={onClose} style={{cursor: "pointer"}}></CloseButton>
+              </Col>
+
+              <CloseButton
+                onClick={onClose}
+                style={{ cursor: "pointer" }}
+              ></CloseButton>
             </Modal.Header>
             <Modal.Body>
-                <Row>
-                    <Col xs={5}>
-                        <Image src={movie.ImagePath} fluid></Image>
-                    </Col>
-                    <Col xs={7}>Genre: {movie.Genre.Name}</Col>
-                </Row>
-                <Row>
-                    <Col xs={3}>
-                        <Image src={movie.Director.HeadShots[0]} fluid></Image>
-                    </Col>
-                    <Col xs={9}>
-                        <p>
-                            {movie.Director.Name}
-                        </p>
-                    </Col>
-                </Row>
-                <Row>
-                        <SimilarMovies
-                            genre={movie.Genre.Name}
-                            token={token}
-                        />
-                </Row>   
+              <Row>
+                <Col xs={5}>
+                  <Image src={movie.ImagePath} fluid></Image>
+                </Col>
+                <Col xs={7}>
+                  <p>Genre: {movie.Genre.Name}</p>
+                  <p>{movie.Plot}</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={3}>
+                  <Image src={movie.Director.HeadShots[0]} fluid></Image>
+                </Col>
+                <Col xs={9}>
+                  <p>{movie.Director.Name}</p>
+                </Col>
+              </Row>
+              <Row>
+                <SimilarMovies genre={movie.Genre.Name} token={token} />
+              </Row>
             </Modal.Body>
-            <Modal.Footer> 
-                <ButtonToolbar >
-                    <ButtonGroup className='me-2'>
-                        <Button variant="outline-warning">
-                            <Image src={thumbUp}></Image>
-                        </Button>
-                        <Button variant="outline-warning">
-                            <Image src={thumbDown}></Image>
-                        </Button>
-                    </ButtonGroup>
-                    <ButtonGroup className='me-2'>
-                        <Button >+ Add</Button>
-                    </ButtonGroup>
-                </ButtonToolbar>
+            <Modal.Footer>
+              <ButtonToolbar>
+                <Col>
+                  <ButtonGroup aria-label="Basic example">
+                    <Button
+                      variant="primary"
+                      onClick={handleFavourites}
+                      id={"add"}
+                    >
+                      +
+                    </Button>
+                    <Button variant="primary" disabled>
+                      -
+                    </Button>
+                  </ButtonGroup>
+                </Col>
+              </ButtonToolbar>
             </Modal.Footer>
-        </Modal>
+          </Modal>
         </>
+      ) : (
+        <>
+          <Modal
+            contentClassName={favourited}
+            show={show}
+            size="lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Modal.Header>
+              <Col>
+                <Modal.Title>{movie.Title}</Modal.Title>
+              </Col>
+
+              <CloseButton
+                onClick={onClose}
+                style={{ cursor: "pointer" }}
+              ></CloseButton>
+            </Modal.Header>
+            <Modal.Body>
+              <Row>
+                <Col xs={5}>
+                  <Image src={movie.ImagePath} fluid></Image>
+                </Col>
+                <Col xs={7}>
+                  <p>Genre: {movie.Genre.Name}</p>
+                  <p>{movie.Plot}</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={3}>
+                  <Image src={movie.Director.HeadShots[0]} fluid></Image>
+                </Col>
+                <Col xs={9}>
+                  <p>{movie.Director.Name}</p>
+                </Col>
+              </Row>
+              <Row>
+                <SimilarMovies genre={movie.Genre.Name} token={token} />
+              </Row>
+            </Modal.Body>
+            <Modal.Footer>
+              <Col>One of your favourites!</Col>
+
+              <ButtonToolbar>
+                <Col>
+                  <ButtonGroup aria-label="Basic example">
+                    <Button
+                      id={"remove"}                      
+                      variant="primary"
+                      onClick={handleFavourites}
+                      disabled
+                    >
+                      +
+                    </Button>
+                    <Button 
+                    variant="primary"
+                    onClick={handleFavourites}
+                      >-</Button>
+                  </ButtonGroup>
+                </Col>
+              </ButtonToolbar>
+            </Modal.Footer>
+          </Modal>
+        </>
+      )}
     </div>
-   )
+  );
 };
 
 MovieViewModal.propTypes = {
-    movie: PropTypes.shape({
-        Title: PropTypes.string.isRequired,
-        Description: PropTypes.string.isRequired,
-        Plot: PropTypes.string.isRequired,
-        ReleaseYear: PropTypes.string.isRequired,
-        ImagePath: PropTypes.string.isRequired,
-        Director: PropTypes.shape ({
-            Name: PropTypes.string.isRequired,
-            Bio: PropTypes.string.isRequired,
-            Birth: PropTypes.string,
-            HeadShots: PropTypes.array.isRequired
-        }),
-        Genre: PropTypes.shape ({
-            Name: PropTypes.string.isRequired,
-        })
-    })
-}
+  movie: PropTypes.shape({
+    Title: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
+    Plot: PropTypes.string.isRequired,
+    ReleaseYear: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired,
+    Director: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+      Bio: PropTypes.string.isRequired,
+      Birth: PropTypes.string,
+      HeadShots: PropTypes.array.isRequired,
+    }),
+    Genre: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+    }),
+  }),
+};

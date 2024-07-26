@@ -26,14 +26,14 @@ export const Login = ({ onLoggedIn , setMessage}) => {
       .then((response) => response.json())
       .then((data) => {
         if (data.token) {
-          localStorage.setItem("user", username);
+          localStorage.setItem("user", JSON.stringify(data));
           localStorage.setItem("token", data.token);
-          onLoggedIn(username, data.token);
+          localStorage.setItem("userId", data.userId)
+          onLoggedIn(data, data.token);
         } else {
           setMessage(data.message)
         }
       })
-      
   };
 
   return (

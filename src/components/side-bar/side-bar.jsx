@@ -1,15 +1,18 @@
 import  {useState} from "react";
-import "./side-bar.scss"
+import Col from "react-bootstrap/Col";
+import "./side-bar.scss";
 
-export const SideBar = ({handleLogout}) => {
+export const SideBar = ({handleLogout}, {user}) => {
+
+console.log(user)
+
     return (
-        <div className = "sidebar-container">
+        <Col className = "sidebar-container">
             <div className="sidbar-header">
             </div>
             <div className="sidebar-filter-container">
-                <h2>Filter</h2>
                 <button onClick={handleLogout}>Logout</button>
             </div>
-        </div>
+        </Col>
     )
 }
