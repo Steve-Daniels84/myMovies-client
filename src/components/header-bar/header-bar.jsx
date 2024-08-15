@@ -8,11 +8,12 @@ import Button from "react-bootstrap/Button";
 import { Col, Row } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { UserProfile } from "./user-profile/user-profile";
+import {FiltersPanel} from "./filters-panel/filters-panel"
 
-export const HeaderBar = ({ onClick, user, setUser, setRefresh }) => {
+export const HeaderBar = ({ onClick, user, setUser, setRefresh, movies, setMovies, originalMovies }) => {
   const [showEdit, setShowEdit] = useState(false);
 
-  const handleRefresh = () => {
+  const handleRefresh = (event) => {
     setRefresh(prev => !prev);
   };
 
@@ -36,6 +37,12 @@ export const HeaderBar = ({ onClick, user, setUser, setRefresh }) => {
             />
             myMovies
           </Navbar.Brand>
+          <FiltersPanel 
+          movies={movies}
+          handleRefresh={handleRefresh}
+          setMovies={setMovies}
+          originalMovies={originalMovies}
+          />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse
             id="basic-navbar-nav"

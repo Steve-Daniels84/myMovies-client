@@ -1,0 +1,13 @@
+span {
+    margin: 10px;
+}
+
+span:hover {
+    cursor: pointer;
+    font-size: larger;
+}
+
+.reset:hover {
+    cursor:default;
+    font-size: unset;
+}

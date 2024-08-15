@@ -10,11 +10,13 @@ import { MovieViewModal } from "../movie-view-modal/movie-view-modal";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {
+  
   const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
   const [token, setToken] = useState(localStorage.getItem("token") || null);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [originalMovies, setOriginalMovies] = useState([]);
   const [refresh, setRefresh] = useState(false);
 
 
@@ -49,6 +51,7 @@ export const MainView = () => {
           };
         });
         setMovies(movies);
+        setOriginalMovies(movies);
       });
   }, [token, refresh]);
 
@@ -118,6 +121,9 @@ export const MainView = () => {
                         user={user}
                         setUser={setUser}
                         setRefresh={setRefresh}
+                        movies={movies}
+                        setMovies={setMovies}
+                        originalMovies={originalMovies}
                       />
                       <Row>
                         <Col>
@@ -172,6 +178,9 @@ export const MainView = () => {
                         user={user}
                         setUser={setUser}
                         setRefresh={setRefresh}
+                        movies={movies}
+                        setMovies={setMovies}
+                        originalMovies={originalMovies}
                       />
                       <Row>
                         <Col>
