@@ -7,6 +7,19 @@ import { FavouritesList } from "./favourites-list/favourites-list";
 export const UserProfile = ({ show, setShow, user, onRefresh, setUser }) => {
   const [email, setEmail] = useState(user.email);
   const [username, setUsername] = useState(user.username);
+  const [favouriteMovies, setFavouriteMovies] = useState([]);
+
+
+  
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("user"));
+
+    setFavouriteMovies(data.FavouriteMovies);
+  
+    console.log(favouriteMovies)
+
+  }, []);
+
 
   useEffect(() => {
     setEmail(user.email);
@@ -58,9 +71,10 @@ export const UserProfile = ({ show, setShow, user, onRefresh, setUser }) => {
             <Card.Title style={{ textAlign: "center" }}>
               Your Favourites
               </Card.Title>
-            {user.FavouriteMovies.map((movie, index) => (
-              <Col key={index} className="d-flex" style={{width: "100%"}}>
-              <FavouritesList  index={index} movieId={movie} />
+            {favouriteMovies.map((movie, index) => (
+              <Col key={index} className="d-flex" style={{width: "100%"}}
+              >
+              <FavouritesList movieId={movie} />
               </Col>
               
             ))}

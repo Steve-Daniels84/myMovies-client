@@ -41922,6 +41922,12 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
     _s();
     const [email, setEmail] = (0, _react.useState)(user.email);
     const [username, setUsername] = (0, _react.useState)(user.username);
+    const [favouriteMovies, setFavouriteMovies] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        const data = JSON.parse(localStorage.getItem("user"));
+        setFavouriteMovies(data.FavouriteMovies);
+        console.log(favouriteMovies);
+    }, []);
     (0, _react.useEffect)(()=>{
         setEmail(user.email);
         setUsername(user.username);
@@ -41966,7 +41972,7 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                         children: user.Username
                     }, void 0, false, {
                         fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                        lineNumber: 53,
+                        lineNumber: 66,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -41976,7 +41982,7 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                         children: user.Email
                     }, void 0, false, {
                         fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                        lineNumber: 56,
+                        lineNumber: 69,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Title, {
@@ -41986,25 +41992,24 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                         children: "Your Favourites"
                     }, void 0, false, {
                         fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                        lineNumber: 58,
+                        lineNumber: 71,
                         columnNumber: 13
                     }, undefined),
-                    user.FavouriteMovies.map((movie, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
+                    favouriteMovies.map((movie, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                             className: "d-flex",
                             style: {
                                 width: "100%"
                             },
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _favouritesList.FavouritesList), {
-                                index: index,
                                 movieId: movie
                             }, void 0, false, {
                                 fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                lineNumber: 63,
+                                lineNumber: 77,
                                 columnNumber: 15
                             }, undefined)
                         }, index, false, {
                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                            lineNumber: 62,
+                            lineNumber: 75,
                             columnNumber: 15
                         }, undefined)),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -42013,13 +42018,13 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                         children: "Edit Profile"
                     }, void 0, false, {
                         fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                        lineNumber: 68,
+                        lineNumber: 82,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                lineNumber: 52,
+                lineNumber: 65,
                 columnNumber: 11
             }, undefined)
         }, void 0, false) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -42042,7 +42047,7 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                             children: "Username"
                                         }, void 0, false, {
                                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                            lineNumber: 79,
+                                            lineNumber: 93,
                                             columnNumber: 19
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -42051,13 +42056,13 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                             onChange: (e)=>setUsername(e.target.value)
                                         }, void 0, false, {
                                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                            lineNumber: 80,
+                                            lineNumber: 94,
                                             columnNumber: 19
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                    lineNumber: 78,
+                                    lineNumber: 92,
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -42067,7 +42072,7 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                             children: "Email"
                                         }, void 0, false, {
                                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                            lineNumber: 87,
+                                            lineNumber: 101,
                                             columnNumber: 19
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -42077,19 +42082,19 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                             onChange: (e)=>setEmail(e.target.value)
                                         }, void 0, false, {
                                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                            lineNumber: 88,
+                                            lineNumber: 102,
                                             columnNumber: 19
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                    lineNumber: 86,
+                                    lineNumber: 100,
                                     columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                            lineNumber: 77,
+                            lineNumber: 91,
                             columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -42107,7 +42112,7 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                    lineNumber: 101,
+                                    lineNumber: 115,
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
@@ -42119,34 +42124,34 @@ const UserProfile = ({ show, setShow, user, onRefresh, setUser })=>{
                                     children: "Save"
                                 }, void 0, false, {
                                     fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                                    lineNumber: 107,
+                                    lineNumber: 121,
                                     columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                            lineNumber: 97,
+                            lineNumber: 111,
                             columnNumber: 15
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                    lineNumber: 76,
+                    lineNumber: 90,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-                lineNumber: 75,
+                lineNumber: 89,
                 columnNumber: 11
             }, undefined)
         }, void 0, false)
     }, void 0, false, {
         fileName: "src/components/header-bar/user-profile/user-profile.jsx",
-        lineNumber: 49,
+        lineNumber: 62,
         columnNumber: 5
     }, undefined);
 };
-_s(UserProfile, "eVuizWvCfVWCyRvaiX/JCYPCl60=");
+_s(UserProfile, "MErqFXlQaf5wzi50ihvW/S8tEPA=");
 _c = UserProfile;
 var _c;
 $RefreshReg$(_c, "UserProfile");
@@ -42372,7 +42377,7 @@ var _useMovie = require("../../../../hooks/useMovie");
 var _reactBootstrap = require("react-bootstrap");
 var _react = require("react");
 var _s = $RefreshSig$();
-const FavouritesList = ({ key, index, movieId, onRefresh })=>{
+const FavouritesList = ({ movieId })=>{
     _s();
     const { movie, loading, error } = (0, _useMovie.useMovie)(movieId);
     if (loading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {

@@ -2,7 +2,7 @@ import { useMovie } from "../../../../hooks/useMovie";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useEffect } from "react";
 
-export const FavouritesList = ({ key, index, movieId, onRefresh }) => {
+export const FavouritesList = ({ movieId }) => {
   const { movie, loading, error } = useMovie(movieId);
 
   if (loading) {
