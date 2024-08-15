@@ -29027,7 +29027,7 @@ function _objectWithoutPropertiesLoose(r, e) {
     if (null == r) return {};
     var t = {};
     for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
-        if (e.indexOf(n) >= 0) continue;
+        if (e.includes(n)) continue;
         t[n] = r[n];
     }
     return t;
@@ -29406,17 +29406,14 @@ const _excluded = [
     "role",
     "onKeyDown"
 ];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
+function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r) return {};
+    var t = {};
+    for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
+        if (e.indexOf(n) >= 0) continue;
+        t[n] = r[n];
     }
-    return target;
+    return t;
 }
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const noop = ()=>{};
@@ -29635,17 +29632,14 @@ const _excluded = [
     "active",
     "eventKey"
 ];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
+function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r) return {};
+    var t = {};
+    for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
+        if (e.indexOf(n) >= 0) continue;
+        t[n] = r[n];
     }
-    return target;
+    return t;
 }
 function useNavItem({ key, onClick, active, id, role, disabled }) {
     const parentOnSelect = (0, _react.useContext)((0, _selectableContextDefault.default));
@@ -29759,17 +29753,14 @@ const _excluded = [
     "as",
     "disabled"
 ];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
+function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r) return {};
+    var t = {};
+    for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
+        if (e.indexOf(n) >= 0) continue;
+        t[n] = r[n];
     }
-    return target;
+    return t;
 }
 function isTrivialHref(href) {
     return !href || href.trim() === "#";
@@ -29920,17 +29911,14 @@ var _jsxRuntime = require("react/jsx-runtime");
 const _excluded = [
     "onKeyDown"
 ];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
+function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r) return {};
+    var t = {};
+    for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
+        if (e.indexOf(n) >= 0) continue;
+        t[n] = r[n];
     }
-    return target;
+    return t;
 }
 function isTrivialHref(href) {
     return !href || href.trim() === "#";
@@ -32671,20 +32659,20 @@ const _excluded = [
     "onEntering",
     "onEntered"
 ];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
+function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r) return {};
+    var t = {};
+    for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
+        if (e.indexOf(n) >= 0) continue;
+        t[n] = r[n];
     }
-    return target;
+    return t;
 }
 let manager;
-function getManager(window) {
+/*
+  Modal props are split into a version with and without index signature so that you can fully use them in another projects
+  This is due to Typescript not playing well with index signatures e.g. when using Omit
+*/ function getManager(window) {
     if (!manager) manager = new (0, _modalManagerDefault.default)({
         ownerDocument: window == null ? void 0 : window.document
     });
@@ -33197,17 +33185,14 @@ var _jsxRuntime = require("react/jsx-runtime");
 const _excluded = [
     "component"
 ];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
+function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r) return {};
+    var t = {};
+    for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
+        if (e.indexOf(n) >= 0) continue;
+        t[n] = r[n];
     }
-    return target;
+    return t;
 }
 // Normalizes Transition callbacks when nodeRef is used.
 const RTGTransition = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
@@ -33237,17 +33222,14 @@ const _excluded = [
     "addEndListener",
     "children"
 ];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
+function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r) return {};
+    var t = {};
+    for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
+        if (e.indexOf(n) >= 0) continue;
+        t[n] = r[n];
     }
-    return target;
+    return t;
 }
 function useRTGTransitionProps(_ref) {
     let { onEnter, onEntering, onEntered, onExit, onExiting, onExited, addEndListener, children } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -34150,17 +34132,14 @@ const _excluded = [
     "children",
     "usePopper"
 ];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
+function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r) return {};
+    var t = {};
+    for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
+        if (e.indexOf(n) >= 0) continue;
+        t[n] = r[n];
     }
-    return target;
+    return t;
 }
 const noop = ()=>{};
 function useDropdownMenu(options = {}) {
@@ -34242,17 +34221,14 @@ const _excluded = [
     "strategy",
     "modifiers"
 ];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
+function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r) return {};
+    var t = {};
+    for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
+        if (e.indexOf(n) >= 0) continue;
+        t[n] = r[n];
     }
-    return target;
+    return t;
 }
 const disabledApplyStylesModifier = {
     name: "applyStyles",
@@ -36837,17 +36813,14 @@ const _excluded = [
     "active",
     "as"
 ];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
+function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r) return {};
+    var t = {};
+    for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
+        if (e.indexOf(n) >= 0) continue;
+        t[n] = r[n];
     }
-    return target;
+    return t;
 }
 function useDropdownItem({ key, href, active, disabled, onClick }) {
     const onSelectCtx = (0, _react.useContext)((0, _selectableContextDefault.default));
@@ -41310,17 +41283,14 @@ const _excluded = [
 ], _excluded3 = [
     "as"
 ];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {};
-    var target = {};
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
+function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r) return {};
+    var t = {};
+    for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
+        if (e.indexOf(n) >= 0) continue;
+        t[n] = r[n];
     }
-    return target;
+    return t;
 }
 function useTabPanel(_ref) {
     let { active, eventKey, mountOnEnter, transition, unmountOnExit, role = "tabpanel", onEnter, onEntering, onEntered, onExit, onExiting, onExited } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded);
@@ -42156,7 +42126,218 @@ $RefreshReg$(_c, "UserProfile");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./user-profile.scss":"ljMGE","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","../../../apis/users":"8Ey2M","./favourites-list/favourites-list":"9Te8x"}],"ljMGE":[function() {},{}],"km3Ru":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./user-profile.scss":"ljMGE","react-bootstrap":"3AD9A","../../../apis/users":"8Ey2M","react":"21dqq","./favourites-list/favourites-list":"9Te8x","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ljMGE":[function() {},{}],"8Ey2M":[function(require,module,exports) {
+async function GetUser() {
+    const userId = localStorage.getItem("userId"), token = localStorage.getItem("token");
+    try {
+        const response = await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}`, {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        const data = await response.json();
+        if (response.ok) {
+            localStorage.setItem("user", JSON.stringify(data[0])); //Update local storage user data
+            return data[0]; //Return user as object
+        } else console.error("Failed to retrieve user data:", response);
+    } catch (error) {
+        console.error("Network error:", error);
+    }
+}
+_c = GetUser;
+async function UpdateUser(values) {
+    const userId = localStorage.getItem("userId"), token = localStorage.getItem("token"), //build result message
+    result = {
+        success: "Update Successful",
+        fail: "Update Failed"
+    }, payload = {};
+    //build the payload
+    if (!values.Username) payload.Email = values.Email;
+    else if (!values.Email) payload.Username = values.Username;
+    else if (values.Email && values.Username) {
+        payload.Email = values.Email;
+        payload.Username = values.Username;
+    }
+    try {
+        const response = await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}`, {
+            method: "PUT",
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+        //response handling
+        if (response.ok) {
+            console.log(result.success);
+            return result.success, response;
+        } else {
+            console.log(result.fail);
+            return result.fail, response;
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+_c1 = UpdateUser;
+module.exports = {
+    GetUser,
+    UpdateUser
+};
+var _c, _c1;
+$RefreshReg$(_c, "GetUser");
+$RefreshReg$(_c1, "UpdateUser");
+
+},{}],"9Te8x":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$31d3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$31d3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "FavouritesList", ()=>FavouritesList);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _useMovie = require("../../../../hooks/useMovie");
+var _reactBootstrap = require("react-bootstrap");
+var _react = require("react");
+var _s = $RefreshSig$();
+const FavouritesList = ({ key, index, movieId, onRefresh })=>{
+    _s();
+    const { movie, loading, error } = (0, _useMovie.useMovie)(movieId);
+    if (loading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "Loading..."
+    }, void 0, false, {
+        fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
+        lineNumber: 9,
+        columnNumber: 12
+    }, undefined);
+    if (error) {
+        console.log("error");
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: "Error loading movie."
+        }, void 0, false, {
+            fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
+            lineNumber: 14,
+            columnNumber: 12
+        }, undefined);
+    }
+    if (!movie) {
+        console.log("No movie found");
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: "No movie found."
+        }, void 0, false, {
+            fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
+            lineNumber: 19,
+            columnNumber: 12
+        }, undefined);
+    }
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
+        className: "d-flex justify-content-center align-items-center",
+        style: {
+            width: "100%"
+        },
+        children: movie.Title
+    }, void 0, false, {
+        fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
+        lineNumber: 23,
+        columnNumber: 5
+    }, undefined);
+};
+_s(FavouritesList, "QD2Ot8tpMY422zBL+E+wrmqAoT4=", false, function() {
+    return [
+        (0, _useMovie.useMovie)
+    ];
+});
+_c = FavouritesList;
+var _c;
+$RefreshReg$(_c, "FavouritesList");
+
+  $parcel$ReactRefreshHelpers$31d3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../../../../hooks/useMovie":"a1WWw","react-bootstrap":"3AD9A","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"a1WWw":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9346 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9346.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useMovie", ()=>useMovie);
+var _react = require("react");
+var _movies = require("../apis/movies");
+var _s = $RefreshSig$();
+const useMovie = (movieId)=>{
+    _s();
+    const [movie, setMovie] = (0, _react.useState)(null);
+    const [loading, setLoading] = (0, _react.useState)(true);
+    const [error, setError] = (0, _react.useState)(null);
+    const fetchMovie = (0, _react.useCallback)(async ()=>{
+        setLoading(true);
+        setError(null);
+        try {
+            const movieData = await (0, _movies.GetMovie)(movieId);
+            setMovie(movieData);
+        } catch (err) {
+            setError(err);
+        } finally{
+            setLoading(false);
+        }
+    }, [
+        movieId
+    ]);
+    (0, _react.useEffect)(()=>{
+        if (movieId) fetchMovie();
+    }, [
+        movieId,
+        fetchMovie
+    ]);
+    return {
+        movie,
+        loading,
+        error
+    };
+};
+_s(useMovie, "f49WHuUkEMUH67x3wUQa0surfxk=");
+
+  $parcel$ReactRefreshHelpers$9346.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","../apis/movies":"fcUkE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fcUkE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GetMovie", ()=>GetMovie);
+const GetMovie = async (movieId)=>{
+    const userId = localStorage.getItem("userId");
+    const token = localStorage.getItem("token");
+    try {
+        const response = await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/movies/id/${movieId}`, {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const data = await response.json();
+        return data[0];
+    } catch (error) {
+        console.error("Add favourite error:", error);
+        throw error;
+    }
+};
+_c = GetMovie;
+var _c;
+$RefreshReg$(_c, "GetMovie");
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 function debounce(func, delay) {
@@ -42294,218 +42475,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7422ead32dcc1e6b":"786KC"}],"8Ey2M":[function(require,module,exports) {
-async function GetUser() {
-    const userId = localStorage.getItem("userId"), token = localStorage.getItem("token");
-    try {
-        const response = await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}`, {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        });
-        const data = await response.json();
-        if (response.ok) {
-            localStorage.setItem("user", JSON.stringify(data[0])); //Update local storage user data
-            return data[0]; //Return user as object
-        } else console.error("Failed to retrieve user data:", response);
-    } catch (error) {
-        console.error("Network error:", error);
-    }
-}
-_c = GetUser;
-async function UpdateUser(values) {
-    const userId = localStorage.getItem("userId"), token = localStorage.getItem("token"), //build result message
-    result = {
-        success: "Update Successful",
-        fail: "Update Failed"
-    }, payload = {};
-    //build the payload
-    if (!values.Username) payload.Email = values.Email;
-    else if (!values.Email) payload.Username = values.Username;
-    else if (values.Email && values.Username) {
-        payload.Email = values.Email;
-        payload.Username = values.Username;
-    }
-    try {
-        const response = await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}`, {
-            method: "PUT",
-            headers: {
-                Authorization: `Bearer ${token}`,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-        });
-        //response handling
-        if (response.ok) {
-            console.log(result.success);
-            return result.success, response;
-        } else {
-            console.log(result.fail);
-            return result.fail, response;
-        }
-    } catch (error) {
-        console.log(error);
-    }
-}
-_c1 = UpdateUser;
-module.exports = {
-    GetUser,
-    UpdateUser
-};
-var _c, _c1;
-$RefreshReg$(_c, "GetUser");
-$RefreshReg$(_c1, "UpdateUser");
-
-},{}],"9Te8x":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$31d3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$31d3.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "FavouritesList", ()=>FavouritesList);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _useMovie = require("../../../../hooks/useMovie");
-var _reactBootstrap = require("react-bootstrap");
-var _react = require("react");
-var _s = $RefreshSig$();
-const FavouritesList = ({ key, index, movieId, onRefresh })=>{
-    _s();
-    const { movie, loading, error } = (0, _useMovie.useMovie)(movieId);
-    if (loading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "Loading..."
-    }, void 0, false, {
-        fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
-        lineNumber: 9,
-        columnNumber: 12
-    }, undefined);
-    if (error) {
-        console.log("error");
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            children: "Error loading movie."
-        }, void 0, false, {
-            fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
-            lineNumber: 14,
-            columnNumber: 12
-        }, undefined);
-    }
-    if (!movie) {
-        console.log("No movie found");
-        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            children: "No movie found."
-        }, void 0, false, {
-            fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
-            lineNumber: 19,
-            columnNumber: 12
-        }, undefined);
-    }
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
-        className: "d-flex justify-content-center align-items-center",
-        style: {
-            width: "100%"
-        },
-        children: movie.Title
-    }, void 0, false, {
-        fileName: "src/components/header-bar/user-profile/favourites-list/favourites-list.jsx",
-        lineNumber: 23,
-        columnNumber: 5
-    }, undefined);
-};
-_s(FavouritesList, "QD2Ot8tpMY422zBL+E+wrmqAoT4=", false, function() {
-    return [
-        (0, _useMovie.useMovie)
-    ];
-});
-_c = FavouritesList;
-var _c;
-$RefreshReg$(_c, "FavouritesList");
-
-  $parcel$ReactRefreshHelpers$31d3.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../../../hooks/useMovie":"a1WWw","react":"21dqq"}],"a1WWw":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$9346 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$9346.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useMovie", ()=>useMovie);
-var _react = require("react");
-var _movies = require("../apis/movies");
-var _s = $RefreshSig$();
-const useMovie = (movieId)=>{
-    _s();
-    const [movie, setMovie] = (0, _react.useState)(null);
-    const [loading, setLoading] = (0, _react.useState)(true);
-    const [error, setError] = (0, _react.useState)(null);
-    const fetchMovie = (0, _react.useCallback)(async ()=>{
-        setLoading(true);
-        setError(null);
-        try {
-            const movieData = await (0, _movies.GetMovie)(movieId);
-            setMovie(movieData);
-        } catch (err) {
-            setError(err);
-        } finally{
-            setLoading(false);
-        }
-    }, [
-        movieId
-    ]);
-    (0, _react.useEffect)(()=>{
-        if (movieId) fetchMovie();
-    }, [
-        movieId,
-        fetchMovie
-    ]);
-    return {
-        movie,
-        loading,
-        error
-    };
-};
-_s(useMovie, "f49WHuUkEMUH67x3wUQa0surfxk=");
-
-  $parcel$ReactRefreshHelpers$9346.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","../apis/movies":"fcUkE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fcUkE":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "GetMovie", ()=>GetMovie);
-const GetMovie = async (movieId)=>{
-    const userId = localStorage.getItem("userId");
-    const token = localStorage.getItem("token");
-    try {
-        const response = await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/movies/id/${movieId}`, {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        });
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const data = await response.json();
-        return data[0];
-    } catch (error) {
-        console.error("Add favourite error:", error);
-        throw error;
-    }
-};
-_c = GetMovie;
-var _c;
-$RefreshReg$(_c, "GetMovie");
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bwuIu":[function(require,module,exports) {
+},{"7422ead32dcc1e6b":"786KC"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43133,7 +43103,7 @@ $RefreshReg$(_c, "MovieViewModal");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"iB9t7","prop-types":"7wKI2","../similar-movies/similar-movies":"3b1j4","react-bootstrap/Modal":"aNVmp","react-bootstrap/CloseButton":"1wmVl","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","react-bootstrap/Image":"cyVPa","react-bootstrap/ButtonGroup":"gXYCe","react-bootstrap/Button":"aPzUt","react-bootstrap/ButtonToolbar":"k88gW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq","../../apis/favourites":"gqSNt","../../apis/users":"8Ey2M"}],"iB9t7":[function() {},{}],"3b1j4":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./movie-view.scss":"iB9t7","prop-types":"7wKI2","../similar-movies/similar-movies":"3b1j4","react-bootstrap/Modal":"aNVmp","react-bootstrap/CloseButton":"1wmVl","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39","react-bootstrap/Image":"cyVPa","react-bootstrap/ButtonGroup":"gXYCe","react-bootstrap/Button":"aPzUt","react-bootstrap/ButtonToolbar":"k88gW","../../apis/favourites":"gqSNt","react":"21dqq","../../apis/users":"8Ey2M","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iB9t7":[function() {},{}],"3b1j4":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fdcc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -43815,7 +43785,7 @@ module.exports = require("6cf7fc7ba8fc4b07").getBundleURL("byUka") + "spinner.d4
 
 },{"6cf7fc7ba8fc4b07":"lgJ39"}],"9xmpe":[function(require,module,exports) {
 /**
- * React Router DOM v6.24.1
+ * React Router DOM v6.26.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -43854,6 +43824,7 @@ parcelHelpers.export(exports, "parsePath", ()=>(0, _reactRouter.parsePath));
 parcelHelpers.export(exports, "redirect", ()=>(0, _reactRouter.redirect));
 parcelHelpers.export(exports, "redirectDocument", ()=>(0, _reactRouter.redirectDocument));
 parcelHelpers.export(exports, "renderMatches", ()=>(0, _reactRouter.renderMatches));
+parcelHelpers.export(exports, "replace", ()=>(0, _reactRouter.replace));
 parcelHelpers.export(exports, "resolvePath", ()=>(0, _reactRouter.resolvePath));
 parcelHelpers.export(exports, "useActionData", ()=>(0, _reactRouter.useActionData));
 parcelHelpers.export(exports, "useAsyncError", ()=>(0, _reactRouter.useAsyncError));
@@ -44466,6 +44437,11 @@ class Deferred {
         navigator,
         basename
     ]);
+    let routerFuture = _react.useMemo(()=>({
+            v7_relativeSplatPath: router.future.v7_relativeSplatPath
+        }), [
+        router.future.v7_relativeSplatPath
+    ]);
     // The fragment and {null} here are important!  We need them to keep React 18's
     // useId happy when we are server-rendering since we may have a <script> here
     // containing the hydrated server-side staticContext (from StaticRouterProvider).
@@ -44485,15 +44461,15 @@ class Deferred {
         location: state.location,
         navigationType: state.historyAction,
         navigator: navigator,
-        future: {
-            v7_relativeSplatPath: router.future.v7_relativeSplatPath
-        }
-    }, state.initialized || router.future.v7_partialHydration ? /*#__PURE__*/ _react.createElement(DataRoutes, {
+        future: routerFuture
+    }, state.initialized || router.future.v7_partialHydration ? /*#__PURE__*/ _react.createElement(MemoizedDataRoutes, {
         routes: router.routes,
         future: router.future,
         state: state
     }) : fallbackElement))))), null);
 }
+// Memoize to avoid re-renders when updating `ViewTransitionContext`
+const MemoizedDataRoutes = /*#__PURE__*/ _react.memo(DataRoutes);
 function DataRoutes(_ref3) {
     let { routes, future, state } = _ref3;
     return (0, _reactRouter.UNSAFE_useRoutesImpl)(routes, undefined, state, future);
@@ -45244,7 +45220,7 @@ let savedScrollPositions = {};
 
 },{"react":"21dqq","react-dom":"j6uA9","react-router":"dbWyW","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dbWyW":[function(require,module,exports) {
 /**
- * React Router v6.24.1
+ * React Router v6.26.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -45266,6 +45242,7 @@ parcelHelpers.export(exports, "matchRoutes", ()=>(0, _router.matchRoutes));
 parcelHelpers.export(exports, "parsePath", ()=>(0, _router.parsePath));
 parcelHelpers.export(exports, "redirect", ()=>(0, _router.redirect));
 parcelHelpers.export(exports, "redirectDocument", ()=>(0, _router.redirectDocument));
+parcelHelpers.export(exports, "replace", ()=>(0, _router.replace));
 parcelHelpers.export(exports, "resolvePath", ()=>(0, _router.resolvePath));
 parcelHelpers.export(exports, "Await", ()=>Await);
 parcelHelpers.export(exports, "MemoryRouter", ()=>MemoryRouter);
@@ -45415,7 +45392,7 @@ RouteErrorContext.displayName = "RouteError";
     !useInRouterContext() && (0, _router.UNSAFE_invariant)(false, // router loaded. We can help them understand how to avoid that.
     "useMatch() may be used only in the context of a <Router> component.");
     let { pathname } = useLocation();
-    return _react.useMemo(()=>(0, _router.matchPath)(pattern, pathname), [
+    return _react.useMemo(()=>(0, _router.matchPath)(pattern, (0, _router.UNSAFE_decodePath)(pathname)), [
         pathname,
         pattern
     ]);
@@ -45731,20 +45708,28 @@ function RenderedRoute(_ref) {
     }, children);
 }
 function _renderMatches(matches, parentMatches, dataRouterState, future) {
-    var _dataRouterState2;
+    var _dataRouterState;
     if (parentMatches === void 0) parentMatches = [];
     if (dataRouterState === void 0) dataRouterState = null;
     if (future === void 0) future = null;
     if (matches == null) {
-        var _dataRouterState;
-        if ((_dataRouterState = dataRouterState) != null && _dataRouterState.errors) // Don't bail if we have data router errors so we can render them in the
+        var _future;
+        if (!dataRouterState) return null;
+        if (dataRouterState.errors) // Don't bail if we have data router errors so we can render them in the
         // boundary.  Use the pre-matched (or shimmed) matches
+        matches = dataRouterState.matches;
+        else if ((_future = future) != null && _future.v7_partialHydration && parentMatches.length === 0 && !dataRouterState.initialized && dataRouterState.matches.length > 0) // Don't bail if we're initializing with partial hydration and we have
+        // router matches.  That means we're actively running `patchRoutesOnMiss`
+        // so we should render down the partial matches to the appropriate
+        // `HydrateFallback`.  We only do this if `parentMatches` is empty so it
+        // only impacts the root matches for `RouterProvider` and no descendant
+        // `<Routes>`
         matches = dataRouterState.matches;
         else return null;
     }
     let renderedMatches = matches;
     // If we have data errors, trim matches to the highest error boundary
-    let errors = (_dataRouterState2 = dataRouterState) == null ? void 0 : _dataRouterState2.errors;
+    let errors = (_dataRouterState = dataRouterState) == null ? void 0 : _dataRouterState.errors;
     if (errors != null) {
         let errorIndex = renderedMatches.findIndex((m)=>m.route.id && (errors == null ? void 0 : errors[m.route.id]) !== undefined);
         !(errorIndex >= 0) && (0, _router.UNSAFE_invariant)(false, "Could not find a matching route for errors on route IDs: " + Object.keys(errors).join(","));
@@ -46512,7 +46497,7 @@ function createMemoryRouter(routes, opts) {
 
 },{"react":"21dqq","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ncDG":[function(require,module,exports) {
 /**
- * @remix-run/router v1.17.1
+ * @remix-run/router v1.19.0
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -46533,6 +46518,7 @@ parcelHelpers.export(exports, "UNSAFE_DeferredData", ()=>DeferredData);
 parcelHelpers.export(exports, "UNSAFE_ErrorResponseImpl", ()=>ErrorResponseImpl);
 parcelHelpers.export(exports, "UNSAFE_convertRouteMatchToUiMatch", ()=>convertRouteMatchToUiMatch);
 parcelHelpers.export(exports, "UNSAFE_convertRoutesToDataRoutes", ()=>convertRoutesToDataRoutes);
+parcelHelpers.export(exports, "UNSAFE_decodePath", ()=>decodePath);
 parcelHelpers.export(exports, "UNSAFE_getResolveToMatches", ()=>getResolveToMatches);
 parcelHelpers.export(exports, "UNSAFE_invariant", ()=>invariant);
 parcelHelpers.export(exports, "UNSAFE_warning", ()=>warning);
@@ -46546,6 +46532,7 @@ parcelHelpers.export(exports, "defer", ()=>defer);
 parcelHelpers.export(exports, "generatePath", ()=>generatePath);
 parcelHelpers.export(exports, "getStaticContextFromError", ()=>getStaticContextFromError);
 parcelHelpers.export(exports, "getToPathname", ()=>getToPathname);
+parcelHelpers.export(exports, "isDataWithResponseInit", ()=>isDataWithResponseInit);
 parcelHelpers.export(exports, "isDeferredData", ()=>isDeferredData);
 parcelHelpers.export(exports, "isRouteErrorResponse", ()=>isRouteErrorResponse);
 parcelHelpers.export(exports, "joinPaths", ()=>joinPaths);
@@ -46556,9 +46543,11 @@ parcelHelpers.export(exports, "normalizePathname", ()=>normalizePathname);
 parcelHelpers.export(exports, "parsePath", ()=>parsePath);
 parcelHelpers.export(exports, "redirect", ()=>redirect);
 parcelHelpers.export(exports, "redirectDocument", ()=>redirectDocument);
+parcelHelpers.export(exports, "replace", ()=>replace);
 parcelHelpers.export(exports, "resolvePath", ()=>resolvePath);
 parcelHelpers.export(exports, "resolveTo", ()=>resolveTo);
 parcelHelpers.export(exports, "stripBasename", ()=>stripBasename);
+parcelHelpers.export(exports, "unstable_data", ()=>data);
 function _extends() {
     _extends = Object.assign ? Object.assign.bind() : function(target) {
         for(var i = 1; i < arguments.length; i++){
@@ -47469,6 +47458,21 @@ function getResolveToMatches(matches, v7_relativeSplatPath) {
         headers
     }));
 };
+class DataWithResponseInit {
+    constructor(data, init){
+        this.type = "DataWithResponseInit";
+        this.data = data;
+        this.init = init || null;
+    }
+}
+/**
+ * Create "responses" that contain `status`/`headers` without forcing
+ * serialization into an actual `Response` - used by Remix single fetch
+ */ function data(data, init) {
+    return new DataWithResponseInit(data, typeof init === "number" ? {
+        status: init
+    } : init);
+}
 class AbortedDeferredError extends Error {
 }
 class DeferredData {
@@ -47630,6 +47634,16 @@ const defer = function defer(data, init) {
     return response;
 };
 /**
+ * A redirect response that will perform a `history.replaceState` instead of a
+ * `history.pushState` for client-side navigation redirects.
+ * Sets the status code and the `Location` header.
+ * Defaults to "302 Found".
+ */ const replace = (url, init)=>{
+    let response = redirect(url, init);
+    response.headers.set("X-Remix-Replace", "true");
+    return response;
+};
+/**
  * @private
  * Utility class we use to hold auto-unwrapped 4xx/5xx Response bodies
  *
@@ -47743,7 +47757,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         v7_partialHydration: false,
         v7_prependBasename: false,
         v7_relativeSplatPath: false,
-        unstable_skipActionErrorRevalidation: false
+        v7_skipActionErrorRevalidation: false
     }, init.future);
     // Cleanup function for history
     let unlistenHistory = null;
@@ -47776,18 +47790,27 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
             [route.id]: error
         };
     }
-    // If the user provided a patchRoutesOnMiss implementation and our initial
-    // match is a splat route, clear them out so we run through lazy discovery
-    // on hydration in case there's a more accurate lazy route match
-    if (initialMatches && patchRoutesOnMissImpl) {
+    // In SPA apps, if the user provided a patchRoutesOnMiss implementation and
+    // our initial match is a splat route, clear them out so we run through lazy
+    // discovery on hydration in case there's a more accurate lazy route match.
+    // In SSR apps (with `hydrationData`), we expect that the server will send
+    // up the proper matched routes so we don't want to run lazy discovery on
+    // initial hydration and want to hydrate into the splat route.
+    if (initialMatches && !init.hydrationData) {
         let fogOfWar = checkFogOfWar(initialMatches, dataRoutes, init.history.location.pathname);
         if (fogOfWar.active) initialMatches = null;
     }
     let initialized;
     if (!initialMatches) {
-        // We need to run patchRoutesOnMiss in initialize()
         initialized = false;
         initialMatches = [];
+        // If partial hydration and fog of war is enabled, we will be running
+        // `patchRoutesOnMiss` during hydration so include any partial matches as
+        // the initial matches so we can properly render `HydrateFallback`'s
+        if (future.v7_partialHydration) {
+            let fogOfWar = checkFogOfWar(null, dataRoutes, init.history.location.pathname);
+            if (fogOfWar.active && fogOfWar.matches) initialMatches = fogOfWar.matches;
+        }
     } else if (initialMatches.some((m)=>m.route.lazy)) // All initialMatches need to be loaded before we're ready.  If we have lazy
     // functions around still then we'll need to run them in initialize()
     initialized = false;
@@ -47859,7 +47882,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
     let cancelledDeferredRoutes = [];
     // Use this internal array to capture fetcher loads that were cancelled by an
     // action navigation and require revalidation
-    let cancelledFetcherLoads = [];
+    let cancelledFetcherLoads = new Set();
     // AbortControllers for any in-flight fetchers
     let fetchControllers = new Map();
     // Track loads based on the order in which they started
@@ -48104,7 +48127,6 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         isUninterruptedRevalidation = false;
         isRevalidationRequired = false;
         cancelledDeferredRoutes = [];
-        cancelledFetcherLoads = [];
     }
     // Trigger a navigation event, which can either be a numerical POP or a PUSH
     // replace with an optional submission
@@ -48331,11 +48353,11 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
                 shortCircuited: true
             };
             else if (discoverResult.type === "error") {
-                let { error, notFoundMatches, route } = handleDiscoverRouteError(location.pathname, discoverResult);
+                let { boundaryId, error } = handleDiscoverRouteError(location.pathname, discoverResult);
                 return {
-                    matches: notFoundMatches,
+                    matches: discoverResult.partialMatches,
                     pendingActionResult: [
-                        route.id,
+                        boundaryId,
                         {
                             type: ResultType.error,
                             error
@@ -48459,12 +48481,12 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
                 shortCircuited: true
             };
             else if (discoverResult.type === "error") {
-                let { error, notFoundMatches, route } = handleDiscoverRouteError(location.pathname, discoverResult);
+                let { boundaryId, error } = handleDiscoverRouteError(location.pathname, discoverResult);
                 return {
-                    matches: notFoundMatches,
+                    matches: discoverResult.partialMatches,
                     loaderData: {},
                     errors: {
-                        [route.id]: error
+                        [boundaryId]: error
                     }
                 };
             } else if (!discoverResult.matches) {
@@ -48479,7 +48501,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
             } else matches = discoverResult.matches;
         }
         let routesToUse = inFlightDataRoutes || dataRoutes;
-        let [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(init.history, state, matches, activeSubmission, location, future.v7_partialHydration && initialHydration === true, future.unstable_skipActionErrorRevalidation, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, deletedFetchers, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, pendingActionResult);
+        let [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(init.history, state, matches, activeSubmission, location, future.v7_partialHydration && initialHydration === true, future.v7_skipActionErrorRevalidation, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, deletedFetchers, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, pendingActionResult);
         // Cancel pending deferreds for no-longer-matched routes or routes we're
         // about to reload.  Note that if this is an action reload we would have
         // already cancelled all pending deferreds so this would be a no-op
@@ -48755,7 +48777,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         fetchReloadIds.set(key, loadId);
         let loadFetcher = getLoadingFetcher(submission, actionResult.data);
         state.fetchers.set(key, loadFetcher);
-        let [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(init.history, state, matches, submission, nextLocation, false, future.unstable_skipActionErrorRevalidation, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, deletedFetchers, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, [
+        let [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(init.history, state, matches, submission, nextLocation, false, future.v7_skipActionErrorRevalidation, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, deletedFetchers, fetchLoadMatches, fetchRedirectIds, routesToUse, basename, [
             match.route.id,
             actionResult
         ]);
@@ -48947,7 +48969,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         // There's no need to abort on redirects, since we don't detect the
         // redirect until the action/loaders have settled
         pendingNavigationController = null;
-        let redirectHistoryAction = replace === true ? Action.Replace : Action.Push;
+        let redirectHistoryAction = replace === true || redirect.response.headers.has("X-Remix-Replace") ? Action.Replace : Action.Push;
         // Use the incoming submission if provided, fallback on the active one in
         // state.navigation
         let { formMethod, formAction, formEncType } = state.navigation;
@@ -49035,7 +49057,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         // Abort in-flight fetcher loads
         fetchLoadMatches.forEach((_, key)=>{
             if (fetchControllers.has(key)) {
-                cancelledFetcherLoads.push(key);
+                cancelledFetcherLoads.add(key);
                 abortFetcher(key);
             }
         });
@@ -49081,6 +49103,7 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         fetchReloadIds.delete(key);
         fetchRedirectIds.delete(key);
         deletedFetchers.delete(key);
+        cancelledFetcherLoads.delete(key);
         state.fetchers.delete(key);
     }
     function deleteFetcherAndUpdateState(key) {
@@ -49193,18 +49216,13 @@ const TRANSITIONS_STORAGE_KEY = "remix-router-transitions";
         };
     }
     function handleDiscoverRouteError(pathname, discoverResult) {
-        let matches = discoverResult.partialMatches;
-        let route = matches[matches.length - 1].route;
-        let error = getInternalRouterError(400, {
-            type: "route-discovery",
-            routeId: route.id,
-            pathname,
-            message: discoverResult.error != null && "message" in discoverResult.error ? discoverResult.error : String(discoverResult.error)
-        });
         return {
-            notFoundMatches: matches,
-            route,
-            error
+            boundaryId: findNearestBoundary(discoverResult.partialMatches).route.id,
+            error: getInternalRouterError(400, {
+                type: "route-discovery",
+                pathname,
+                message: discoverResult.error != null && "message" in discoverResult.error ? discoverResult.error : String(discoverResult.error)
+            })
         };
     }
     function cancelActiveDeferreds(predicate) {
@@ -49992,7 +50010,7 @@ function getMatchesToLoad(history, state, matches, submission, location, isIniti
             nextParams: nextRouteMatch.params
         }, submission, {
             actionResult,
-            unstable_actionStatus: actionStatus,
+            actionStatus,
             defaultShouldRevalidate: shouldSkipRevalidation ? false : // Forced revalidation due to submission, useRevalidator, or X-Remix-Revalidate
             isRevalidationRequired || currentUrl.pathname + currentUrl.search === nextUrl.pathname + nextUrl.search || // Search params affect all loaders
             currentUrl.search !== nextUrl.search || isNewRouteInstance(currentRouteMatch, nextRouteMatch)
@@ -50031,9 +50049,11 @@ function getMatchesToLoad(history, state, matches, submission, location, isIniti
         let shouldRevalidate = false;
         if (fetchRedirectIds.has(key)) // Never trigger a revalidation of an actively redirecting fetcher
         shouldRevalidate = false;
-        else if (cancelledFetcherLoads.includes(key)) // Always revalidate if the fetcher was cancelled
-        shouldRevalidate = true;
-        else if (fetcher && fetcher.state !== "idle" && fetcher.data === undefined) // If the fetcher hasn't ever completed loading yet, then this isn't a
+        else if (cancelledFetcherLoads.has(key)) {
+            // Always mark for revalidation if the fetcher was cancelled
+            cancelledFetcherLoads.delete(key);
+            shouldRevalidate = true;
+        } else if (fetcher && fetcher.state !== "idle" && fetcher.data === undefined) // If the fetcher hasn't ever completed loading yet, then this isn't a
         // revalidation, it would just be a brand new load if an explicit
         // revalidation is required
         shouldRevalidate = isRevalidationRequired;
@@ -50046,7 +50066,7 @@ function getMatchesToLoad(history, state, matches, submission, location, isIniti
             nextParams: matches[matches.length - 1].params
         }, submission, {
             actionResult,
-            unstable_actionStatus: actionStatus,
+            actionStatus,
             defaultShouldRevalidate: shouldSkipRevalidation ? false : isRevalidationRequired
         }));
         if (shouldRevalidate) revalidatingFetchers.push({
@@ -50316,7 +50336,7 @@ async function callLoaderOrAction(type, request, match, manifest, mapRouteProper
     return result;
 }
 async function convertHandlerResultToDataResult(handlerResult) {
-    let { result, type, status } = handlerResult;
+    let { result, type } = handlerResult;
     if (isResponse(result)) {
         let data;
         try {
@@ -50346,24 +50366,47 @@ async function convertHandlerResultToDataResult(handlerResult) {
             headers: result.headers
         };
     }
-    if (type === ResultType.error) return {
-        type: ResultType.error,
-        error: result,
-        statusCode: isRouteErrorResponse(result) ? result.status : status
-    };
+    if (type === ResultType.error) {
+        if (isDataWithResponseInit(result)) {
+            var _result$init2;
+            if (result.data instanceof Error) {
+                var _result$init;
+                return {
+                    type: ResultType.error,
+                    error: result.data,
+                    statusCode: (_result$init = result.init) == null ? void 0 : _result$init.status
+                };
+            }
+            // Convert thrown unstable_data() to ErrorResponse instances
+            result = new ErrorResponseImpl(((_result$init2 = result.init) == null ? void 0 : _result$init2.status) || 500, undefined, result.data);
+        }
+        return {
+            type: ResultType.error,
+            error: result,
+            statusCode: isRouteErrorResponse(result) ? result.status : undefined
+        };
+    }
     if (isDeferredData(result)) {
-        var _result$init, _result$init2;
+        var _result$init3, _result$init4;
         return {
             type: ResultType.deferred,
             deferredData: result,
-            statusCode: (_result$init = result.init) == null ? void 0 : _result$init.status,
-            headers: ((_result$init2 = result.init) == null ? void 0 : _result$init2.headers) && new Headers(result.init.headers)
+            statusCode: (_result$init3 = result.init) == null ? void 0 : _result$init3.status,
+            headers: ((_result$init4 = result.init) == null ? void 0 : _result$init4.headers) && new Headers(result.init.headers)
+        };
+    }
+    if (isDataWithResponseInit(result)) {
+        var _result$init5, _result$init6;
+        return {
+            type: ResultType.data,
+            data: result.data,
+            statusCode: (_result$init5 = result.init) == null ? void 0 : _result$init5.status,
+            headers: (_result$init6 = result.init) != null && _result$init6.headers ? new Headers(result.init.headers) : undefined
         };
     }
     return {
         type: ResultType.data,
-        data: result,
-        statusCode: status
+        data: result
     };
 }
 // Support relative routing in internal redirects
@@ -50584,7 +50627,7 @@ function getInternalRouterError(status, _temp5) {
     let errorMessage = "Unknown @remix-run/router error";
     if (status === 400) {
         statusText = "Bad Request";
-        if (type === "route-discovery") errorMessage = 'Unable to match URL "' + pathname + '" - the `children()` function for ' + ("route `" + routeId + "` threw the following error:\n" + message);
+        if (type === "route-discovery") errorMessage = 'Unable to match URL "' + pathname + '" - the `unstable_patchRoutesOnMiss()` ' + ("function threw the following error:\n" + message);
         else if (method && pathname && routeId) errorMessage = "You made a " + method + ' request to "' + pathname + '" but ' + ('did not provide a `loader` for route "' + routeId + '", ') + "so there is no way to handle the request.";
         else if (type === "defer-action") errorMessage = "defer() is not supported in actions";
         else if (type === "invalid-body") errorMessage = "Unable to encode submission body";
@@ -50646,6 +50689,9 @@ function isErrorResult(result) {
 }
 function isRedirectResult(result) {
     return (result && result.type) === ResultType.redirect;
+}
+function isDataWithResponseInit(value) {
+    return typeof value === "object" && value != null && "type" in value && "data" in value && "init" in value && value.type === "DataWithResponseInit";
 }
 function isDeferredData(value) {
     let deferred = value;
