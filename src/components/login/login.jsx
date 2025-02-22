@@ -16,7 +16,7 @@ export const Login = ({ onLoggedIn , setMessage}) => {
       Password: password,
     };
 
-    fetch("https://mymovies-api-d8738180d851.herokuapp.com/login", {
+    fetch("http://18.130.251.219/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

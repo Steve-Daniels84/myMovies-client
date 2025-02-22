@@ -5,7 +5,7 @@ export const SimilarMovies = ({ genre, token }) => {
   const [similarMovies, setSimilarMovies] = useState([]);
 
   useEffect(() => {
-    fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies/" + genre, {
+    fetch("http://18.130.251.219/movies/" + genre, {
       headers: {
         Authorization: `Bearer ${token}`
       }

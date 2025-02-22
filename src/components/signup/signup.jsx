@@ -17,7 +17,7 @@ export const SignUp = ({ setMessage }) => {
       Password: password,
     };
 
-    fetch("https://mymovies-api-d8738180d851.herokuapp.com/users", {
+    fetch("http://18.130.251.219/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

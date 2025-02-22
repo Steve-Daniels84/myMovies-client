@@ -4,7 +4,7 @@ async function GetUser() {
 
   try {
     const response = await fetch(
-      `https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}`,
+      `http://18.130.251.219/users/${userId}`,
       {
         method: "GET",
         headers: {
@@ -49,7 +49,7 @@ async function UpdateUser(values) {
 
   try {
     const response = await fetch(
-      `https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}`,
+      `http://18.130.251.219/users/${userId}`,
       {
         method: "PUT",
         headers: {

@@ -4,7 +4,7 @@ export const GetMovie = async (movieId) => {
     
     try {
       const response = await fetch(
-        `https://mymovies-api-d8738180d851.herokuapp.com/movies/id/${movieId}`,
+        `http://18.130.251.219/movies/id/${movieId}`,
         {
           method: "GET",
           headers: {

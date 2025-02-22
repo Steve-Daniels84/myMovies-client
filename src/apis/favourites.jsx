@@ -3,7 +3,7 @@ async function AddFavouriteMovie(movie) {
   const token = localStorage.getItem("token");
   try {
     await fetch(
-      `https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}/${movie}`,
+      `http://18.130.251.219/users/${userId}/${movie}`,
       {
         method: "PUT",
         headers: {
@@ -23,7 +23,7 @@ async function DeleteFavouriteMovie(movie) {
   const token = localStorage.getItem("token");
   try {
     await fetch(
-      `https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}/${movie}`,
+      `http://18.130.251.219/users/${userId}/${movie}`,
       {
         method: "DELETE",
         headers: {

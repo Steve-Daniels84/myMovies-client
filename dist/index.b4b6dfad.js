@@ -27265,7 +27265,7 @@ const MainView = ()=>{
     const [refresh, setRefresh] = (0, _react.useState)(false);
     (0, _react.useEffect)(()=>{
         if (!token) return;
-        fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies", {
+        fetch("http://18.130.251.219/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -27754,7 +27754,7 @@ $RefreshReg$(_c, "HeaderBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../../../public/img/logo.svg":"13h7n","./header-bar.scss":"99HcC","react-bootstrap/Container":"hEdsw","react-bootstrap/Nav":"cXyL2","react-bootstrap/Navbar":"1mHjo","react-bootstrap/NavDropdown":"8e6QB","react-bootstrap/Button":"aPzUt","react-bootstrap":"3AD9A","react":"21dqq","./user-profile/user-profile":"7BXJO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./filters-panel/filters-panel":"7mkea"}],"13h7n":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../../../public/img/logo.svg":"13h7n","./header-bar.scss":"99HcC","react-bootstrap/Container":"hEdsw","react-bootstrap/Nav":"cXyL2","react-bootstrap/Navbar":"1mHjo","react-bootstrap/NavDropdown":"8e6QB","react-bootstrap/Button":"aPzUt","react-bootstrap":"3AD9A","react":"21dqq","./user-profile/user-profile":"7BXJO","./filters-panel/filters-panel":"7mkea","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"13h7n":[function(require,module,exports) {
 module.exports = require("d7e9cc471dcaace4").getBundleURL("byUka") + "logo.7efc0074.svg" + "?" + Date.now();
 
 },{"d7e9cc471dcaace4":"lgJ39"}],"lgJ39":[function(require,module,exports) {
@@ -42149,7 +42149,7 @@ $RefreshReg$(_c, "UserProfile");
 async function GetUser() {
     const userId = localStorage.getItem("userId"), token = localStorage.getItem("token");
     try {
-        const response = await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}`, {
+        const response = await fetch(`http://18.130.251.219/users/${userId}`, {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -42179,7 +42179,7 @@ async function UpdateUser(values) {
         payload.Username = values.Username;
     }
     try {
-        const response = await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}`, {
+        const response = await fetch(`http://18.130.251.219/users/${userId}`, {
             method: "PUT",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -42338,7 +42338,7 @@ const GetMovie = async (movieId)=>{
     const userId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
     try {
-        const response = await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/movies/id/${movieId}`, {
+        const response = await fetch(`http://18.130.251.219/movies/id/${movieId}`, {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -43233,7 +43233,7 @@ const SimilarMovies = ({ genre, token })=>{
     _s();
     const [similarMovies, setSimilarMovies] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
-        fetch("https://mymovies-api-d8738180d851.herokuapp.com/movies/" + genre, {
+        fetch("http://18.130.251.219/movies/" + genre, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -43330,7 +43330,7 @@ async function AddFavouriteMovie(movie) {
     const userId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
     try {
-        await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}/${movie}`, {
+        await fetch(`http://18.130.251.219/users/${userId}/${movie}`, {
             method: "PUT",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -43347,7 +43347,7 @@ async function DeleteFavouriteMovie(movie) {
     const userId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
     try {
-        await fetch(`https://mymovies-api-d8738180d851.herokuapp.com/users/${userId}/${movie}`, {
+        await fetch(`http://18.130.251.219/users/${userId}/${movie}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -43579,7 +43579,7 @@ const SignUp = ({ setMessage })=>{
             Username: username,
             Password: password
         };
-        fetch("https://mymovies-api-d8738180d851.herokuapp.com/users", {
+        fetch("http://18.130.251.219/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -43745,7 +43745,7 @@ const Login = ({ onLoggedIn, setMessage })=>{
             Username: username,
             Password: password
         };
-        fetch("https://mymovies-api-d8738180d851.herokuapp.com/login", {
+        fetch("http://18.130.251.219/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
