@@ -5,12 +5,15 @@ import { SignupLogin } from "../signup-login/signup-login";
 import spinner from "../../../public/img/spinner.gif";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import { Container } from "react-bootstrap";
 import { MovieViewModal } from "../movie-view-modal/movie-view-modal";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useRef } from "react";
 
 export const MainView = () => {
-  
   const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
   const [token, setToken] = useState(localStorage.getItem("token") || null);
@@ -18,16 +21,20 @@ export const MainView = () => {
   const [showModal, setShowModal] = useState(false);
   const [originalMovies, setOriginalMovies] = useState([]);
   const [refresh, setRefresh] = useState(false);
-
+  const [s3Contents, setS3Contents] = useState([]);
+  const [selectedFile, setSelectedFile] = useState(null);
 
   useEffect(() => {
     if (!token) {
       return;
     }
 
-    fetch("http://18.130.251.219/movies", {
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    fetch(
+      "http://3-tier-web-app-alb-1684509236.us-east-1.elb.amazonaws.com/movies",
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         const movies = data.map((movie) => {
@@ -55,7 +62,75 @@ export const MainView = () => {
       });
   }, [token, refresh]);
 
-    const handleOpenModal = (movie) => {
+  useEffect(() => {
+    if (!token) {
+      return;
+    }
+
+    fetch(
+      "http://3-tier-web-app-alb-1684509236.us-east-1.elb.amazonaws.com/objects"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.Contents && data.Contents.length > 1) {
+          // Remove the first item and strip "original-images/" from the remaining ones
+          const filteredKeys = data.Contents.slice(1).map((object) =>
+            object.Key.replace(/^original-images\//, "")
+          );
+
+          setS3Contents(filteredKeys);
+        }
+      })
+      .catch((error) => console.error("Error fetching S3 contents:", error));
+  }, [token, refresh]);
+
+  const fileInputRef = useRef(null);
+
+  const handleButtonClick = () => {
+    fileInputRef.current.click(); // Opens file picker
+  };
+
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    setSelectedFile(file);
+    console.log("Selected file:", file.name);
+
+    // Automatically submit after selecting the file
+    await handleSubmit(file);
+  };
+
+  const handleSubmit = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await fetch(
+        "http://3-tier-web-app-alb-1684509236.us-east-1.elb.amazonaws.com/objects",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (response.ok) {
+        alert("File uploaded successfully!");
+        setSelectedFile(null);
+
+        setTimeout(() => {
+          setRefresh(!refresh);
+        }, 2000);
+        
+      } else {
+        alert("Upload failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error uploading file:", error);
+    }
+  };
+
+  const handleOpenModal = (movie) => {
     setSelectedMovie(movie);
     setShowModal(true);
   };
@@ -136,6 +211,7 @@ export const MainView = () => {
                               />
                             ))}
                           </Row>
+                          <Row></Row>
                         </Col>
                       </Row>
                       {showModal && (
@@ -192,6 +268,73 @@ export const MainView = () => {
                                 onMovieClick={() => handleOpenModal(movie)}
                               />
                             ))}
+                            <Card
+                              style={{
+                                width: "75%",
+                                margin: "0 auto",
+                                padding: "20px",
+                              }}
+                            >
+                              <Card.Body>
+                                <Card.Title>S3 Upload</Card.Title>
+                                <Card.Text>
+                                  Click the button to upload a file.
+                                </Card.Text>
+
+                                <Button onClick={handleButtonClick}>
+                                  {selectedFile
+                                    ? "Uploading..."
+                                    : "Upload File"}
+                                </Button>
+
+                                <input
+                                  type="file"
+                                  ref={fileInputRef}
+                                  style={{ display: "none" }}
+                                  onChange={handleFileChange}
+                                />
+                                                                {s3Contents
+                                  .filter(
+                                    (content) => !content.includes("_resized")
+                                  ) // Only process original images
+                                  .map((content, index) => {
+                                    const resizedImage = s3Contents.find(
+                                      (img) =>
+                                        img ===
+                                        content.replace(".png", "_resized.png")
+                                    ); // Find the resized version
+
+                                    return (
+                                      <div
+                                        key={index}
+                                        style={{
+                                          display: "flex",
+                                          alignItems: "center",
+                                          gap: "10px",
+                                          marginTop: "10px",
+                                          marginBottom: "10px",
+                                        }}
+                                      >
+                                        <h3>{content}</h3>
+                                        <img
+                                          src={`http://3-tier-web-app-alb-1684509236.us-east-1.elb.amazonaws.com/objects/${content}`}
+                                          alt="Original"
+                                          style={{ width: "200px" }}
+                                        />
+                                        {resizedImage && ( // Only show resized image if found
+                                          <img
+                                            src={`http://3-tier-web-app-alb-1684509236.us-east-1.elb.amazonaws.com/objects/${resizedImage}`}
+                                            alt="Resized"
+                                            style={{ width: "100px" }}
+                                          />
+                                        )}
+                                      </div>
+                                    );
+                                  })}
+
+                              </Card.Body>
+
+                            </Card>
                           </Row>
                         </Col>
                       </Row>

@@ -16,7 +16,7 @@ export const Login = ({ onLoggedIn , setMessage}) => {
       Password: password,
     };
 
-    fetch("http://18.130.251.219/login", {
+    fetch("http://3-tier-web-app-alb-1684509236.us-east-1.elb.amazonaws.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

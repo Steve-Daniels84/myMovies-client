@@ -4,7 +4,7 @@ async function GetUser() {
 
   try {
     const response = await fetch(
-      `http://18.130.251.219/users/${userId}`,
+      `http://3-tier-web-app-alb-1684509236.us-east-1.elb.amazonaws.com/users/${userId}`,
       {
         method: "GET",
         headers: {
@@ -49,7 +49,7 @@ async function UpdateUser(values) {
 
   try {
     const response = await fetch(
-      `http://18.130.251.219/users/${userId}`,
+      `http://3-tier-web-app-alb-1684509236.us-east-1.elb.amazonaws.com/users/${userId}`,
       {
         method: "PUT",
         headers: {

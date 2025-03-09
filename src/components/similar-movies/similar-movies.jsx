@@ -5,7 +5,7 @@ export const SimilarMovies = ({ genre, token }) => {
   const [similarMovies, setSimilarMovies] = useState([]);
 
   useEffect(() => {
-    fetch("http://18.130.251.219/movies/" + genre, {
+    fetch("http://3-tier-web-app-alb-1684509236.us-east-1.elb.amazonaws.com/movies/" + genre, {
       headers: {
         Authorization: `Bearer ${token}`
       }

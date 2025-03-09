@@ -3,7 +3,7 @@ async function AddFavouriteMovie(movie) {
   const token = localStorage.getItem("token");
   try {
     await fetch(
-      `http://18.130.251.219/users/${userId}/${movie}`,
+      `http://3-tier-web-app-alb-1684509236.us-east-1.elb.amazonaws.com/users/${userId}/${movie}`,
       {
         method: "PUT",
         headers: {
@@ -23,7 +23,7 @@ async function DeleteFavouriteMovie(movie) {
   const token = localStorage.getItem("token");
   try {
     await fetch(
-      `http://18.130.251.219/users/${userId}/${movie}`,
+      `http://3-tier-web-app-alb-1684509236.us-east-1.elb.amazonaws.com/users/${userId}/${movie}`,
       {
         method: "DELETE",
         headers: {
